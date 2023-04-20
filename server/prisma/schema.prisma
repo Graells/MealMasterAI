@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+model MealAI {
+  id          Int      @id @default(autoincrement())
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model Meal {
+  id                 Int           @id @default(autoincrement())
+  age                Int
+  gender             Gender
+  weight             Float
+  height             Float
+  activityLevel      ActivityLevel
+  dietaryPreferences String?
+  weightGoal         WeightGoal
+  weightAmount       Float
+  timeFrame          Int?
+  eatingFrequency    Int
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum ActivityLevel {
+  SEDENTARY
+  LIGHT
+  MODERATE
+  ACTIVE
+  VERY_ACTIVE
+}
+
+enum WeightGoal {
+  LOSE
+  GAIN
+  MAINTAIN
+}
