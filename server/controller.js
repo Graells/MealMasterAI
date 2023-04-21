@@ -22,6 +22,7 @@ controller.getAll = async (req, res) => {
 }
 controller.postAI = async (req, res) => {
   const {
+    name,
     age,
     gender,
     weight,
@@ -34,10 +35,11 @@ controller.postAI = async (req, res) => {
     eatingFrequency,
   } = req.body;
   try {
-    const prompt = `Generate a diet plan for a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${JSON.stringify(dietaryPreferences)}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
+    const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
+    console.log(prompt);
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `${prompt}. Give the response as if you were talking to the user directly.`}]
+      messages: [{ role: "user", content: `${prompt}. Give the response as if you were talking to the user directly saying his/her name.`}]
     });
     const diet = response.data.choices[0].message.content;
     // res.json(diet);
@@ -54,7 +56,7 @@ controller.postAI = async (req, res) => {
 }
 controller.postOne = async (req, res) => {
   try {
-    const newMeal = await prisma.meal.create({ data: req.body });
+    const newMeal = await prisma.userInfo.create({ data: req.body });
     res.status(201)
     res.json(newMeal); //res.send
   } catch (error) {
@@ -64,7 +66,7 @@ controller.postOne = async (req, res) => {
 }
 controller.getOne = async (req, res) => {
   try {
-    const meal = await prisma.meal.findUnique({ where: { id: parseInt(req.params.id) } });
+    const meal = await prisma.userInfo.findUnique({ where: { id: parseInt(req.params.id) } });
     if (!meal) return res.status(404).json({ error: 'Meal not found' });
     res.status(200).json(meal);
   } catch (error) {
@@ -74,7 +76,7 @@ controller.getOne = async (req, res) => {
 }
 controller.updateOne = async (req, res) => {
   try {
-    const updatedMeal = await prisma.meal.update({
+    const updatedMeal = await prisma.userInfo.update({
       where: { id: parseInt(req.params.id) },
       data: req.body,
     });
@@ -85,7 +87,7 @@ controller.updateOne = async (req, res) => {
 }
 controller.deleteOne = async (req, res) => {
   try {
-    await prisma.meal.delete({ where: { id: parseInt(req.params.id) } });
+    await prisma.userInfo.delete({ where: { id: parseInt(req.params.id) } });
     res.status(204).send();
   } catch (error) {
     res.status(500).json({ error: 'Error deleting meal' });

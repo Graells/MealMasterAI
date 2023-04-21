@@ -6,13 +6,11 @@ var cors = require('cors')
 const app = express();
 const prisma = new PrismaClient();
 
+
 app.use(cors());
 app.use(express.json());
 app.use(router);
 
-app.get('/', (req, res) => {
-  res.send('MealMasterAI');
-});
 
 const PORT = process.env.PORT || 3001;
 (async () => {

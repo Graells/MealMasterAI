@@ -11,10 +11,18 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id           Int       @id @default(autoincrement())
+  googleId     String    @unique
+  displayName  String?
+  firstName    String?
+  lastName     String?
+  email        String    @unique
+  password     String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
+
+
 
 model MealAI {
   id          Int      @id @default(autoincrement())
@@ -22,8 +30,9 @@ model MealAI {
   createdAt   DateTime @default(now())
 }
 
-model Meal {
+model UserInfo {
   id                 Int           @id @default(autoincrement())
+  name               String
   age                Int
   gender             Gender
   weight             Float

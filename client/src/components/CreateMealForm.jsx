@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { addOne } from "../api.service";
 
 const initialState = {
+  name: "",
   age: 0,
   gender: "",
   weight: 0,
@@ -23,10 +24,11 @@ const CreateMealForm = ({ onMealSubmit }) => {
     e.preventDefault();
     const meal = {
       ...formData,
+      name: formData.name,
       age: parseInt(formData.age),
       weight: parseFloat(formData.weight),
       height: parseFloat(formData.height),
-      dietaryPreferences: JSON.stringify(formData.dietaryPreferences),
+      dietaryPreferences: formData.dietaryPreferences,
       weightAmount: parseFloat(formData.weightAmount),
       timeFrame: parseInt(formData.timeFrame),
       eatingFrequency: parseInt(formData.eatingFrequency),
@@ -40,6 +42,13 @@ const CreateMealForm = ({ onMealSubmit }) => {
   return (
     <form className="formStyle" onSubmit={handleSubmit}>
       <h2>Create a new meal</h2>
+      <label htmlFor="name">Your name:</label>
+      <textarea
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
       <label htmlFor="age">Age:</label>
       <input
         type="number"
