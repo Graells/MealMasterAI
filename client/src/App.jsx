@@ -1,9 +1,6 @@
-import "./App.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { submitForm, addOne, getAll } from "./api.service";
-// import CreateMealForm from "./components/CreateMealForm";
-// import DietDisplay from "./components/DietDisplay";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateMealPage from "./pages/CreateMealPage";
 import DietsPage from "./pages/DietsPage";

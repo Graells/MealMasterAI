@@ -38,6 +38,7 @@ CREATE TABLE "Meal" (
     "weightAmount" DOUBLE PRECISION NOT NULL,
     "timeFrame" INTEGER,
     "eatingFrequency" INTEGER NOT NULL,
+    "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

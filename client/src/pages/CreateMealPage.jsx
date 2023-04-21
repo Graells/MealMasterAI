@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 
 const CreateMealPage = ({ onMealSubmit }) => {
   return (
-    <div>      
+    <div className="createMealPage">
       <Link to="/">
         <button>Home</button>
       </Link>
       <CreateMealForm onMealSubmit={onMealSubmit} />
-
     </div>
   );
 };
