@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import LogoutButton from "../components/LogoutButton";
+import Profile from "../components/Profile";
 
 const HomePage = () => {
   return (
@@ -8,9 +10,13 @@ const HomePage = () => {
         <Link to="/create-meal">
           <button>Create Meal</button>
         </Link>
-        <Link to="/diets">
+        <Link to="/dashboard">
           <button>Dashboard</button>
         </Link>
+      </div>
+      <div className="footer">
+        <Profile />
+        <LogoutButton />
       </div>
     </div>
   );

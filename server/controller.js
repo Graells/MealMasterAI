@@ -12,9 +12,12 @@ const controller = {};
 
 controller.getAll = async (req, res) => {
   try {
-    const meals = await prisma.mealAI.findMany();
-    res.status(200)
-    res.json(meals); //res.send(meals)
+    const meals = await prisma.mealAI.findMany({
+      include: {
+        user: true,
+      },
+    });
+    res.status(200).json(meals);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching meals' });
     console.log(error)
@@ -22,6 +25,10 @@ controller.getAll = async (req, res) => {
 }
 controller.postAI = async (req, res) => {
   const {
+    auth0Id,
+    userName,
+    userPic,
+    email,
     name,
     age,
     gender,
@@ -43,12 +50,19 @@ controller.postAI = async (req, res) => {
     });
     const diet = response.data.choices[0].message.content;
     // res.json(diet);
+    const user = await prisma.user.upsert({
+      where: { auth0Id },
+      update: {},
+      create: { auth0Id, email: email, userName, userPic },
+    });
+    
     const newMealAI = await prisma.mealAI.create({
       data: {
         description: diet,
-      }
+        userId: user.auth0Id,
+      },
     });
-    res.json(newMealAI);
+    res.json({...newMealAI, user});
   } catch (error) {
     console.error('Error generating diet plan:', error);
     res.status(500).json({ error: 'Failed to generate diet plan' });

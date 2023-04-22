@@ -3,24 +3,32 @@ import DietDisplay from "../components/DietDisplay";
 import { Link } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
+import LogoutButton from "../components/LogoutButton";
+import Profile from "../components/Profile";
 
 const DietsPage = () => {
   const { diets, isLoading } = useContext(DietContext);
 
-  console.log(diets);
+  console.log("DIETS DietsPage", diets);
 
   return (
-    <div>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      <h2>Dashboard: All Diets</h2>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        diets.map((diet) => <DietDisplay key={diet.id} diet={diet} />)
-      )}
-    </div>
+    <>
+      <div>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <h2>Dashboard: All Diets</h2>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          diets.map((diet) => <DietDisplay key={diet.id} diet={diet} />)
+        )}
+      </div>
+      <div className="footer">
+        <Profile />
+        <LogoutButton />
+      </div>
+    </>
   );
 };
 

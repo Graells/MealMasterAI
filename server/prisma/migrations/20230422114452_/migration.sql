@@ -10,9 +10,10 @@ CREATE TYPE "WeightGoal" AS ENUM ('LOSE', 'GAIN', 'MAINTAIN');
 -- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
-    "googleId" TEXT NOT NULL,
-    "displayName" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
+    "auth0Id" TEXT NOT NULL,
+    "email" TEXT,
+    "userName" TEXT,
+    "userPic" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -20,6 +21,7 @@ CREATE TABLE "User" (
 -- CreateTable
 CREATE TABLE "MealAI" (
     "id" SERIAL NOT NULL,
+    "userId" TEXT NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -47,7 +49,7 @@ CREATE TABLE "UserInfo" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_googleId_key" ON "User"("googleId");
+CREATE UNIQUE INDEX "User_auth0Id_key" ON "User"("auth0Id");
 
--- CreateIndex
-CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+-- AddForeignKey
+ALTER TABLE "MealAI" ADD CONSTRAINT "MealAI_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("auth0Id") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -11,7 +11,7 @@ export const getAll = async () => {
     }
 
     const data = await response.json();
-    console.log(data);
+    console.log('apiService DATA',data);
     return data;
   } catch (error) {
     console.error("Error fetching diets:", error);
@@ -41,7 +41,13 @@ export const addOne = async (meal) => {
   }
 };
 
-export const submitForm = async (formData) => {
+export const submitForm = async (
+  formData,
+  auth0Id,
+  userEmail,
+  userName,
+  userPic
+) => {
   const {
     name,
     age,
@@ -63,6 +69,10 @@ export const submitForm = async (formData) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        userPic,
+        userName,
+        auth0Id,
+        email: userEmail,
         name,
         age,
         gender,
@@ -82,9 +92,8 @@ export const submitForm = async (formData) => {
     }
 
     const data = await response.json();
-    console.log(data, "RESPONSE");
-    const { description } = data;
-    return description;
+    console.log("RESPONSE",data);
+    return data;
   } catch (error) {
     console.error("Error submitting form:", error);
     throw error;

@@ -3,13 +3,15 @@ import CreateMealForm from "../components/CreateMealForm";
 import { Link, useNavigate } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
+import LogoutButton from "../components/LogoutButton";
+import Profile from "../components/Profile";
 
 const CreateMealPage = () => {
   const { handleMealSubmit, isLoading } = useContext(DietContext);
   const navigate = useNavigate();
 
   const onSuccess = () => {
-    navigate("/diets");
+    navigate("/diet-user-display");
   };
 
   const onMealFormSubmit = async (formData) => {
@@ -17,16 +19,22 @@ const CreateMealPage = () => {
   };
 
   return (
-    <div className="createMealPage">
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <CreateMealForm onMealSubmit={onMealFormSubmit} />
-      )}
-    </div>
+    <>
+      <div className="createMealPage">
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <CreateMealForm onMealSubmit={onMealFormSubmit} />
+        )}
+      </div>
+      <div className="footer">
+        <Profile />
+        <LogoutButton />
+      </div>
+    </>
   );
 };
 

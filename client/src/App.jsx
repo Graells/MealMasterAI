@@ -5,6 +5,7 @@ import DietsPage from "./pages/DietsPage";
 import HomePage from "./pages/HomePage";
 import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
+import DietUserDisplay from "./components/DietUserDisplay";
 
 const DietContext = React.createContext();
 
@@ -16,7 +17,8 @@ const App = () => {
           <Route exact path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/create-meal" element={<CreateMealPage />} />
-          <Route path="/diets" element={<DietsPage />} />
+          <Route path="/dashboard" element={<DietsPage />} />
+          <Route path="/diet-user-display" element={<DietUserDisplay />} />
         </Routes>
       </BrowserRouter>
     </DietProvider>
