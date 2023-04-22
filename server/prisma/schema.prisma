@@ -27,7 +27,7 @@ model MealAI {
 }
 
 
-model UserInfo {
+model MealInfo {
   id                 Int           @id @default(autoincrement())
   name               String
   age                Int

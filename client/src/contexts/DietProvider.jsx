@@ -50,7 +50,7 @@ const DietProvider = ({ children }) => {
 
   return (
     <DietContext.Provider
-      value={{ diets, handleMealSubmit, isLoading, lastCreatedDiet }}
+      value={{ diets,setDiets, handleMealSubmit, isLoading, lastCreatedDiet }}
     >
       {children}
     </DietContext.Provider>

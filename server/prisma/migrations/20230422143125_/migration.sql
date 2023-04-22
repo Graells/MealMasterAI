@@ -29,7 +29,7 @@ CREATE TABLE "MealAI" (
 );
 
 -- CreateTable
-CREATE TABLE "UserInfo" (
+CREATE TABLE "MealInfo" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "age" INTEGER NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE "UserInfo" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "UserInfo_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "MealInfo_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

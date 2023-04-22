@@ -70,7 +70,7 @@ controller.postAI = async (req, res) => {
 }
 controller.postOne = async (req, res) => {
   try {
-    const newMeal = await prisma.userInfo.create({ data: req.body });
+    const newMeal = await prisma.mealInfo.create({ data: req.body });
     res.status(201)
     res.json(newMeal); //res.send
   } catch (error) {
@@ -80,7 +80,7 @@ controller.postOne = async (req, res) => {
 }
 controller.getOne = async (req, res) => {
   try {
-    const meal = await prisma.userInfo.findUnique({ where: { id: parseInt(req.params.id) } });
+    const meal = await prisma.mealInfo.findUnique({ where: { id: parseInt(req.params.id) } });
     if (!meal) return res.status(404).json({ error: 'Meal not found' });
     res.status(200).json(meal);
   } catch (error) {
@@ -90,7 +90,7 @@ controller.getOne = async (req, res) => {
 }
 controller.updateOne = async (req, res) => {
   try {
-    const updatedMeal = await prisma.userInfo.update({
+    const updatedMeal = await prisma.mealInfo.update({
       where: { id: parseInt(req.params.id) },
       data: req.body,
     });
@@ -101,7 +101,7 @@ controller.updateOne = async (req, res) => {
 }
 controller.deleteOne = async (req, res) => {
   try {
-    await prisma.userInfo.delete({ where: { id: parseInt(req.params.id) } });
+    await prisma.mealAI.delete({ where: { id: parseInt(req.params.id) } });
     res.status(204).send();
   } catch (error) {
     res.status(500).json({ error: 'Error deleting meal' });
