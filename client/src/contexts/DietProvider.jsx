@@ -25,7 +25,7 @@ const DietProvider = ({ children }) => {
         userName,
         userPic
       );
-      await addOne(formData);
+      // await addOne(formData);
       setDiets((prevDiets) => [...prevDiets, generatedDiet]);
       setLastCreatedDiet(generatedDiet);
       if (onSuccess) {
@@ -50,7 +50,7 @@ const DietProvider = ({ children }) => {
 
   return (
     <DietContext.Provider
-      value={{ diets,setDiets, handleMealSubmit, isLoading, lastCreatedDiet }}
+      value={{ diets, setDiets, handleMealSubmit, isLoading, lastCreatedDiet }}
     >
       {children}
     </DietContext.Provider>

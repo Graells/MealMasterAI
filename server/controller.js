@@ -15,6 +15,7 @@ controller.getAll = async (req, res) => {
     const meals = await prisma.mealAI.findMany({
       include: {
         user: true,
+        mealInfo: true,
       },
     });
     res.status(200).json(meals);
@@ -29,6 +30,7 @@ controller.postAI = async (req, res) => {
     userName,
     userPic,
     email,
+    title,
     name,
     age,
     gender,
@@ -55,29 +57,45 @@ controller.postAI = async (req, res) => {
       update: {},
       create: { auth0Id, email: email, userName, userPic },
     });
-    
+    const newMealInfo = await prisma.mealInfo.create({
+      data: {
+        title,
+        name,
+        age,
+        gender,
+        weight,
+        height,
+        activityLevel,
+        dietaryPreferences,
+        weightGoal,
+        weightAmount,
+        timeFrame,
+        eatingFrequency,
+      },
+    });
     const newMealAI = await prisma.mealAI.create({
       data: {
         description: diet,
         userId: user.auth0Id,
-      },
+        mealInfoId: newMealInfo.id
+      }
     });
-    res.json({...newMealAI, user});
+    res.json({...newMealAI, user, mealInfo: newMealInfo});
   } catch (error) {
     console.error('Error generating diet plan:', error);
     res.status(500).json({ error: 'Failed to generate diet plan' });
   }
 }
-controller.postOne = async (req, res) => {
-  try {
-    const newMeal = await prisma.mealInfo.create({ data: req.body });
-    res.status(201)
-    res.json(newMeal); //res.send
-  } catch (error) {
-    res.status(500).json({ error: 'Error creating meal' });
-    console.log(error);
-  }
-}
+// controller.postOne = async (req, res) => {
+//   try {
+//     const newMeal = await prisma.mealInfo.create({ data: req.body });
+//     res.status(201)
+//     res.json(newMeal); //res.send
+//   } catch (error) {
+//     res.status(500).json({ error: 'Error creating meal' });
+//     console.log(error);
+//   }
+// }
 controller.getOne = async (req, res) => {
   try {
     const meal = await prisma.mealInfo.findUnique({ where: { id: parseInt(req.params.id) } });
@@ -90,15 +108,17 @@ controller.getOne = async (req, res) => {
 }
 controller.updateOne = async (req, res) => {
   try {
+    const { title } = req.body;
     const updatedMeal = await prisma.mealInfo.update({
       where: { id: parseInt(req.params.id) },
-      data: req.body,
+      data: { title },
     });
     res.status(200).json(updatedMeal);
   } catch (error) {
     res.status(500).json({ error: 'Error updating meal' });
   }
 }
+
 controller.deleteOne = async (req, res) => {
   try {
     await prisma.mealAI.delete({ where: { id: parseInt(req.params.id) } });

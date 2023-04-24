@@ -24,6 +24,7 @@ CREATE TABLE "MealAI" (
     "userId" TEXT NOT NULL,
     "description" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "mealInfoId" INTEGER NOT NULL,
 
     CONSTRAINT "MealAI_pkey" PRIMARY KEY ("id")
 );
@@ -31,6 +32,7 @@ CREATE TABLE "MealAI" (
 -- CreateTable
 CREATE TABLE "MealInfo" (
     "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "age" INTEGER NOT NULL,
     "gender" "Gender" NOT NULL,
@@ -51,5 +53,11 @@ CREATE TABLE "MealInfo" (
 -- CreateIndex
 CREATE UNIQUE INDEX "User_auth0Id_key" ON "User"("auth0Id");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "MealAI_mealInfoId_key" ON "MealAI"("mealInfoId");
+
 -- AddForeignKey
 ALTER TABLE "MealAI" ADD CONSTRAINT "MealAI_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("auth0Id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "MealAI" ADD CONSTRAINT "MealAI_mealInfoId_fkey" FOREIGN KEY ("mealInfoId") REFERENCES "MealInfo"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -11,33 +11,11 @@ export const getAll = async () => {
     }
 
     const data = await response.json();
-    console.log('apiService DATA',data);
+    console.log("apiService DATA", data);
     return data;
   } catch (error) {
     console.error("Error fetching diets:", error);
     return error;
-  }
-};
-
-export const addOne = async (meal) => {
-  try {
-    const response = await fetch("http://localhost:3001/meals", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(meal),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error ${response.status}`);
-    }
-
-    const result = await response.json();
-    console.log("Meal created:", result);
-    return result;
-  } catch (error) {
-    console.error("Error creating meal:", error);
   }
 };
 
@@ -49,6 +27,7 @@ export const submitForm = async (
   userPic
 ) => {
   const {
+    title,
     name,
     age,
     gender,
@@ -73,6 +52,7 @@ export const submitForm = async (
         userName,
         auth0Id,
         email: userEmail,
+        title,
         name,
         age,
         gender,
@@ -92,7 +72,7 @@ export const submitForm = async (
     }
 
     const data = await response.json();
-    console.log("RESPONSE",data);
+    console.log("RESPONSE", data);
     return data;
   } catch (error) {
     console.error("Error submitting form:", error);
@@ -100,3 +80,24 @@ export const submitForm = async (
   }
 };
 
+export const addOne = async (meal) => {
+  try {
+    const response = await fetch("http://localhost:3001/meals", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(meal),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log("Meal created:", result);
+    return result;
+  } catch (error) {
+    console.error("Error creating meal:", error);
+  }
+};

@@ -24,6 +24,7 @@ const CreateMealPage = () => {
         <Link to="/">
           <button>Home</button>
         </Link>
+
         {isLoading ? (
           <Spinner />
         ) : (

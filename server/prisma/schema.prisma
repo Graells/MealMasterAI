@@ -24,11 +24,14 @@ model MealAI {
   user        User     @relation(fields: [userId], references: [auth0Id])
   description String?
   createdAt   DateTime @default(now())
+  mealInfoId  Int      @unique
+  mealInfo    MealInfo @relation(fields: [mealInfoId], references: [id])
 }
 
 
 model MealInfo {
   id                 Int           @id @default(autoincrement())
+  title              String
   name               String
   age                Int
   gender             Gender
@@ -42,6 +45,7 @@ model MealInfo {
   eatingFrequency    Int
   createdAt          DateTime      @default(now())
   updatedAt          DateTime      @updatedAt
+  mealAI             MealAI[]
 }
 
 enum Gender {

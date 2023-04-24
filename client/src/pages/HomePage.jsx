@@ -5,6 +5,9 @@ import Profile from "../components/Profile";
 const HomePage = () => {
   return (
     <div className="styleHomePage">
+      <Link to="/">
+        <button>refresh</button>
+      </Link>
       <h1>MealMasterAI</h1>
       <div className="buttonGroup">
         <Link to="/create-meal">

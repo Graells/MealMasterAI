@@ -17,7 +17,7 @@ const DietsPage = () => {
         <Link to="/">
           <button>Home</button>
         </Link>
-        <h2>Dashboard: All Diets</h2>
+        <h2>Dashboard: All Diets from all Users</h2>
         {isLoading ? (
           <Spinner />
         ) : (

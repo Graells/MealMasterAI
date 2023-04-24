@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { addOne } from "../api.service";
 
 const initialState = {
+  title: "",
   name: "",
   age: 0,
   gender: "",
@@ -24,6 +25,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
     e.preventDefault();
     const meal = {
       ...formData,
+      title: formData.title,
       name: formData.name,
       age: parseInt(formData.age),
       weight: parseFloat(formData.weight),
@@ -42,12 +44,22 @@ const CreateMealForm = ({ onMealSubmit }) => {
   return (
     <form className="formStyle" onSubmit={handleSubmit}>
       <h2>Create a new meal</h2>
+      <label htmlFor="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value={formData.title}
+        onChange={handleChange}
+        required
+      />
       <label htmlFor="name">Your name:</label>
       <textarea
         id="name"
         name="name"
         value={formData.name}
         onChange={handleChange}
+        required
       />
       <label htmlFor="age">Age:</label>
       <input
@@ -56,6 +68,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="age"
         value={formData.age}
         onChange={handleChange}
+        required
       />
 
       <label htmlFor="gender">Gender:</label>
@@ -64,6 +77,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="gender"
         value={formData.gender}
         onChange={handleChange}
+        required
       >
         <option value="">Select Gender</option>
         <option value="MALE">Male</option>
@@ -78,6 +92,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="weight"
         value={formData.weight}
         onChange={handleChange}
+        required
       />
       <label htmlFor="height">Height (in cm):</label>
       <input
@@ -86,6 +101,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="height"
         value={formData.height}
         onChange={handleChange}
+        required
       />
       <label htmlFor="activityLevel">Activity Level:</label>
       <select
@@ -93,6 +109,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="activityLevel"
         value={formData.activityLevel}
         onChange={handleChange}
+        required
       >
         <option value="">Select Activity Level</option>
         <option value="SEDENTARY">Sedentary</option>
@@ -107,6 +124,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="dietaryPreferences"
         value={formData.dietaryPreferences}
         onChange={handleChange}
+        required
       />
       <label htmlFor="weightGoal">Weight Goal:</label>
       <select
@@ -114,6 +132,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="weightGoal"
         value={formData.weightGoal}
         onChange={handleChange}
+        required
       >
         <option value="">Select Weight Goal</option>
         <option value="LOSE">Lose</option>
@@ -127,6 +146,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="weightAmount"
         value={formData.weightAmount}
         onChange={handleChange}
+        required
       />
       <label htmlFor="timeFrame">Time Frame (in weeks):</label>
       <input
@@ -135,6 +155,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="timeFrame"
         value={formData.timeFrame}
         onChange={handleChange}
+        required
       />
       <label htmlFor="eatingFrequency">Eating Frequency (meals per day):</label>
       <input
@@ -143,6 +164,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         name="eatingFrequency"
         value={formData.eatingFrequency}
         onChange={handleChange}
+        required
       />
       <button type="submit">Create Meal</button>
     </form>
