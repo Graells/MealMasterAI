@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
-import LogoutButton from "../components/LogoutButton";
 import Profile from "../components/Profile";
+import "../styles/HomePage.css";
+import logo from "../assets/MealMasterAILogo.png";
 
 const HomePage = () => {
   return (
-    <div className="styleHomePage">
-      <Link to="/">
-        <button>refresh</button>
-      </Link>
-      <h1>MealMasterAI</h1>
-      <div className="buttonGroup">
-        <Link to="/create-meal">
-          <button>Create Meal</button>
+    <>
+      <div className="styleHomePage" style={{ paddingBottom: "80px" }}>
+        <Link to="/">
+          <img src={logo} alt="App Logo" className="app-logo" />
+          {/* <button>refresh</button> */}
         </Link>
-        <Link to="/dashboard">
-          <button>Dashboard</button>
-        </Link>
+        <h1>MealMasterAI</h1>
+        <div className="buttonGroup">
+          <Link to="/create-meal">
+            <button>Create Meal</button>
+          </Link>
+          <Link to="/dashboard">
+            <button>Dashboard</button>
+          </Link>
+        </div>
       </div>
       <div className="footer">
         <Profile />
-        <LogoutButton />
       </div>
-    </div>
+    </>
   );
 };
 

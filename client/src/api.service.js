@@ -15,7 +15,7 @@ export const getAll = async () => {
     return data;
   } catch (error) {
     console.error("Error fetching diets:", error);
-    return error;
+    return "Error message:" + error.message;
   }
 };
 

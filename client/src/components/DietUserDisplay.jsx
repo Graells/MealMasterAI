@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "./Profile";
-import LogoutButton from "./LogoutButton";
+import "../styles/DietUserDisplay.css";
 
 const DietUserDisplay = () => {
   const { lastCreatedDiet, isLoading } = useContext(DietContext);
@@ -28,7 +28,6 @@ const DietUserDisplay = () => {
       </div>
       <div className="footer">
         <Profile />
-        <LogoutButton />
       </div>
     </>
   );

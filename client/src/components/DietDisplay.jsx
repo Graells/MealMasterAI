@@ -3,6 +3,9 @@ import { useContext, useState } from "react";
 import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "./Spinner";
+import "../styles/DietDisplay.css";
+import { ShareButton } from "./ShareButton";
+import { Link } from "react-router-dom";
 
 const DietDisplay = ({ diet }) => {
   const { diets, setDiets } = useContext(DietContext);
@@ -32,8 +35,8 @@ const DietDisplay = ({ diet }) => {
         );
         setDiets(updatedDiets);
       } else {
-        // Handle any errors
-        console.error("Error updating meal title");
+        const errorText = await response.text();
+        console.error("Error updating meal title:", errorText);
       }
     } catch (error) {
       console.error("Error updating meal title:", error);
@@ -53,6 +56,8 @@ const DietDisplay = ({ diet }) => {
         const updatedDiets = diets.filter((d) => d.id !== diet.id);
         setDiets(updatedDiets);
       } else {
+        const errorText = await response.text();
+        console.error("Error deleting meal:", errorText);
       }
     } catch (error) {
       console.error("Error deleting diet:", error);
@@ -63,14 +68,6 @@ const DietDisplay = ({ diet }) => {
 
   return (
     <div className="dietDisplay">
-      <div className="profile-container">
-        <h3>Diet plan from:</h3>
-        <img src={diet.user.userPic} alt={diet.user.userName} />
-        <div className="info">
-          <p>User name: {diet.user.userName}</p>
-          <p>User email: {diet.user.email}</p>
-        </div>
-      </div>
       <div className="title-container">
         {isEditingTitle ? (
           <form
@@ -94,15 +91,37 @@ const DietDisplay = ({ diet }) => {
             </button>
           )
         )}
-        <h3>Diet title: {diet.mealInfo.title}</h3>
+        <Link to={`/diet/${diet.id}`}>
+          <h3>Diet title: {diet.mealInfo.title}</h3>
+        </Link>
         <button onClick={() => setShowDescription(!showDescription)}>
           Show diet
         </button>
       </div>
+      <div>
+        <h3>
+          Goal: {diet.mealInfo.weightGoal.toLowerCase()}{" "}
+          {diet.mealInfo.weightAmount} kg in {diet.mealInfo.timeFrame} weeks.
+        </h3>
+      </div>
 
-      {showDescription && <pre>{diet.description}</pre>}
+      {showDescription && (
+        <div>
+          <pre>{diet.description}</pre>
+        <ShareButton diet={diet} />
 
-      {isCurrentUserOwner && <button onClick={handleDelete}>Delete</button>}
+          {isCurrentUserOwner && <button onClick={handleDelete}>Delete</button>}
+        </div>
+      )}
+
+      <div className="profile-container">
+        <h3>By user:</h3>
+        <img src={diet.user.userPic} alt={diet.user.userName} />
+        <div className="info">
+          <p className="dietUserStyle">{diet.user.userName}</p>
+          <p>User email: {diet.user.email}</p>
+        </div>
+      </div>
     </div>
   );
 };

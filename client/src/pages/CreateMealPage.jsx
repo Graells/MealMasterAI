@@ -3,8 +3,9 @@ import CreateMealForm from "../components/CreateMealForm";
 import { Link, useNavigate } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
-import LogoutButton from "../components/LogoutButton";
 import Profile from "../components/Profile";
+import "../styles/CreateMealPage.css";
+import logo from "../assets/MealMasterAILogo.png";
 
 const CreateMealPage = () => {
   const { handleMealSubmit, isLoading } = useContext(DietContext);
@@ -20,9 +21,10 @@ const CreateMealPage = () => {
 
   return (
     <>
-      <div className="createMealPage">
+      <div className="createMealPage" style={{ paddingBottom: "80px" }}>
         <Link to="/">
-          <button>Home</button>
+          <img src={logo} alt="App Logo" className="app-logo" />
+          {/* <button>Home</button> */}
         </Link>
 
         {isLoading ? (
@@ -33,26 +35,9 @@ const CreateMealPage = () => {
       </div>
       <div className="footer">
         <Profile />
-        <LogoutButton />
       </div>
     </>
   );
 };
 
 export default CreateMealPage;
-
-// import CreateMealForm from "../components/CreateMealForm";
-// import { Link } from "react-router-dom";
-
-// const CreateMealPage = ({ onMealSubmit }) => {
-//   return (
-//     <div className="createMealPage">
-//       <Link to="/">
-//         <button>Home</button>
-//       </Link>
-//       <CreateMealForm onMealSubmit={onMealSubmit} />
-//     </div>
-//   );
-// };
-
-// export default CreateMealPage;
