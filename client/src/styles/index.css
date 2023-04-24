@@ -6,6 +6,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    color: #1A8DAF;
+
   }
 
   .app-logo {
@@ -18,7 +20,7 @@ body {
    button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #3c3f3d;
+    background-color: #1A8DAF;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
@@ -31,17 +33,18 @@ body {
   }
   
  button:hover {
-    background-color: #000000;
+    background-color: #036B88
   }
   
   .profile-container {
     display: flex;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: rgb(219, 255, 235);
     border-radius: 8px;
     padding: 1rem;
     width: 550px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid  #1A8DAF;
     margin: 1rem;
   }
   
@@ -63,7 +66,6 @@ body {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #333;
   }
   
   .profile-container p {
@@ -73,7 +75,6 @@ body {
   }
 
   .footer {
-    left: 0;
     width: 100%;
     height: 50px;
     padding: 20px;

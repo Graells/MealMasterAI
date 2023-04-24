@@ -5,9 +5,10 @@
     max-width: 800px;
     margin: 30px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: rgb(219, 255, 235);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid  #1A8DAF;
   }
   
   .dietDisplay h2 {
@@ -27,7 +28,7 @@
   .info .dietUserStyle {
     font-weight: bold;
     font-size: 19px;
-    color: blue;
+    color: #1A8DAF;
     margin-bottom: 0px;
   }
   

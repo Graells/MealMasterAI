@@ -108,12 +108,10 @@ const DietDisplay = ({ diet }) => {
       {showDescription && (
         <div>
           <pre>{diet.description}</pre>
-        <ShareButton diet={diet} />
-
+          <p>Share it with others: <ShareButton diet={diet} /></p>
           {isCurrentUserOwner && <button onClick={handleDelete}>Delete</button>}
         </div>
       )}
-
       <div className="profile-container">
         <h3>By user:</h3>
         <img src={diet.user.userPic} alt={diet.user.userName} />

@@ -23,14 +23,13 @@ const DietDetailsPage = () => {
 
   return (
     <>
-              <Link to="/dashboard">
-            <button>Back to Dashboard</button>
-          </Link>
-              <div>
-      <DietDisplay diet={diet} />
-    </div>
+      <Link to="/dashboard">
+        <button>Back to Dashboard</button>
+      </Link>
+      <div>
+        <DietDisplay diet={diet} />
+      </div>
     </>
-
   );
 };
 
