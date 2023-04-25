@@ -6,6 +6,7 @@ import Spinner from "./Spinner";
 import "../styles/DietDisplay.css";
 import { ShareButton } from "./ShareButton";
 import { Link } from "react-router-dom";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const DietDisplay = ({ diet }) => {
   const { diets, setDiets } = useContext(DietContext);
@@ -13,6 +14,7 @@ const DietDisplay = ({ diet }) => {
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [title, setTitle] = useState(diet.mealInfo.title);
   const [showDescription, setShowDescription] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
 
   console.log("USER", user);
 
@@ -69,28 +71,49 @@ const DietDisplay = ({ diet }) => {
   return (
     <div className="dietDisplay">
       <div className="title-container">
-        {isEditingTitle ? (
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setIsEditingTitle(false);
-              handleTitleEdit(title);
-            }}
-          >
-            <input
-              value={title}
-              required
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <button type="submit">Submit</button>
-          </form>
-        ) : (
-          isCurrentUserOwner && (
-            <button onClick={() => setIsEditingTitle(true)}>
-              Update title
-            </button>
-          )
+        {isCurrentUserOwner && (
+          <IoSettingsSharp
+            className="options-icon"
+            onClick={() => setShowOptions(!showOptions)}
+            size={24}
+          />
         )}
+        {showOptions && isCurrentUserOwner && (
+          <div className="options-container">
+            {isEditingTitle ? (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setIsEditingTitle(false);
+                  handleTitleEdit(title);
+                }}
+              >
+                <input
+                  value={title}
+                  required
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+                <button type="submit">Submit</button>
+              </form>
+            ) : (
+              <button onClick={() => setIsEditingTitle(true)}>
+                Update title
+              </button>
+            )}
+            <button
+              onClick={() => {
+                if (
+                  window.confirm("Are you sure you want to delete this diet?")
+                ) {
+                  handleDelete();
+                }
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        )}
+
         <Link to={`/diet/${diet.id}`}>
           <h3>Diet title: {diet.mealInfo.title}</h3>
         </Link>
@@ -108,8 +131,9 @@ const DietDisplay = ({ diet }) => {
       {showDescription && (
         <div>
           <pre>{diet.description}</pre>
-          <p>Share it with others: <ShareButton diet={diet} /></p>
-          {isCurrentUserOwner && <button onClick={handleDelete}>Delete</button>}
+          <p>
+            Share it with others: <ShareButton diet={diet} />
+          </p>
         </div>
       )}
       <div className="profile-container">

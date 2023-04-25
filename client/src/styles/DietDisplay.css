@@ -37,4 +37,25 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative;
   }
+.options-icon {
+  font-size: 24px; 
+  cursor: pointer;
+  margin: 0;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% - 27px);
+  right: calc(100% - 5px);
+  margin: 0px;
+  background-color:  rgb(219, 255, 235);
+  border: 1px solid  #1A8DAF;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  z-index: 1;
+}

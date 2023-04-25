@@ -6,9 +6,10 @@ import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
 import logo from "../assets/MealMasterAILogo.png";
+import PreviousDataItem from "../components/PreviousDataItem";
 
 const CreateMealPage = () => {
-  const { handleMealSubmit, isLoading } = useContext(DietContext);
+  const { handleMealSubmit, isLoading, diets } = useContext(DietContext);
   const navigate = useNavigate();
 
   const onSuccess = () => {
@@ -20,23 +21,29 @@ const CreateMealPage = () => {
   };
 
   return (
-    <>
-      <div className="createMealPage" style={{ paddingBottom: "80px" }}>
-        <Link to="/">
-          <img src={logo} alt="App Logo" className="app-logo" />
-          {/* <button>Home</button> */}
-        </Link>
-
+<>
+    <div className="createMealPage" style={{ paddingBottom: "80px" }}>
+      <Link to="/">
+        <img src={logo} alt="App Logo" className="app-logo" />
+      </Link>
+      
+      <div className="form-and-data-container">
         {isLoading ? (
           <Spinner />
         ) : (
           <CreateMealForm onMealSubmit={onMealFormSubmit} />
         )}
+
+        <div className="previous-data-container">
+          <h2>Your previous input data</h2>
+          <PreviousDataItem />
+        </div>
       </div>
-      <div className="footer">
-        <Profile />
-      </div>
-    </>
+    </div>
+    <div className="footer">
+      <Profile />
+    </div>
+  </>
   );
 };
 
