@@ -115,7 +115,9 @@ const DietDisplay = ({ diet }) => {
         )}
 
         <Link to={`/diet/${diet.id}`}>
-          <h3>Diet title: {diet.mealInfo.title}</h3>
+          <h3>
+            Diet title: {diet.mealInfo.title} for {diet.mealInfo.name}
+          </h3>
         </Link>
         <button onClick={() => setShowDescription(!showDescription)}>
           Show diet
@@ -129,11 +131,12 @@ const DietDisplay = ({ diet }) => {
       </div>
 
       {showDescription && (
-        <div>
+        <div className="share-container">
           <pre>{diet.description}</pre>
-          <p>
-            Share it with others: <ShareButton diet={diet} />
-          </p>
+          <div className="share-button-container">
+            <span>Share it with others:</span>
+            <ShareButton diet={diet} />
+          </div>
         </div>
       )}
       <div className="profile-container">

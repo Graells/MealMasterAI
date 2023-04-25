@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import "../styles/PreviousDataItem.css";
 const PreviousDataItem = () => {
   const { diets } = useContext(DietContext);
   const { user } = useAuth0();
@@ -20,9 +20,12 @@ const PreviousDataItem = () => {
         return (
           isCurrentUserOwner && (
             <div key={data.id}>
-              <h3 onClick={() => toggleDetails(data.id)} style={{ textDecoration: "underline", cursor: "pointer" }}>
-                {data.mealInfo.title}
-                </h3>
+              <h3
+                onClick={() => toggleDetails(data.id)}
+                style={{ textDecoration: "underline", cursor: "pointer" }}
+              >
+                {data.mealInfo.title} for {data.mealInfo.name}
+              </h3>
               {visibleDetails[data.id] && (
                 <>
                   <p>Name: {data.mealInfo.name}</p>
@@ -35,7 +38,10 @@ const PreviousDataItem = () => {
                   <p>Weight Goal: {data.mealInfo.weightGoal} kg</p>
                   <p>Weight Amount: {data.mealInfo.weightAmount} kg</p>
                   <p>Time Frame: {data.mealInfo.timeFrame} weeks</p>
-                  <p>Eating Frequency: {data.mealInfo.eatingFrequency} meals per day</p>
+                  <p>
+                    Eating Frequency: {data.mealInfo.eatingFrequency} meals per
+                    day
+                  </p>
                 </>
               )}
             </div>

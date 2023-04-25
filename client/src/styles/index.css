@@ -7,6 +7,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #1A8DAF;
+    /* background-image:url("../assets/pexels-jot-singh-2179483.jpg"); */
 
   }
 
@@ -39,7 +40,7 @@ body {
   .profile-container {
     display: flex;
     align-items: center;
-    background-color: rgb(219, 255, 235);
+    /* background-color: rgb(219, 255, 235); */
     border-radius: 8px;
     padding: 1rem;
     width: 550px;

@@ -21,29 +21,29 @@ const CreateMealPage = () => {
   };
 
   return (
-<>
-    <div className="createMealPage" style={{ paddingBottom: "80px" }}>
-      <Link to="/">
-        <img src={logo} alt="App Logo" className="app-logo" />
-      </Link>
-      
-      <div className="form-and-data-container">
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <CreateMealForm onMealSubmit={onMealFormSubmit} />
-        )}
+    <>
+      <div className="createMealPage" style={{ paddingBottom: "80px" }}>
+        <Link to="/">
+          <img src={logo} alt="App Logo" className="app-logo" />
+        </Link>
 
-        <div className="previous-data-container">
-          <h2>Your previous input data</h2>
-          <PreviousDataItem />
+        <div className="form-and-data-container">
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <CreateMealForm onMealSubmit={onMealFormSubmit} />
+          )}
+
+          <div className="previous-data-container">
+            <h2>Your previous input data</h2>
+            <PreviousDataItem />
+          </div>
         </div>
       </div>
-    </div>
-    <div className="footer">
-      <Profile />
-    </div>
-  </>
+      <div className="footer">
+        <Profile />
+      </div>
+    </>
   );
 };
 
