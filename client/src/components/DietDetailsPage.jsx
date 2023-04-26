@@ -24,7 +24,7 @@ const DietDetailsPage = () => {
   return (
     <>
       <Link to="/dashboard">
-        <button>Back to Dashboard</button>
+        <button>Go to Dashboard</button>
       </Link>
       <div>
         <DietDisplay diet={diet} />

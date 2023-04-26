@@ -34,7 +34,11 @@ export const ShareButton = ({ diet }) => {
         subject={`Check out this diet plan created using AI tech: ${diet.mealInfo.title}`}
         body={`Hey, I found this diet plan and thought you might be interested: ${getShareUrl(
           diet.id
-        )}`}
+        )}
+        
+        The diet:
+        
+         ${diet.description}`}
       >
         <EmailIcon size={32} round={true} />
       </EmailShareButton>

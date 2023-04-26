@@ -1,0 +1,26 @@
+.select-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-container select {
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    pointer-events: none;
+    font-size: 14px;
+    color: #999;
+  }
+  

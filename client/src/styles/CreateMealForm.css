@@ -7,6 +7,7 @@
     background-color: #f4f4f4;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid  #1A8DAF;
   }
   
   .formStyle h2 {
@@ -30,7 +31,7 @@
   .formStyle select,
   .formStyle textarea {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid  #1A8DAF;
     border-radius: 3px;
     font-size: 14px;
     font-family: inherit;
@@ -39,7 +40,7 @@
   .formStyle button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1A8DAF;
+    background-color: #35814A;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;

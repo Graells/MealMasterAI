@@ -44,7 +44,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
   };
   return (
     <form className="formStyle" onSubmit={handleSubmit}>
-      <h2>Create a new meal</h2>
+      <h2>Create a new diet</h2>
       <div className="form-group">
         <label htmlFor="title">Title</label>
         <input
@@ -57,7 +57,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         />
 
         <label htmlFor="name">Your name:</label>
-        <textarea
+        <input
           id="name"
           name="name"
           value={formData.name}
@@ -173,7 +173,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
         />
       </div>
 
-      <button type="submit">Create Meal</button>
+      <button type="submit">Create Diet</button>
     </form>
   );
 };

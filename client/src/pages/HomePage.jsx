@@ -14,7 +14,7 @@ const HomePage = () => {
         <h1>MealMasterAI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
-            <button>Create Meal</button>
+            <button>Create Diet</button>
           </Link>
           <Link to="/dashboard">
             <button>Dashboard</button>

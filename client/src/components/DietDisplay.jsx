@@ -8,7 +8,7 @@ import { ShareButton } from "./ShareButton";
 import { Link } from "react-router-dom";
 import { IoSettingsSharp } from "react-icons/io5";
 
-const DietDisplay = ({ diet }) => {
+const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
   const { diets, setDiets } = useContext(DietContext);
   const { user, isLoading } = useAuth0();
   const [isEditingTitle, setIsEditingTitle] = useState(false);
@@ -27,7 +27,7 @@ const DietDisplay = ({ diet }) => {
         },
         body: JSON.stringify({ id: diet.id, title: newTitle }),
       });
-
+  
       if (response.ok) {
         const updatedMeal = await response.json();
         const updatedDiets = diets.map((d) =>
@@ -36,6 +36,13 @@ const DietDisplay = ({ diet }) => {
             : d
         );
         setDiets(updatedDiets);
+  
+        const updatedFilteredDiets = filteredDiets.map((d) =>
+          d.id === diet.id
+            ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
+            : d
+        );
+        setFilteredDiets(updatedFilteredDiets);
       } else {
         const errorText = await response.text();
         console.error("Error updating meal title:", errorText);
@@ -44,6 +51,7 @@ const DietDisplay = ({ diet }) => {
       console.error("Error updating meal title:", error);
     }
   };
+  
 
   if (isLoading) {
     return <Spinner />;
@@ -57,6 +65,9 @@ const DietDisplay = ({ diet }) => {
       if (response.status === 204) {
         const updatedDiets = diets.filter((d) => d.id !== diet.id);
         setDiets(updatedDiets);
+
+        const updatedFilteredDiets = filteredDiets.filter((d) => d.id !== diet.id);
+        setFilteredDiets(updatedFilteredDiets);
       } else {
         const errorText = await response.text();
         console.error("Error deleting meal:", errorText);

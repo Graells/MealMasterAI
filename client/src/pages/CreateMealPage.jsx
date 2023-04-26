@@ -34,10 +34,12 @@ const CreateMealPage = () => {
             <CreateMealForm onMealSubmit={onMealFormSubmit} />
           )}
 
-          <div className="previous-data-container">
-            <h2>Your previous input data</h2>
-            <PreviousDataItem />
-          </div>
+          {!isLoading && (
+            <div className="previous-data-container">
+              <h2 className="h2-background">Your previous input data</h2>
+              <PreviousDataItem />
+            </div>
+          )}
         </div>
       </div>
       <div className="footer">

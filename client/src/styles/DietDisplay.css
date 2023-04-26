@@ -5,7 +5,7 @@
     max-width: 800px;
     margin: 30px auto;
     padding: 20px;
-    /* background-color: rgb(219, 255, 235); */
+    background-color: #F4F4F4;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid  #1A8DAF;
@@ -62,7 +62,8 @@
   top: calc(100% - 27px);
   right: calc(100% - 5px);
   margin: 0px;
-  background-color:  rgb(238, 255, 245);
+  background-color: #F4F4F4;
+
   border: 1px solid  #1A8DAF;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

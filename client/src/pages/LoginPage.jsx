@@ -22,11 +22,11 @@ const LoginPage = () => {
         <img src={logo} alt="App Logo" className="app-logo" />
         <h1>MealMasterAI</h1>
         <div className="login-hero">
-          <p>To create meals using AI:</p>
+          <p>To create a diet using AI:</p>
           <LoginButton />
         </div>
         <div className="login-dashboard">
-          <p>To view pre-existing meals created by other users:</p>
+          <p>To view pre-existing diets created by other users:</p>
           <Link to="/dashboard">
             <button>Dashboard</button>
           </Link>
