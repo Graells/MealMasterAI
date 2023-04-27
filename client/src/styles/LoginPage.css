@@ -1,28 +1,46 @@
+
+* {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Lexend Zetta', sans-serif;
+}
+
+img {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  margin-right: 0px;
+  
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #F4F4F4;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
+   
+    
+    
   }
-  .login-container .login-hero {
+  .login-hero {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    height: 50px;
-    margin-bottom: 2px;
+    align-items: space-between;
+    height: 65px;
+    margin-bottom: 30px;
+    padding: 45px;
   }
-  .login-container .login-dashboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
+  
+  .headingName {
+    color: white;
+    padding-top: 15vh;
+    font-size: 4.7rem;
   }
-  .app-logo {
-    width: 150px;
-    height: auto;
+  
+  .space {
+    width: 100px;
+  }
+
+  .loginbtn {
+    width: 100px !important;
   }

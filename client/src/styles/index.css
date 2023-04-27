@@ -7,7 +7,8 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #35814A;
-    background-color: #1A8DAF;
+    background: rgb(211,255,204);
+background: linear-gradient(114deg, rgba(211,255,204,1) 0%, rgba(39,39,39,1) 98%);
 
   }
   #root {
@@ -31,27 +32,41 @@ align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid  #1A8DAF;
   }
-  
-  
-   button {
+  .loginbtn {
+    width: 100px !important;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #35814A;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
-    border-radius: 3px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.2s;
-    margin: 20px;
+    min-width: 200px;
     text-decoration: none;
-    border: 1px solid  #000000;
-
   }
   
+   /* button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 100px;
+    text-decoration: none;
+    
+
+  } */
+  
  button:hover {
-    background-color: #036B88
+    background-color: #755dfc
   }
   
   .profile-container {
