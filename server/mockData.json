@@ -1,0 +1,6 @@
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [{ "role": "user", 
+    "content": "Generate a diet plan for user name Juan, a 30-year-old male, weighing 85 kg, and 176cm tall, with an activity level of light, dietary preferences of pizzas, a weight goal of lose 5 kg, a time frame of 4 weeks, and an eating frequency of 4 times a day.. Give the response as if you were talking to the user directly saying his/her name."}]
+  }
+
