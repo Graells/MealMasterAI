@@ -1,5 +1,20 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+    "commitizen": "^4.3.0",
+    "openai": "^3.2.1"
+  },
+  "name": "mealmasterai",
+  "description": "AI-powered diet tracking and sharing app. -",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+=======
     "@types/express": "^4.17.17",
     "openai": "^3.2.1"
   },
@@ -11,4 +26,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   }
+>>>>>>> 6f66b2f08f63ecfb7880b47f65a067e373c0dc73
 }

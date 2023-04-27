@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import logo from "../assets/MealMasterAILogo.png";
+import aiarm from "../assets/airobotarm.svg";
 import "../styles/LoginPage.css";
 
 const LoginPage = () => {
@@ -19,18 +20,22 @@ const LoginPage = () => {
   return (
     <div>
       <div className="login-container">
-        <img src={logo} alt="App Logo" className="app-logo" />
-        <h1>MealMasterAI</h1>
+        
+        <h1 className="headingName">  MEALMASTER AI</h1>
+        <img src={aiarm} alt="App Logo"  />
+
+
         <div className="login-hero">
-          <p>To create a diet using AI:</p>
-          <LoginButton />
-        </div>
-        <div className="login-dashboard">
-          <p>To view pre-existing diets created by other users:</p>
+          {/* <p>To create a diet using AI:</p> */}
+          <LoginButton /><div className="space"></div>
+       
+          {/* <p>To view pre-existing diets created by other users:</p> */}
           <Link to="/dashboard">
-            <button>Dashboard</button>
+            <button className="loginbtn" >Dashboard</button>
           </Link>
         </div>
+
+
       </div>
     </div>
   );
