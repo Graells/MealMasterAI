@@ -3,12 +3,13 @@ const prisma = new PrismaClient();
 const dotenv = require('dotenv');
 dotenv.config();
 const { OpenAIApi, Configuration } = require('openai');
-const openai = new OpenAIApi(new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
-}))
+const openai = new OpenAIApi(
+  new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+);
 
 const controller = {};
-
 
 controller.getAll = async (req, res) => {
   try {
@@ -21,9 +22,9 @@ controller.getAll = async (req, res) => {
     res.status(200).json(meals);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching meals' });
-    console.log(error)
+    console.log(error);
   }
-}
+};
 controller.postAI = async (req, res) => {
   const {
     auth0Id,
@@ -37,6 +38,8 @@ controller.postAI = async (req, res) => {
     weight,
     height,
     activityLevel,
+    howManyDays,
+    howMuchMoney,
     dietaryPreferences,
     weightGoal,
     weightAmount,
@@ -44,11 +47,16 @@ controller.postAI = async (req, res) => {
     eatingFrequency,
   } = req.body;
   try {
-    const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
+    const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, how many ${howManyDays} the user needs a diet for, spending this much ${howMuchMoney} per day, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
     console.log(prompt);
     const response = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `${prompt}. Give the response as if you were talking to the user directly saying his/her name.`}]
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'user',
+          content: `${prompt}. Give the response as if you were talking to the user directly saying his/her name.`,
+        },
+      ],
     });
     const diet = response.data.choices[0].message.content;
     // res.json(diet);
@@ -77,35 +85,28 @@ controller.postAI = async (req, res) => {
       data: {
         description: diet,
         userId: user.auth0Id,
-        mealInfoId: newMealInfo.id
-      }
+        mealInfoId: newMealInfo.id,
+      },
     });
-    res.json({...newMealAI, user, mealInfo: newMealInfo});
+    res.json({ ...newMealAI, user, mealInfo: newMealInfo });
   } catch (error) {
     console.error('Error generating diet plan:', error);
     res.status(500).json({ error: 'Failed to generate diet plan' });
   }
-}
-// controller.postOne = async (req, res) => {
-//   try {
-//     const newMeal = await prisma.mealInfo.create({ data: req.body });
-//     res.status(201)
-//     res.json(newMeal); //res.send
-//   } catch (error) {
-//     res.status(500).json({ error: 'Error creating meal' });
-//     console.log(error);
-//   }
-// }
+};
+
 controller.getOne = async (req, res) => {
   try {
-    const meal = await prisma.mealInfo.findUnique({ where: { id: parseInt(req.params.id) } });
+    const meal = await prisma.mealInfo.findUnique({
+      where: { id: parseInt(req.params.id) },
+    });
     if (!meal) return res.status(404).json({ error: 'Meal not found' });
     res.status(200).json(meal);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching meal' });
-    console.log(error)
+    console.log(error);
   }
-}
+};
 controller.updateOne = async (req, res) => {
   try {
     const { title } = req.body;
@@ -117,7 +118,7 @@ controller.updateOne = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error updating meal' });
   }
-}
+};
 
 controller.deleteOne = async (req, res) => {
   try {
@@ -126,6 +127,6 @@ controller.deleteOne = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error deleting meal' });
   }
-}
+};
 
 module.exports = controller;
