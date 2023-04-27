@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "commitizen": "^4.3.0",
     "openai": "^3.2.1"
-  }
+  },
+  "name": "mealmasterai",
+  "description": "AI-powered diet tracking and sharing app. -",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
