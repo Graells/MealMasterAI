@@ -21,7 +21,7 @@ const LoginPage = () => {
     <div>
       <div className="login-container">
         
-        <h1 className="headingName">  MealMaster AI</h1>
+        <h1 className="headingName">  MEALMASTER AI</h1>
         <img src={aiarm} alt="App Logo"  />
 
 
