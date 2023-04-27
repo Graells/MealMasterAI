@@ -34,7 +34,7 @@ img {
   .headingName {
     color: white;
     padding-top: 15vh;
-    font-size: 4.7rem;
+    font-size: 3.7rem;
   }
   
   .space {
@@ -42,5 +42,58 @@ img {
   }
 
   .loginbtn {
-    width: 100px !important;
+    width: 20vw;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
   }
+
+  /* Media queries */
+@media only screen and (max-width: 768px) {
+  .headingName {
+    font-size: 2.1rem;
+  }
+
+  .login-hero {
+    height: 50px;
+    margin-bottom: 15px;
+    padding: 20px;
+  }
+
+  .space {
+    width: 10vw;
+  }
+
+  .loginbtn {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .headingName {
+    font-size: 1.9rem;
+  }
+
+  .login-hero {
+    height: 25vh;
+    margin-bottom: 10vh;
+    width: max-content;
+  }
+
+  .space {
+    width: 10vw;
+  }
+
+  .loginbtn {
+    height: 6vh;
+    width: 40vw;
+    font-size: 1rem;
+  }
+}

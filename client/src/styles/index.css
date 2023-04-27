@@ -32,21 +32,7 @@ align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid  #1A8DAF;
   }
-  .loginbtn {
-    width: 100px !important;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    min-width: 200px;
-    text-decoration: none;
-  }
+  
   
    /* button {
     display: inline-block;
