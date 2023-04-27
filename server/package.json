@@ -2,9 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx nodemon ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "tsc --watch"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
     "openai": "^3.2.1",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0"

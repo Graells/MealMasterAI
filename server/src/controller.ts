@@ -1,5 +1,5 @@
 // typeScript
-import { PrismaClient } from './node_modules/.prisma/client';
+import { PrismaClient } from '../node_modules/.prisma/client';
 
 //workaround for open issue https://github.com/prisma/prisma/issues/13672#issuecomment-1152581890
 import dotenv from 'dotenv';
