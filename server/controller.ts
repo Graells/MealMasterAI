@@ -1,5 +1,6 @@
 // typeScript
-import { PrismaClient } from '../node_modules/.prisma/client';
+import { PrismaClient } from './node_modules/.prisma/client';
+
 //workaround for open issue https://github.com/prisma/prisma/issues/13672#issuecomment-1152581890
 import dotenv from 'dotenv';
 import { OpenAIApi, Configuration } from 'openai';
@@ -53,7 +54,7 @@ interface Controller {
   deleteOne: (req: any, res: any) => Promise<void>;
 }
 
-const controller: Controller = {} as Controller;
+export const controller: Controller = {} as Controller;
 
 controller.getAll = async (req, res) => {
   try {
