@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const controller = require('./controller');
+import express, { Router } from 'express';
+import { controller } from './controller';
+
+const router: Router = express.Router();
 
 router.get('/meals', controller.getAll);
 // router.post('/meals', controller.postOne);
@@ -9,4 +10,4 @@ router.get('/meals/:id', controller.getOne);
 router.put('/meals/:id', controller.updateOne);
 router.delete('/meals/:id', controller.deleteOne);
 
-module.exports = router;
+export default router;
