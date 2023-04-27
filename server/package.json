@@ -25,6 +25,7 @@
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "prisma": "^4.13.0"
   }
 }
