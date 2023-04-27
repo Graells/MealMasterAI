@@ -165,7 +165,7 @@ controller.getOne = async (req: Request, res: Response): Promise<void> => {
     const meal = await prisma.mealInfo.findUnique({
       where: { id: parseInt(req.params.id) },
     });
-    if (!meal) return res.status(404).json({ error: 'Meal not found' });
+    if (!meal) res.status(404).json({ error: 'Meal not found' });
     res.status(200).json(meal);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching meal' });
@@ -194,5 +194,3 @@ controller.deleteOne = async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ error: 'Error deleting meal' });
   }
 };
-
-// const controller = {};
