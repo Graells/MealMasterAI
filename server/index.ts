@@ -21,7 +21,7 @@ const PORT: number = Number(process.env.PORT) || 3001;
       console.log(`Server listening on: http://localhost:${PORT}`)
     );
   } catch (error) {
-    console.log('Error in connecting to database :', error);
+    console.log('Error connecting to Prisma database: ', error);
   }
 })();
 
