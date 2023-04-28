@@ -27,7 +27,7 @@ const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
         },
         body: JSON.stringify({ id: diet.id, title: newTitle }),
       });
-  
+
       if (response.ok) {
         const updatedMeal = await response.json();
         const updatedDiets = diets.map((d) =>
@@ -36,7 +36,7 @@ const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
             : d
         );
         setDiets(updatedDiets);
-  
+
         const updatedFilteredDiets = filteredDiets.map((d) =>
           d.id === diet.id
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
@@ -51,7 +51,6 @@ const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
       console.error("Error updating meal title:", error);
     }
   };
-  
 
   if (isLoading) {
     return <Spinner />;
@@ -66,7 +65,9 @@ const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
         const updatedDiets = diets.filter((d) => d.id !== diet.id);
         setDiets(updatedDiets);
 
-        const updatedFilteredDiets = filteredDiets.filter((d) => d.id !== diet.id);
+        const updatedFilteredDiets = filteredDiets.filter(
+          (d) => d.id !== diet.id
+        );
         setFilteredDiets(updatedFilteredDiets);
       } else {
         const errorText = await response.text();
