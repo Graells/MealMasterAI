@@ -14,7 +14,7 @@ const PreviousDataItem = () => {
   };
 
   return (
-    <div className="previous-data-item">
+    <div data-testid="your-previous-data" className="previous-data-item">
       {diets.map((data) => {
         const isCurrentUserOwner = user && data.user.auth0Id === user.sub;
         return (

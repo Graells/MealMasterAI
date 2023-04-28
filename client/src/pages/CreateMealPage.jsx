@@ -22,10 +22,10 @@ const CreateMealPage = () => {
 
   return (
     <>
-      <div className="createMealPage" style={{ paddingBottom: "80px" }}>
-        <Link to="/">
+      <div className="createMealPage" >
+        {/* <Link to="/">
           <img src={logo} alt="App Logo" className="app-logo" />
-        </Link>
+        </Link> */}
 
         <div className="form-and-data-container">
           {isLoading ? (
