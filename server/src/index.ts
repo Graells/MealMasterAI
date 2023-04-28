@@ -25,4 +25,4 @@ const PORT: number = Number(process.env.PORT) || 3001;
   }
 })();
 
-export {};
+export default app;
