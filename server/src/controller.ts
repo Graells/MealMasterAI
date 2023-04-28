@@ -1,5 +1,10 @@
 // typeScript
-import { PrismaClient } from '../node_modules/.prisma/client';
+import {
+  ActivityLevel,
+  Gender,
+  PrismaClient,
+  WeightGoal,
+} from '../node_modules/.prisma/client';
 
 //workaround for open issue https://github.com/prisma/prisma/issues/13672#issuecomment-1152581890
 import dotenv from 'dotenv';
@@ -84,8 +89,6 @@ controller.postAI = async (req, res) => {
     weight,
     height,
     activityLevel,
-    howManyDays,
-    howMuchMoney,
     dietaryPreferences,
     weightGoal,
     weightAmount,
@@ -99,21 +102,19 @@ controller.postAI = async (req, res) => {
     title: string;
     name: string;
     age: number;
-    gender: string;
+    gender: Gender;
     weight: number;
     height: number;
-    activityLevel: string;
-    howManyDays: number;
-    howMuchMoney: number;
-    dietaryPreferences: string[];
-    weightGoal: string;
+    activityLevel: ActivityLevel;
+    dietaryPreferences: string | null;
+    weightGoal: WeightGoal;
     weightAmount: number;
     timeFrame: number;
     eatingFrequency: number;
   };
 
   try {
-    const prompt: string = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, how many ${howManyDays} the user needs a diet for, spending this much ${howMuchMoney} per day, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
+    const prompt: string = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
     console.log(prompt);
     const response = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
