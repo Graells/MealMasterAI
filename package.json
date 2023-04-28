@@ -9,12 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.17",
     "commitizen": "^4.3.0",
-    "openai": "^3.2.1",
-    "@types/express": "^4.17.17"
+    "openai": "^3.2.1"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   },
   "config": {
     "commitizen": {
