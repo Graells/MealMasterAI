@@ -1,28 +1,103 @@
+
+* {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Lexend Zetta', sans-serif;
+}
+
+img {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  margin-right: 0px;
+  z-index: -1;
+  
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #F4F4F4;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
+   
+    
+    
   }
-  .login-container .login-hero {
+  .login-hero {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: space-between;
+    height: 65px;
+    margin-bottom: 30px;
+    padding: 45px;
+  }
+  
+  .headingName {
+    color: white;
+    padding-top: 15vh;
+    font-size: 3.7rem;
+  }
+  
+  .space {
+    width: 100px;
+  }
+
+  .loginbtn {
+    width: 20vw;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    z-index: 1000;
+    
+  }
+
+  /* Media queries */
+@media only screen and (max-width: 768px) {
+  .headingName {
+    font-size: 2.1rem;
+  }
+
+  .login-hero {
     height: 50px;
-    margin-bottom: 2px;
+    margin-bottom: 15px;
+    padding: 20px;
   }
-  .login-container .login-dashboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
+
+  .space {
+    width: 10vw;
   }
-  .app-logo {
-    width: 150px;
-    height: auto;
+
+  .loginbtn {
+    width: 30vw;
+    z-index: 1000;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .headingName {
+    font-size: 1.9rem;
+  }
+
+  .login-hero {
+    height: 25vh;
+    margin-bottom: 10vh;
+    width: max-content;
+  }
+
+  .space {
+    width: 10vw;
+  }
+
+  .loginbtn {
+    height: 6vh;
+    width: 40vw;
+    font-size: 1rem;
+    z-index: 1000;
+  }
+}
