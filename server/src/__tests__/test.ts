@@ -1,5 +1,4 @@
 import request from 'supertest';
-import router from '../router';
 import app from '../index';
 
 
@@ -35,7 +34,7 @@ describe('GET /meals', function () {
     it('responds with json', function (done) {
       request(app)
         .put('/meals/1') 
-        .send({ name: 'Updated meal name' }) meal data
+        .send({ name: 'Updated meal name' }) 
         .expect('Content-Type', /json/)
         .expect(200, done);
     });

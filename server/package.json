@@ -32,14 +32,10 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
-<<<<<<< HEAD
-    "prisma": "^4.13.0"
-=======
     "@types/supertest": "^2.0.12",
     "jest": "^29.5.0",
     "prisma": "^4.13.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0"
->>>>>>> c0362376fd81474caa174911293584283d6b072f
   }
 }
