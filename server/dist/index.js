@@ -24,12 +24,14 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(router_1.default);
 const PORT = Number(process.env.PORT) || 3001;
+let server;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield prisma.$connect();
-        app.listen(PORT, () => console.log(`Server listening on: http://localhost:${PORT}`));
+        server = app.listen(PORT, () => console.log(`Server listening on: http://localhost:${PORT}`));
     }
     catch (error) {
         console.log('Error connecting to Prisma database: ', error);
     }
 }))();
+exports.default = server;

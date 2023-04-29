@@ -25,6 +25,7 @@ const openai = new openai_1.OpenAIApi(new openai_1.Configuration({
 }));
 exports.controller = {};
 exports.controller.getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('im in the getAll');
     try {
         const meals = yield prisma.mealAI.findMany({
             include: {
@@ -41,9 +42,9 @@ exports.controller.getAll = (req, res) => __awaiter(void 0, void 0, void 0, func
 });
 exports.controller.postAI = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c;
-    const { auth0Id, userName, userPic, email, title, name, age, gender, weight, height, activityLevel, howManyDays, howMuchMoney, dietaryPreferences, weightGoal, weightAmount, timeFrame, eatingFrequency, } = req.body;
+    const { auth0Id, userName, userPic, email, title, name, age, gender, weight, height, activityLevel, dietaryPreferences, weightGoal, weightAmount, timeFrame, eatingFrequency, } = req.body;
     try {
-        const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, how many ${howManyDays} the user needs a diet for, spending this much ${howMuchMoney} per day, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
+        const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
         console.log(prompt);
         const response = yield openai.createChatCompletion({
             model: 'gpt-3.5-turbo',

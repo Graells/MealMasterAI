@@ -13,11 +13,12 @@ app.use(express.json());
 app.use(router);
 
 const PORT: number = Number(process.env.PORT) || 3001;
+let server;
 
 (async () => {
   try {
     await prisma.$connect();
-    app.listen(PORT, () =>
+    server = app.listen(PORT, () =>
       console.log(`Server listening on: http://localhost:${PORT}`)
     );
   } catch (error) {
@@ -25,4 +26,4 @@ const PORT: number = Number(process.env.PORT) || 3001;
   }
 })();
 
-export default app;
+export default server;
