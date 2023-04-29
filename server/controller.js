@@ -25,6 +25,7 @@ controller.getAll = async (req, res) => {
     console.log(error);
   }
 };
+
 controller.postAI = async (req, res) => {
   const {
     auth0Id,
@@ -45,6 +46,10 @@ controller.postAI = async (req, res) => {
     eatingFrequency,
   } = req.body;
   try {
+    //if age is less than 0, throw an error
+    if (age < 0) {
+      return res.status(400).json({ error: "Age must be a positive number" });
+    }
     // console.log("req.body", req.body);
     const prompt = `Generate a diet plan for user name ${name}, a ${age}-year-old ${gender}, weighing ${weight} kg, and ${height} cm tall, with an activity level of ${activityLevel}, dietary preferences of ${dietaryPreferences}, a weight goal of ${weightGoal} ${weightAmount} kg, a time frame of ${timeFrame} weeks, and an eating frequency of ${eatingFrequency} times a day.`;
     // console.log(prompt);

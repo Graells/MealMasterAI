@@ -11,6 +11,7 @@ describe("Test of the endpoints", () => {
     const response = await request(app).get("/meals");
     expect(response.status).toEqual(200);
     expect(response.body).toBeInstanceOf(Array);
+    //+add the test for error 500 with check of the error message
   });
 
   it("GET /meals/:id send back a specific meal", async () => {
@@ -28,14 +29,9 @@ describe("Test of the endpoints", () => {
         mealInfoId: 3,
       },
     });
+    console.log("id du meal", meal.id);
     const response = await request(app).delete(`/meals/${meal.id}`);
     expect(response.status).toEqual(204);
-    expect(response.body.title).toEqual("Test");
-
-    const updatedMeal = await prisma.mealInfo.findUnique({
-      where: { id: 1 },
-    });
-    expect(updatedMeal.title).toEqual("Test");
   });
 
   it("PUT /meals/:id update title of the diet", async () => {
@@ -60,5 +56,31 @@ describe("Test of the endpoints", () => {
     // console.log("mockdata", mockData);
     const response = await request(app).post("/ai-generate").send({});
     expect(response.status).toEqual(500);
+    // + test the error message line 99 in controller
   }, 90000);
+
+  it("POST /ai-generate generate a meal with ", async () => {
+    const response = await request(app).post("/ai-generate").send({
+      auth0Id: "google-oauth2|105514186843076497545",
+      userName: "Guillaume",
+      userPic: "",
+      email: "guillaume.rouchaud@gmail.com",
+      title: "Test",
+      name: "Guillaume",
+      age: -30,
+      gender: "MALE",
+      weight: 90,
+      height: 183,
+      activityLevel: "ACTIVE",
+      dietaryPreferences: "ham, eggs",
+      weightGoal: "LOSE",
+      weightAmount: 5,
+      timeFrame: 3,
+      eatingFrequency: 3,
+    });
+    expect(response.status).toEqual(400);
+  }, 90000);
+
+  // test if createchatcompletion has been called with the rights parameters
+  // test if the prompt constructs the prompt in the correct way
 });
