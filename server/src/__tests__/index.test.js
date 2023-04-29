@@ -26,7 +26,7 @@ describe('Test of the endpoints', () => {
       data: {
         description: 'hello',
         userId: 'github|122622286',
-        mealInfoId: 3,
+        mealInfoId: 1,
       },
     });
     console.log('id du meal', meal.id);

@@ -5,7 +5,7 @@ import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
-import logo from "../assets/MealMasterAILogo.png";
+import HomeIcon from '@mui/icons-material/Home';
 import PreviousDataItem from "../components/PreviousDataItem";
 
 const CreateMealPage = () => {
@@ -22,10 +22,13 @@ const CreateMealPage = () => {
 
   return (
     <>
-      <div className="createMealPage" style={{ paddingBottom: "80px" }}>
+    
+      <div className="createMealPage" >
+        <div className="homelink">
         <Link to="/">
-          <img src={logo} alt="App Logo" className="app-logo" />
-        </Link>
+          <HomeIcon sx={{color: 'black'}}/>
+        </Link> 
+        </div>
 
         <div className="form-and-data-container">
           {isLoading ? (
@@ -36,15 +39,15 @@ const CreateMealPage = () => {
 
           {!isLoading && (
             <div className="previous-data-container">
-              <h2 className="h2-background">Your previous input data</h2>
+              <h4 className="h2-background">YOUR PREVIOUS DIET PLANS</h4>
               <PreviousDataItem />
             </div>
           )}
         </div>
       </div>
-      <div className="footer">
+     
         <Profile />
-      </div>
+      
     </>
   );
 };

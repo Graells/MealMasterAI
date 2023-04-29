@@ -3,7 +3,6 @@ import LoginButton from "../components/LoginButton";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
-import logo from "../assets/MealMasterAILogo.png";
 import aiarm from "../assets/airobotarm.svg";
 import "../styles/LoginPage.css";
 
@@ -18,7 +17,7 @@ const LoginPage = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div>
+    <div className="full-login-page">
       <div className="login-container">
         
         <h1 className="headingName">  MEALMASTER AI</h1>

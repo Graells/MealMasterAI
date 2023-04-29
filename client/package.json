@@ -8,10 +8,15 @@
     "build": "vite build",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "test": "vitest"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.2",
     "axios": "^1.3.6",
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
@@ -24,6 +29,7 @@
     "ts-loader": "^9.4.2"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
     "@types/express": "^4.17.17",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
@@ -32,8 +38,10 @@
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
+    "jsdom": "^21.1.1",
     "prettier": "^2.8.7",
-    "vite": "^4.2.0"
+    "vite": "^4.2.0",
+    "vitest": "^0.30.1"
   },
   "config": {
     "commitizen": {
