@@ -19,6 +19,7 @@ export const ShareButton = ({ diet }) => {
         url={getShareUrl(diet.id)}
         quote={`Check out this diet plan created using AI tech: ${diet.mealInfo.title}`}
         hashtag="#YourAppHashtag"
+        className="whatsapp-share-button"
       >
         <WhatsappIcon size={32} round={true} />
       </WhatsappShareButton>
@@ -26,11 +27,13 @@ export const ShareButton = ({ diet }) => {
         url={getShareUrl(diet.id)}
         title={`Check out this diet plan created using AI tech: ${diet.mealInfo.title}`}
         hashtags={["YourAppHashtag"]}
+        className="twitter-share-button"
       >
         <TwitterIcon size={32} round={true} />
       </TwitterShareButton>
       <EmailShareButton
         url={getShareUrl(diet.id)}
+        className="email-share-button"
         subject={`Check out this diet plan created using AI tech: ${diet.mealInfo.title}`}
         body={`Hey, I found this diet plan and thought you might be interested: ${getShareUrl(
           diet.id
