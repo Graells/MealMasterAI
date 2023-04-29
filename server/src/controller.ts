@@ -62,6 +62,7 @@ interface Controller {
 export const controller: Controller = {} as Controller;
 
 controller.getAll = async (req, res) => {
+  console.log('im in the getAll');
   try {
     const meals = await prisma.mealAI.findMany({
       include: {
