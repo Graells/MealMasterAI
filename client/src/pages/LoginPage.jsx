@@ -17,7 +17,7 @@ const LoginPage = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div>
+    <div className="full-login-page">
       <div className="login-container">
         
         <h1 className="headingName">  MEALMASTER AI</h1>
