@@ -29,8 +29,7 @@ align-items: center;
     background-color: #F4F4F4;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
+    height: 30vh;
   }
   
   
@@ -52,7 +51,7 @@ align-items: center;
   } */
   
  button:hover {
-    background-color: #755dfc
+    background-color: #92F7FD
   }
   
   .profile-container {

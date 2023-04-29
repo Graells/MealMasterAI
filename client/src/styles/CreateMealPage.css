@@ -9,11 +9,12 @@
   }
   
   .previous-data-container {
-    width: 20vw;
+    width: 25vw;
     margin-right: 10vw;
-    margin-top: 10vh;
-    height: 80vh;
+    margin-top: 15vh;
+    height: 60vh;
     color: black;
+    border-radius: 8px;
     
   }
 
@@ -23,3 +24,9 @@
     border-radius: 20%;
   }
   
+  .homelink {
+    position: absolute;
+    height: 5vh;
+    left: 2vh;
+    top:2vh;
+  }

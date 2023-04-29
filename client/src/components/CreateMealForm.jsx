@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import { addOne } from "../api.service";
 import "../styles/CreateMealForm.css";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
 const initialState = {
@@ -46,7 +48,7 @@ const CreateMealForm = ({ onMealSubmit }) => {
   return (
     
     <form className="formStyle" onSubmit={handleSubmit}>
-      <h2>Create a new diet</h2>
+      <h2>CREATE A NEW DIET</h2>
       <div className="columns-container">
       <div className="column">
         <label htmlFor="title">Title</label>

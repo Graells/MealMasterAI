@@ -23,7 +23,7 @@ const HomePage = () => {
         </div>
       </div>
       
-        <Profile />
+        <Profile className="profilehomepage"/>
       
     </>
   );

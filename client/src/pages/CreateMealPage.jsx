@@ -22,11 +22,13 @@ const CreateMealPage = () => {
 
   return (
     <>
-    {/* <Link to="/">
-          <HomeIcon/>
-        </Link> */}
+    
       <div className="createMealPage" >
-        
+        <div className="homelink">
+        <Link to="/">
+          <HomeIcon sx={{color: 'black'}}/>
+        </Link> 
+        </div>
 
         <div className="form-and-data-container">
           {isLoading ? (
@@ -37,7 +39,7 @@ const CreateMealPage = () => {
 
           {!isLoading && (
             <div className="previous-data-container">
-              <h3 className="h2-background">Your previous input data</h3>
+              <h4 className="h2-background">YOUR PREVIOUS DIET PLANS</h4>
               <PreviousDataItem />
             </div>
           )}
