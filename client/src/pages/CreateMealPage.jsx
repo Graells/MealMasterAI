@@ -42,9 +42,9 @@ const CreateMealPage = () => {
           )}
         </div>
       </div>
-      <div className="footer">
+     
         <Profile />
-      </div>
+      
     </>
   );
 };

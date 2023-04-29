@@ -5,14 +5,11 @@
   }
   .form-and-data-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
   }
   
   .previous-data-container {
-    max-width: 400px;
-    margin-left: 80px;
+    width: 25vw;
+    margin-left: 5vw;
+    height: 100%;
   }

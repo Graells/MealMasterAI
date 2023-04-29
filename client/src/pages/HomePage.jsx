@@ -7,23 +7,24 @@ const HomePage = () => {
   return (
     <>
       <div className="styleHomePage" style={{ paddingBottom: "80px" }}>
-        <Link to="/">
+        {/* <Link to="/">
           <img src={logo} alt="App Logo" className="app-logo" />
-          {/* <button>refresh</button> */}
-        </Link>
+          <button>refresh</button> 
+        </Link>*/}
         <h1>MealMasterAI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
-            <button>Create Diet</button>
+            <button className="homebtn">Create Diet</button>
           </Link>
+          <div className="space"></div>
           <Link to="/dashboard">
-            <button>Dashboard</button>
+            <button className="homebtn">Dashboard</button>
           </Link>
         </div>
       </div>
-      <div className="footer">
+      
         <Profile />
-      </div>
+      
     </>
   );
 };
