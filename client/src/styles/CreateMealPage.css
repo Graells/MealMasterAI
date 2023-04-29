@@ -5,11 +5,21 @@
   }
   .form-and-data-container {
     display: flex;
-    padding: 5px;
+    
   }
   
   .previous-data-container {
-    width: 25vw;
-    margin-left: 5vw;
-    height: 100%;
+    width: 20vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
+    height: 80vh;
+    color: black;
+    
   }
+
+  .logoutbtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 20%;
+  }
+  
