@@ -1,45 +1,68 @@
-import React, { useState } from "react";
-// import { addOne } from "../api.service";
-import "../styles/CreateMealForm.css";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+// import { addOne } from '../api.service';
+import '../styles/CreateMealForm.css';
 
+interface Meal {
+  title: string;
+  name: string;
+  age: number;
+  gender: string;
+  weight: number;
+  height: number;
+  activityLevel: string;
+  dietaryPreferences: string;
+  weightGoal: number;
+  weightAmount: number;
+  timeFrame: number;
+  eatingFrequency: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-const initialState = {
-  title: "",
-  name: "",
+interface CreateMealFormProps {
+  onMealSubmit: (meal: Meal) => void;
+}
+
+const initialState: Meal = {
+  title: '',
+  name: '',
   age: 0,
-  gender: "",
+  gender: '',
   weight: 0,
   height: 0,
-  activityLevel: "",
-  dietaryPreferences: "",
+  activityLevel: '',
+  dietaryPreferences: '',
   weightGoal: 0,
   weightAmount: 0,
   timeFrame: 0,
   eatingFrequency: 0,
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
-const CreateMealForm = ({ onMealSubmit }) => {
-  const [formData, setFormData] = useState(initialState);
-  const handleChange = (e) => {
+
+const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
+  const [formData, setFormData] = useState<Meal>(initialState);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const meal = {
+    const meal: Meal = {
       ...formData,
       title: formData.title,
       name: formData.name,
-      age: parseInt(formData.age),
-      weight: parseFloat(formData.weight),
-      height: parseFloat(formData.height),
+      age: parseInt(formData.age.toString(), 10),
+      weight: parseFloat(formData.weight.toString()),
+      height: parseFloat(formData.height.toString()),
       dietaryPreferences: formData.dietaryPreferences,
-      weightAmount: parseFloat(formData.weightAmount),
-      timeFrame: parseInt(formData.timeFrame),
-      eatingFrequency: parseInt(formData.eatingFrequency),
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      weightAmount: parseFloat(formData.weightAmount.toString()),
+      timeFrame: parseInt(formData.timeFrame.toString(), 10),
+      eatingFrequency: parseInt(formData.eatingFrequency.toString(), 10),
+      createdAt: formData.createdAt,
+      updatedAt: formData.updatedAt,
     };
     // addOne(meal);
     onMealSubmit(meal);
