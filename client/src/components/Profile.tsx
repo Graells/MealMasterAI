@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "./Spinner";
 import LogoutButton from "./LogoutButton";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {

@@ -4,13 +4,16 @@ import { submitForm, addOne, getAll } from "../api.service";
 import { DietContext } from "../App";
 
 const DietProvider = ({ children }) => {
-  const [diets, setDiets] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [lastCreatedDiet, setLastCreatedDiet] = useState({});
+  const [diets, setDiets] = useState<[{}]>([{}]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [lastCreatedDiet, setLastCreatedDiet] = useState<{}>({});
 
   const { user, isAuthenticated } = useAuth0();
-  console.log("USER AUTH0", user);
-  const handleMealSubmit = async (formData, onSuccess) => {
+
+  const handleMealSubmit = async (formData: {}, onSuccess:any) => {
+    console.log('formData', formData)
+    console.log('onSuccess', onSuccess)
+
     setIsLoading(true);
     try {
       const userEmail = isAuthenticated && user ? user.email : null;
@@ -27,6 +30,7 @@ const DietProvider = ({ children }) => {
       );
       // await addOne(formData);
       setDiets((prevDiets) => [...prevDiets, generatedDiet]);
+      // console.log(prevDiets)
       setLastCreatedDiet(generatedDiet);
       if (onSuccess) {
         setIsLoading(false);

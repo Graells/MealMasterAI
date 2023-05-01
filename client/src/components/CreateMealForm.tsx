@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { addOne } from "../api.service";
 import "../styles/CreateMealForm.css";
 
-const initialState = {
+const initialState: {} = {
   title: "",
   name: "",
   age: 0,
@@ -16,11 +16,13 @@ const initialState = {
   timeFrame: 0,
   eatingFrequency: 0,
 };
-const CreateMealForm = ({ onMealSubmit }) => {
+const CreateMealForm: React.FC = ({ onMealSubmit }) => {
   const [formData, setFormData] = useState(initialState);
+  console.log(onMealSubmit)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log()
   };
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -8,7 +8,7 @@ import { ShareButton } from "./ShareButton";
 import { Link } from "react-router-dom";
 import { IoSettingsSharp } from "react-icons/io5";
 
-const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
+const DietDisplay: React.FC = ({ diet, filteredDiets, setFilteredDiets }) => {
   const { diets, setDiets } = useContext(DietContext);
   const { user, isLoading } = useAuth0();
   const [isEditingTitle, setIsEditingTitle] = useState(false);

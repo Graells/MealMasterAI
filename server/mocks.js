@@ -1,4 +1,4 @@
-import axios from "axios";
+
 
 export const mocksOpenIa = {
   auth0Id: "google-oauth2|105514186843076497545",

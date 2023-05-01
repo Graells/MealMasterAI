@@ -8,8 +8,9 @@ import {
   EmailIcon,
 } from "react-share";
 
-export const ShareButton = ({ diet }) => {
-  const getShareUrl = (dietId) => {
+export const ShareButton: React.FC = ({ diet }) => {
+  const getShareUrl = (dietId: number) => {
+    console.log(diet)
     return `${window.location.origin}/diet/${dietId}`;
   };
 
