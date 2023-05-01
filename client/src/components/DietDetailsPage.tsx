@@ -1,17 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { DietContext } from "../App";
-import DietDisplay from "./DietDisplay";
-import Spinner from "./Spinner";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import DietDisplay from './DietDisplay';
+import Spinner from './Spinner';
+import { Link } from 'react-router-dom';
 
-const DietDetailsPage = () => {
+export interface Diet {
+  id: number;
+  mealInfo: MealInfo;
+  user: User;
+  description: string;
+
+}
+
+interface DietContextType {
+  diets: Diet[];
+}
+
+const DietContext = React.createContext<DietContextType>({ diets: [] });
+
+const DietDetailsPage: React.FC = () => {
   const { diets } = useContext(DietContext);
-  const { dietId } = useParams();
-  const [diet, setDiet] = useState(null);
+  const { dietId } = useParams<{ dietId: string }>();
+  const [diet, setDiet] = useState<Diet | null>(null);
 
   useEffect(() => {
-    const foundDiet = diets.find((d) => d.id === parseInt(dietId));
+    const foundDiet = diets.find((d) => d.id === parseInt(dietId ?? '0', 10));
     if (foundDiet) {
       setDiet(foundDiet);
     }

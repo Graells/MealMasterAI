@@ -1,14 +1,46 @@
-import React from "react";
-import { useContext, useState } from "react";
-import { DietContext } from "../App";
-import { useAuth0 } from "@auth0/auth0-react";
-import Spinner from "./Spinner";
-import "../styles/DietDisplay.css";
-import { ShareButton } from "./ShareButton";
-import { Link } from "react-router-dom";
-import { IoSettingsSharp } from "react-icons/io5";
+import React, { useContext, useState } from 'react';
+import { DietContext } from '../App';
+import { useAuth0 } from '@auth0/auth0-react';
+import Spinner from './Spinner';
+import '../styles/DietDisplay.css';
+import { ShareButton } from './ShareButton';
+import { Link } from 'react-router-dom';
+import { IoSettingsSharp } from 'react-icons/io5';
 
-const DietDisplay = ({ diet, filteredDiets, setFilteredDiets }) => {
+interface User {
+  auth0Id: string;
+  userPic: string;
+  userName: string;
+  email: string;
+}
+
+interface MealInfo {
+  title: string;
+  name: string;
+  weightGoal: string;
+  weightAmount: number;
+  timeFrame: number;
+}
+
+interface Diet {
+  id: number;
+  mealInfo: MealInfo;
+  user: User;
+  description: string;
+}
+
+interface DietDisplayProps {
+  diet: Diet;
+  filteredDiets: Diet[];
+  setFilteredDiets: (diets: Diet[]) => void;
+}
+
+const DietDisplay: React.FC<DietDisplayProps> = ({
+  diet,
+  filteredDiets,
+  setFilteredDiets,
+}) => {
+  // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);
   const { user, isLoading } = useAuth0();
   const [isEditingTitle, setIsEditingTitle] = useState(false);

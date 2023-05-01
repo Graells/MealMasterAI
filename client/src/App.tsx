@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateMealPage from "./pages/CreateMealPage";
 import DietsPage from "./pages/DietsPage";
@@ -7,15 +7,25 @@ import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
+import { Diet } from "./components/DietDetailsPage"
 
-const DietContext = React.createContext();
+interface DietContextType {
+  diets: Diet[];
+  setDiets: React.Dispatch<React.SetStateAction<Diet[]>>;
+  handleMealSubmit: (formData: FormData, onSuccess?: () => void) => void;
+  isLoading: boolean;
+  lastCreatedDiet: Diet;
+}
+
+
+export const DietContext = createContext<DietContextType | undefined>(undefined);
 
 const App = () => {
   return (
     <DietProvider>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/create-meal" element={<CreateMealPage />} />
           <Route path="/dashboard" element={<DietsPage />} />
@@ -28,4 +38,4 @@ const App = () => {
 };
 
 export default App;
-export { DietContext };
+// export { DietContext };
