@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const DietDetailsPage: React.FC = () => {
   const { diets } = useContext(DietContext);
+  console.log(diets)
   const { dietId } = useParams();
   const [diet, setDiet] = useState<any>(null);
 
