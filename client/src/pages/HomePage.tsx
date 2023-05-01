@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Profile from "../components/Profile";
 import "../styles/HomePage.css";
 import logo from "../assets/MealMasterAILogo.png";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 
 const HomePage = () => {
   return (
@@ -14,17 +16,24 @@ const HomePage = () => {
         <h1>MealMasterAI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
-            <button className="homebtn">Create Diet</button>
+            <button className="homebtn">
+              <RestaurantIcon className="RestaurantIcon" />
+              Create Diet
+            </button>
           </Link>
+
           <div className="space"></div>
+
           <Link to="/dashboard">
-            <button className="homebtn">Dashboard</button>
+            <button className="homebtn">
+              <DashboardIcon className="DashboardIcon" />
+              Dashboard
+            </button>
           </Link>
         </div>
       </div>
-      
-        <Profile className="profilehomepage"/>
-      
+
+      <Profile className="profile-container" />
     </>
   );
 };

@@ -12,20 +12,18 @@ const Profile = () => {
 
   return (
     <>
-    isAuthenticated && (
-      <div className="profile-container profilehomepage">
-        <img src={user?.picture} alt={user?.name} />
-        <div className="info">
-          <h2>{user?.name}</h2>
-          <p>{user?.email}</p>
+      {isAuthenticated && (
+        <div className="profile-container">
+          <img src={user?.picture} alt={user?.name} />
+          <div className="info">
+            <h2>{user?.name}</h2>
+            <p>{user?.email}</p>
+          </div>
+          <LogoutButton />
         </div>
-        <LogoutButton />
-      </div>
-      
-    )
+      )}
     </>
   );
-  
 };
 
 export default Profile;

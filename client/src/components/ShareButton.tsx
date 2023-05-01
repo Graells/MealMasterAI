@@ -1,5 +1,5 @@
 import React from "react";
-import { Diet } from "./DietDetailsPage"
+import { Diet } from "./DietDetailsPage";
 
 import {
   WhatsappShareButton,
@@ -11,16 +11,13 @@ import {
 } from "react-share";
 
 interface Props {
-  diet: Diet 
+  diet: Diet;
 }
 
 export const ShareButton: React.FC<Props> = ({ diet }) => {
   const getShareUrl = (dietId: string) => {
     return `${window.location.origin}/diet/${dietId}`;
   };
-
-
-
 
   return (
     <div className="share-buttons">

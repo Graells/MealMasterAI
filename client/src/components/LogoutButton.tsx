@@ -6,16 +6,16 @@ const LogoutButton: React.FC = () => {
 
   return (
     <>
-      isAuthenticated && (
-      <button
-        className="logoutbtn"
-        onClick={() =>
-          logout({ logoutParams: { returnTo: window.location.origin } })
-        }
-      >
-        Log Out
-      </button>
-      )
+      {isAuthenticated && (
+        <button
+          className="logoutbtn"
+          onClick={() =>
+            logout({ logoutParams: { returnTo: window.location.origin } })
+          }
+        >
+          Log Out
+        </button>
+      )}
     </>
   );
 };
