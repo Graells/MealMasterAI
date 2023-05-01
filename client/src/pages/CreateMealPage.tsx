@@ -5,8 +5,10 @@ import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
-import HomeIcon from '@mui/icons-material/Home';
+import "../styles/ProfileComponent.css";
+import HomeIcon from "@mui/icons-material/Home";
 import PreviousDataItem from "../components/PreviousDataItem";
+import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 
 const CreateMealPage = () => {
   const { handleMealSubmit, isLoading, diets } = useContext(DietContext);
@@ -16,18 +18,17 @@ const CreateMealPage = () => {
     navigate("/diet-user-display");
   };
 
-  const onMealFormSubmit = async (formData) => {
+  const onMealFormSubmit = async (formData: FormData) => {
     await handleMealSubmit(formData, onSuccess);
   };
 
   return (
     <>
-    
-      <div className="createMealPage" >
+      <div className="createMealPage">
         <div className="homelink">
-        <Link to="/">
-          <HomeIcon sx={{color: 'black'}}/>
-        </Link> 
+          <Link to="/">
+            <HomeIcon sx={{ color: "black" }} />
+          </Link>
         </div>
 
         <div className="form-and-data-container">
@@ -45,9 +46,9 @@ const CreateMealPage = () => {
           )}
         </div>
       </div>
-     
+      <div className="create-meal-profile-box">
         <Profile />
-      
+      </div>
     </>
   );
 };
