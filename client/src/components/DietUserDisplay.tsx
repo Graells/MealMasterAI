@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DietContext } from "../App";
-import Spinner from "../components/Spinner";
+import Spinner from "./Spinner";
 import Profile from "./Profile";
 import "../styles/DietUserDisplay.css";
 import { ShareButton } from "./ShareButton";

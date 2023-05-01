@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { DietContext } from "../App";
-import DietDisplay from "../components/DietDisplay";
-import Spinner from "../components/Spinner";
+import DietDisplay from "./DietDisplay";
+import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
 
 const DietDetailsPage = () => {
