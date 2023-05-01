@@ -38,14 +38,15 @@ export interface Diet {
 
 export interface DietDisplayProps {
   diet: Diet;
-  filteredDiets: Diet[];
-  setFilteredDiets: (diets: Diet[]) => void;
+  filteredDiets?: Diet[];
+  setFilteredDiets?: (diets: Diet[]) => void;
 }
 
 const DietDisplay: React.FC<DietDisplayProps> = ({
   diet,
   filteredDiets,
   setFilteredDiets,
+
 }) => {
   // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);
@@ -57,7 +58,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
 
   console.log("USER", user);
 
-  const handleTitleEdit = async (newTitle) => {
+  const handleTitleEdit = async (newTitle: string) => {
     try {
       const response = await fetch(`http://localhost:3001/meals/${diet.id}`, {
         method: "PUT",
@@ -69,14 +70,14 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
 
       if (response.ok) {
         const updatedMeal = await response.json();
-        const updatedDiets = diets.map((d) =>
+        const updatedDiets = diets.map((d:any) =>
           d.id === diet.id
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
             : d
         );
         setDiets(updatedDiets);
 
-        const updatedFilteredDiets = filteredDiets.map((d) =>
+        const updatedFilteredDiets = filteredDiets?.map((d) =>
           d.id === diet.id
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
             : d
@@ -101,13 +102,13 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
       });
 
       if (response.status === 204) {
-        const updatedDiets = diets.filter((d) => d.id !== diet.id);
+        const updatedDiets = diets.filter((d:any) => d.id !== diet.id);
         setDiets(updatedDiets);
 
-        const updatedFilteredDiets = filteredDiets.filter(
+        const updatedFilteredDiets = filteredDiets?.filter(
           (d) => d.id !== diet.id
         );
-        setFilteredDiets(updatedFilteredDiets);
+        setFilteredDiets?(updatedFilteredDiets):
       } else {
         const errorText = await response.text();
         console.error("Error deleting meal:", errorText);

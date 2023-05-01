@@ -47,3 +47,4 @@ const DietDetailsPage: React.FC = () => {
 };
 
 export default DietDetailsPage;
+
