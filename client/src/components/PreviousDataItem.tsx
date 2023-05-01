@@ -2,11 +2,17 @@ import { useContext, useState } from "react";
 import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/PreviousDataItem.css";
+import { IDiet } from "../Interfaces";
+
+interface IVisibleDetails {
+  [id:string]:boolean
+}
+
 const PreviousDataItem = () => {
   const { diets } = useContext(DietContext);
   const { user } = useAuth0();
-  const [visibleDetails, setVisibleDetails] = useState({});
-  const toggleDetails = (id) => {
+  const [visibleDetails, setVisibleDetails] = useState<IVisibleDetails>({});
+  const toggleDetails = (id:string) => {
     setVisibleDetails((prevState) => ({
       ...prevState,
       [id]: !prevState[id],
@@ -15,13 +21,13 @@ const PreviousDataItem = () => {
 
   return (
     <div className="previous-data-item">
-      {diets.map((data) => {
+      {diets.map((data:IDiet) => {
         const isCurrentUserOwner = user && data.user.auth0Id === user.sub;
         return (
           isCurrentUserOwner && (
             <div key={data.id}>
               <h3
-                onClick={() => toggleDetails(data.id)}
+                onClick={() => toggleDetails(String(data.id))}
                 style={{ textDecoration: "underline", cursor: "pointer" }}
               >
                 {data.mealInfo.title} for {data.mealInfo.name}
