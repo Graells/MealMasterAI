@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useEffect } from "react";
-import { submitForm, addOne, getAll } from "../api.service";
+// @ts-ignore
+import { submitForm, addOne, getAll } from "../api.service.js";
 import { DietContext } from "../App";
 import { Diet } from "../components/DietDisplay";
 
@@ -12,8 +13,6 @@ interface DietProviderProps {
 interface FormData {
   // here we will define the formdata shape
 }
-
-
 
 const DietProvider: React.FC<DietProviderProps> = ({ children }) => {
 const [diets, setDiets] = useState<Diet[]>([]);

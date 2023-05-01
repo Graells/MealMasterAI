@@ -14,7 +14,7 @@ interface DietContextType {
   setDiets: React.Dispatch<React.SetStateAction<Diet[]>>;
   handleMealSubmit: (formData: FormData, onSuccess?: () => void) => void;
   isLoading: boolean;
-  lastCreatedDiet: Diet;
+  lastCreatedDiet: Diet | null;
 }
 
 export const DietContext = createContext<DietContextType>({
@@ -22,7 +22,7 @@ export const DietContext = createContext<DietContextType>({
   setDiets: () => {},
   handleMealSubmit: () => {},
   isLoading: false,
-  lastCreatedDiet: {} as Diet,
+  lastCreatedDiet: {} as Diet | null,
 });
 
 const App = () => {

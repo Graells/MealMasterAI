@@ -11,6 +11,7 @@ const Profile = () => {
   }
 
   return (
+    <>
     isAuthenticated && (
       <div className="profile-container profilehomepage">
         <img src={user?.picture} alt={user?.name} />
@@ -20,8 +21,11 @@ const Profile = () => {
         </div>
         <LogoutButton />
       </div>
+      
     )
+    </>
   );
+  
 };
 
 export default Profile;
