@@ -6,11 +6,11 @@ const LoginButton: React.FC = () => {
 
   return (
     <>
-      !isAuthenticated && (
-      <button className="loginbtn" onClick={() => loginWithRedirect()}>
-        Log In
-      </button>
-      )
+      {!isAuthenticated && (
+        <button className="loginbtn" onClick={() => loginWithRedirect()}>
+          Log In
+        </button>
+      )}
     </>
   );
 };
