@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useEffect } from "react";
 import { submitForm, addOne, getAll } from "../api.service";
 import { DietContext } from "../App";
+import { Diet } from "../components/DietDisplay";
 
 
 interface DietProviderProps {
@@ -13,10 +14,11 @@ interface FormData {
 }
 
 
+
 const DietProvider: React.FC<DietProviderProps> = ({ children }) => {
 const [diets, setDiets] = useState<Diet[]>([]);
 const [isLoading, setIsLoading] = useState<boolean>(false);
-const [lastCreatedDiet, setLastCreatedDiet] = useState<Diet>({});
+const [lastCreatedDiet, setLastCreatedDiet] = useState<Diet | null>(null);
 
   const { user, isAuthenticated } = useAuth0();
   console.log("USER AUTH0", user);
