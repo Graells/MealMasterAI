@@ -7,7 +7,7 @@ import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
-import { Diet } from "./components/DietDetailsPage"
+import { Diet } from "./components/DietDetailsPage";
 
 interface DietContextType {
   diets: Diet[];
@@ -17,8 +17,13 @@ interface DietContextType {
   lastCreatedDiet: Diet;
 }
 
-
-export const DietContext = createContext<DietContextType | undefined>(undefined);
+export const DietContext = createContext<DietContextType>({
+  diets: [],
+  setDiets: () => {},
+  handleMealSubmit: () => {},
+  isLoading: false,
+  lastCreatedDiet: {} as Diet,
+});
 
 const App = () => {
   return (
