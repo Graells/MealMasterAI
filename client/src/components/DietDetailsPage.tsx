@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import DietDisplay from './DietDisplay';
 import Spinner from './Spinner';
 import { Link } from 'react-router-dom';
+import  { MealInfo, User }   from './DietDisplay'
 
 export interface Diet {
   id: number;
