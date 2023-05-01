@@ -1,17 +1,20 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 dotenv.config();
-const { OpenAIApi, Configuration } = require("openai");
+import { OpenAIApi, Configuration } from "openai";
+import Express from "express";
+
 const openai = new OpenAIApi(
   new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   })
 );
 
-const controller = {};
+// type controller= {getAll: <T>()=>T}
 
-controller.getAll = async (req, res) => {
+const getAll = async (req:Express.Request, res:Express.Response) => {
+
   try {
     const meals = await prisma.mealAI.findMany({
       include: {
@@ -26,7 +29,7 @@ controller.getAll = async (req, res) => {
   }
 };
 
-controller.postAI = async (req, res) => {
+const postAI = async (req:Express.Request, res:Express.Response) => {
   const {
     auth0Id,
     userName,
@@ -60,6 +63,7 @@ controller.postAI = async (req, res) => {
         },
       ],
     });
+    if(response.data.choices[0].message === undefined) throw new Error("Couldn't get message from OpenAI")
     const diet = response.data.choices[0].message.content;
     // res.json(diet);
     console.log(auth0Id);
@@ -108,7 +112,8 @@ controller.postAI = async (req, res) => {
 //     console.log(error);
 //   }
 // }
-controller.getOne = async (req, res) => {
+
+const getOne = async (req:Express.Request, res:Express.Response) => {
   try {
     const meal = await prisma.mealInfo.findUnique({
       where: { id: parseInt(req.params.id) },
@@ -120,7 +125,8 @@ controller.getOne = async (req, res) => {
     console.log(error);
   }
 };
-controller.updateOne = async (req, res) => {
+
+const updateOne = async (req:Express.Request, res:Express.Response) => {
   try {
     const { title } = req.body;
     const updatedMeal = await prisma.mealInfo.update({
@@ -133,7 +139,7 @@ controller.updateOne = async (req, res) => {
   }
 };
 
-controller.deleteOne = async (req, res) => {
+const deleteOne = async (req:Express.Request, res:Express.Response) => {
   try {
     const deleted = await prisma.mealAI.delete({
       where: { id: parseInt(req.params.id) },
@@ -144,4 +150,4 @@ controller.deleteOne = async (req, res) => {
   }
 };
 
-module.exports = controller;
+export{deleteOne,updateOne,getOne,postAI, getAll}
