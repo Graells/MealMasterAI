@@ -7,14 +7,14 @@ import { ShareButton } from './ShareButton';
 import { Link } from 'react-router-dom';
 import { IoSettingsSharp } from 'react-icons/io5';
 
-interface User {
+export interface User {
   auth0Id: string;
   userPic: string;
   userName: string;
   email: string;
 }
 
-interface MealInfo {
+export interface MealInfo {
   title: string;
   name: string;
   weightGoal: string;
@@ -22,14 +22,14 @@ interface MealInfo {
   timeFrame: number;
 }
 
-interface Diet {
+export interface Diet {
   id: number;
   mealInfo: MealInfo;
   user: User;
   description: string;
 }
 
-interface DietDisplayProps {
+export interface DietDisplayProps {
   diet: Diet;
   filteredDiets: Diet[];
   setFilteredDiets: (diets: Diet[]) => void;
@@ -39,6 +39,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   diet,
   filteredDiets,
   setFilteredDiets,
+  
 }) => {
   // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);
