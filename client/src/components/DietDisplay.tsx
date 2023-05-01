@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react';
-import { DietContext } from '../App';
-import { useAuth0 } from '@auth0/auth0-react';
-import Spinner from './Spinner';
-import '../styles/DietDisplay.css';
-import { ShareButton } from './ShareButton';
-import { Link } from 'react-router-dom';
-import { IoSettingsSharp } from 'react-icons/io5';
+import React, { ReactNode, useContext, useState } from "react";
+import { DietContext } from "../App";
+import { useAuth0 } from "@auth0/auth0-react";
+import Spinner from "./Spinner";
+import "../styles/DietDisplay.css";
+import { ShareButton } from "./ShareButton";
+import { Link } from "react-router-dom";
+import { IoSettingsSharp } from "react-icons/io5";
 
 export interface User {
   auth0Id: string;
@@ -15,6 +15,13 @@ export interface User {
 }
 
 export interface MealInfo {
+  age: ReactNode;
+  gender: ReactNode;
+  weight: ReactNode;
+  height: ReactNode;
+  activityLevel: ReactNode;
+  dietaryPreferences: any;
+  eatingFrequency: ReactNode;
   title: string;
   name: string;
   weightGoal: string;
@@ -39,7 +46,6 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   diet,
   filteredDiets,
   setFilteredDiets,
-  
 }) => {
   // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);

@@ -5,7 +5,8 @@ const LogoutButton: React.FC = () => {
   const { logout, isAuthenticated } = useAuth0();
 
   return (
-    isAuthenticated && (
+    <>
+      isAuthenticated && (
       <button
         className="logoutbtn"
         onClick={() =>
@@ -14,7 +15,8 @@ const LogoutButton: React.FC = () => {
       >
         Log Out
       </button>
-    )
+      )
+    </>
   );
 };
 

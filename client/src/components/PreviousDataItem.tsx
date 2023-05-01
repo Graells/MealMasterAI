@@ -3,6 +3,7 @@ import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/PreviousDataItem.css";
 import React from "react";
+import { Diet } from "./DietDisplay";
 
 interface MealInfo {
   title: string;
@@ -32,7 +33,7 @@ interface VisibleDetails {
 }
 
 const PreviousDataItem: React.FC = () => {
-  const { diets } = useContext(DietContext);
+  const { diets }: { diets: Diet[] } = useContext(DietContext);
   const { user } = useAuth0();
   const [visibleDetails, setVisibleDetails] = useState<VisibleDetails>({});
 
@@ -45,7 +46,7 @@ const PreviousDataItem: React.FC = () => {
 
   return (
     <div data-testid="your-previous-data" className="previous-data-item">
-      {diets.map((data: DietData) => {
+      {diets.map((data: Diet) => {
         const isCurrentUserOwner = user && data.user.auth0Id === user.sub;
 
         return (
