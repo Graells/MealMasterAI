@@ -8,8 +8,18 @@ import {
   EmailIcon,
 } from "react-share";
 
-export const ShareButton = ({ diet }) => {
-  const getShareUrl = (dietId) => {
+interface Props {
+  diet: {
+    id: string;
+    mealInfo: {
+      title: string;
+    };
+    description: string;
+  };
+}
+
+export const ShareButton: React.FC<Props> = ({ diet }) => {
+  const getShareUrl = (dietId: string) => {
     return `${window.location.origin}/diet/${dietId}`;
   };
 
