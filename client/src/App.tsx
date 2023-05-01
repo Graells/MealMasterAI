@@ -7,8 +7,18 @@ import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
+import { Diet } from "./components/DietDetailsPage"
 
-const DietContext = React.createContext();
+interface DietContextType {
+  diets: Diet[];
+  setDiets: React.Dispatch<React.SetStateAction<Diet[]>>;
+  handleMealSubmit: (formData: FormData, onSuccess?: () => void) => void;
+  isLoading: boolean;
+  lastCreatedDiet: Diet;
+}
+
+
+export const DietContext = createContext<DietContextType | undefined>(undefined);
 
 const App = () => {
   return (
