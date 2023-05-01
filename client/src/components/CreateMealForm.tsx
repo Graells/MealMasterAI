@@ -2,7 +2,25 @@ import React, { useState } from "react";
 // import { addOne } from "../api.service";
 import "../styles/CreateMealForm.css";
 
-const initialState: {} = {
+interface FormDiet {
+  title: string;
+  name: string;
+  age: number;
+  gender: string;
+  weight: number;
+  height: number;
+  activityLevel: string;
+  dietaryPreferences: string;
+  weightGoal: number;
+  weightAmount: number;
+  timeFrame: number;
+  eatingFrequency: number;
+  createdAt: Date,
+  updatedAt: Date,
+}
+
+
+const initialState: FormDiet = {
   title: "",
   name: "",
   age: 0,
@@ -15,31 +33,35 @@ const initialState: {} = {
   weightAmount: 0,
   timeFrame: 0,
   eatingFrequency: 0,
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
-const CreateMealForm: React.FC = ({ onMealSubmit }) => {
+
+type FormData = typeof initialState;
+
+const CreateMealForm: React.FC<{onMealSubmit : (formData: FormData) => Promise<void>}> = ({ onMealSubmit }) => {
   const [formData, setFormData] = useState(initialState);
-  console.log(onMealSubmit)
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target as HTMLInputElement;
     setFormData({ ...formData, [name]: value });
-    console.log()
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const meal = {
+    const meal: FormDiet = {
       ...formData,
       title: formData.title,
       name: formData.name,
-      age: parseInt(formData.age),
-      weight: parseFloat(formData.weight),
-      height: parseFloat(formData.height),
+      age: Number(formData.age),
+      weight: Number(formData.weight),
+      height: Number(formData.height),
       dietaryPreferences: formData.dietaryPreferences,
-      weightAmount: parseFloat(formData.weightAmount),
-      timeFrame: parseInt(formData.timeFrame),
-      eatingFrequency: parseInt(formData.eatingFrequency),
+      weightAmount: Number(formData.weightAmount),
+      timeFrame: Number(formData.timeFrame),
+      eatingFrequency: Number(formData.eatingFrequency),
       createdAt: new Date(),
       updatedAt: new Date(),
     };
+
     // addOne(meal);
     onMealSubmit(meal);
     setFormData(initialState);

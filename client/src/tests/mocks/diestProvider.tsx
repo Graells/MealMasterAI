@@ -5,9 +5,9 @@ export const DietContext = React.createContext({
 });
 
 export const DietProvider = ({ children }) => {
-  const [diets, setDiets] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [lastCreatedDiet, setLastCreatedDiet] = useState({});
+  const [diets, setDiets] = useState<[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [lastCreatedDiet, setLastCreatedDiet] = useState<{}>({});
 
 
 
