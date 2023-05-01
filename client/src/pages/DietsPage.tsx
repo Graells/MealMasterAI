@@ -10,7 +10,7 @@ const DietsPage = () => {
   const { diets, isLoading } = useContext(DietContext);
   const [filteredDiets, setFilteredDiets] = useState(diets);
 
-  const filterByUser = (userEmail) => {
+  const filterByUser = (userEmail : String) => {
     if (userEmail === "") {
       setFilteredDiets(diets);
     } else {

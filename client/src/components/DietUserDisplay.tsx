@@ -21,11 +21,11 @@ const DietUserDisplay = () => {
           <Spinner />
         ) : (
           <div className="dietDisplay">
-            <pre>{lastCreatedDiet.description}</pre>
-            <div>
+            <pre>{lastCreatedDiet?.description}</pre>
+            {lastCreatedDiet && <div>
               <span>Share it with others:</span>
               <ShareButton diet={lastCreatedDiet} />
-            </div>
+            </div>}
           </div>
         )}
         <Link to="/dashboard">

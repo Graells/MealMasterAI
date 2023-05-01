@@ -82,7 +82,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
             : d
         );
-        setFilteredDiets(updatedFilteredDiets);
+        setFilteredDiets?(updatedFilteredDiets): null;
       } else {
         const errorText = await response.text();
         console.error("Error updating meal title:", errorText);
@@ -108,7 +108,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
         const updatedFilteredDiets = filteredDiets?.filter(
           (d) => d.id !== diet.id
         );
-        setFilteredDiets?(updatedFilteredDiets):
+        setFilteredDiets?(updatedFilteredDiets): null;
       } else {
         const errorText = await response.text();
         console.error("Error deleting meal:", errorText);
