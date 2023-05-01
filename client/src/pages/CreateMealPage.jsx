@@ -5,12 +5,13 @@ import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
-import logo from "../assets/MealMasterAILogo.png";
+// import logo from "../assets/MealMasterAILogo.png";
 import PreviousDataItem from "../components/PreviousDataItem";
 
 const CreateMealPage = () => {
   const { handleMealSubmit, isLoading, diets } = useContext(DietContext);
   const navigate = useNavigate();
+  const logo = ""
 
   const onSuccess = () => {
     navigate("/diet-user-display");
@@ -24,7 +25,7 @@ const CreateMealPage = () => {
     <>
       <div className="createMealPage" style={{ paddingBottom: "80px" }}>
         <Link to="/">
-          <img src={logo} alt="App Logo" className="app-logo" />
+          <img src="logMealMasterAILogo.png" alt="App Logo" className="app-logo" />
         </Link>
 
         <div className="form-and-data-container">

@@ -6,7 +6,9 @@ import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 
 const DietDetailsPage = () => {
-  const { diets } = useContext(DietContext);
+  const cont = useContext(DietContext);
+  console.log(cont)
+  const { diets } = cont;
   const { dietId } = useParams();
   const [diet, setDiet] = useState(null);
 
