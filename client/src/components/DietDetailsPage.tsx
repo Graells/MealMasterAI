@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 export interface Diet {
   id: number;
+  mealInfo: MealInfo;
+  user: User;
+  description: string;
+
 }
 
 interface DietContextType {
