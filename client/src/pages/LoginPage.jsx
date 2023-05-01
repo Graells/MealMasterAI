@@ -3,7 +3,7 @@ import LoginButton from "../components/LoginButton";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
-import logo from "../assets/MealMasterAILogo.png";
+// import logo from "../assets/MealMasterAILogo.png";
 import "../styles/LoginPage.css";
 
 const LoginPage = () => {
@@ -19,7 +19,7 @@ const LoginPage = () => {
   return (
     <div>
       <div className="login-container">
-        <img src={logo} alt="App Logo" className="app-logo" />
+        <img src="MealMasterAILogo.png" alt="App Logo" className="app-logo" />
         <h1>MealMasterAI</h1>
         <div className="login-hero">
           <p>To create a diet using AI:</p>

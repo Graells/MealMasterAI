@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
-import logo from "../assets/MealMasterAILogo.png";
+// import logo from "../assets/MealMasterAILogo.png";
 import "../styles/DropdownMenu.css";
 const DietsPage = () => {
   const { diets, isLoading } = useContext(DietContext);
@@ -30,7 +30,7 @@ const DietsPage = () => {
     <>
       <div style={{ paddingBottom: "80px" }}>
         <Link to="/">
-          <img src={logo} alt="App Logo" className="app-logo" />
+          <img src="MealMasterAILogo.png" alt="App Logo" className="app-logo" />
         </Link>
         <h2 className="h2-background">Dashboard: All Diets from all Users</h2>
         <div className="select-container">

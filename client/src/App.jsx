@@ -8,7 +8,11 @@ import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
 
-const DietContext = React.createContext();
+const DietContext = React.createContext({
+  diets: [],
+        isLoading: false,
+        lastCreatedDiet: {}
+});
 
 const App = () => {
   return (

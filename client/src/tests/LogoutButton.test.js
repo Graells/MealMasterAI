@@ -3,6 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import LogoutButton from "../components/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import "@testing-library/jest-dom/extend-expect";
+// const { test } = require("jest");
 
 jest.mock("@auth0/auth0-react");
 
