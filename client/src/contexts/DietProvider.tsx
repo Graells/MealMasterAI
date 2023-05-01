@@ -3,14 +3,27 @@ import React, { useState, useEffect } from "react";
 import { submitForm, addOne, getAll } from "../api.service";
 import { DietContext } from "../App";
 
-const DietProvider = ({ children }) => {
-  const [diets, setDiets] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [lastCreatedDiet, setLastCreatedDiet] = useState({});
+
+interface DietProviderProps {
+  children: React.ReactNode;
+}
+
+interface FormData {
+  // here we will define the formdata shape
+}
+
+
+const DietProvider: React.FC<DietProviderProps> = ({ children }) => {
+const [diets, setDiets] = useState<Diet[]>([]);
+const [isLoading, setIsLoading] = useState<boolean>(false);
+const [lastCreatedDiet, setLastCreatedDiet] = useState<Diet>({});
 
   const { user, isAuthenticated } = useAuth0();
   console.log("USER AUTH0", user);
-  const handleMealSubmit = async (formData, onSuccess) => {
+  const handleMealSubmit = async (
+    formData: FormData,
+    onSuccess?: () => void
+  ) => {
     setIsLoading(true);
     try {
       const userEmail = isAuthenticated && user ? user.email : null;
