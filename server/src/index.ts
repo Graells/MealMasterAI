@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 require("dotenv").config();
-const { PrismaClient } = require("@prisma/client");
-const router = require("./router");
+import { PrismaClient } from "@prisma/client";
+import router from "./router";
 var cors = require("cors");
 const app = express();
 const prisma = new PrismaClient();
@@ -25,4 +25,4 @@ const PORT = process.env.PORT || 3001;
   }
 })();
 
-module.exports = app;
+export default app;
