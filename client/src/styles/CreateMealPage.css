@@ -1,8 +1,8 @@
-.createMealPage {
+/* .createMealPage {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
   .form-and-data-container {
     display: flex;
     
@@ -10,7 +10,7 @@
   
   .previous-data-container {
     width: 25vw;
-    margin-right: 10vw;
+    margin-right: 12vw;
     margin-top: 15vh;
     height: 60vh;
     color: black;

@@ -5,12 +5,13 @@ const LoginButton: React.FC = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
+     
     <>
-      !isAuthenticated && (
-      <button className="loginbtn" onClick={() => loginWithRedirect()}>
-        Log In
-      </button>
-      )
+     {!isAuthenticated && (
+        <button className="loginbtn" onClick={() => loginWithRedirect()}>
+          Log In
+        </button>
+      ) }
     </>
   );
 };
