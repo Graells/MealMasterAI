@@ -1,23 +1,7 @@
 import React, { useState } from "react";
 // import { addOne } from "../api.service";
 import "../styles/CreateMealForm.css";
-
-interface FormDiet {
-  title: string;
-  name: string;
-  age: number;
-  gender: string;
-  weight: number;
-  height: number;
-  activityLevel: string;
-  dietaryPreferences: string;
-  weightGoal: number;
-  weightAmount: number;
-  timeFrame: number;
-  eatingFrequency: number;
-  createdAt: Date,
-  updatedAt: Date,
-}
+import { FormDiet } from "../Interfaces";
 
 
 const initialState: FormDiet = {
