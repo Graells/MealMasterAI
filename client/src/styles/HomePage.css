@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 8px;
   width: 60vw;
 }
