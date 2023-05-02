@@ -1,8 +1,7 @@
-
 * {
   height: 100%;
   overflow: hidden;
-  font-family: 'Lexend Zetta', sans-serif;
+  font-family: "Lexend Zetta", sans-serif;
 }
 
 img {
@@ -11,53 +10,48 @@ img {
   height: auto;
   margin-right: 0px;
   z-index: -1;
-  
 }
 
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   
-    
-    
-  }
-  .login-hero {
-    display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    height: 65px;
-    margin-bottom: 30px;
-    padding: 45px;
-  }
-  
-  .headingName {
-    color: white;
-    padding-top: 15vh;
-    font-size: 3.7rem;
-  }
-  
-  .space {
-    width: 100px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  height: 65px;
+  margin-bottom: 30px;
+  padding: 45px;
+}
 
-  .loginbtn {
-    width: 20vw;
-    display: inline-block;
-    background-color: white;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    z-index: 1000;
-    
-  }
+.headingName {
+  color: white;
+  padding-top: 15vh;
+  font-size: 3.7rem;
+}
 
-  /* Media queries */
+.space {
+  width: 100px;
+}
+
+.loginbtn {
+  width: 20vw;
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 1000;
+}
+
+/* Media queries */
 @media only screen and (max-width: 768px) {
   .headingName {
     font-size: 2.1rem;

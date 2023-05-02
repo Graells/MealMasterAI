@@ -6,6 +6,7 @@ import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import HomeIcon from "@mui/icons-material/Home";
 import "../styles/DropdownMenu.css";
+import Footer from "../components/Footer";
 const DietsPage = () => {
   const { diets, isLoading } = useContext(DietContext);
   const [filteredDiets, setFilteredDiets] = useState(diets);
@@ -67,7 +68,7 @@ const DietsPage = () => {
         )}
       </div>
 
-      <Profile />
+      <Footer />
     </>
   );
 };
