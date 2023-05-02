@@ -36,19 +36,14 @@
 }
 
 .profile-container {
-  position: fixed;
-  margin-bottom: 30px;
-  bottom: 20vh;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
   background-color: white;
   border-radius: 8px;
-  padding: 1rem;
   width: 60vw;
-  margin-right: 0vw !important;
-  max-height: 10vh !important;
 }
+
 .RestaurantIcon {
   padding-right: 14px;
 }
