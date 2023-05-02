@@ -20,6 +20,10 @@ body {
   align-items: center;
 }
 
+* {
+  font-family: "Lexend Zetta", sans-serif;
+}
+
 /* .app-logo {
     margin-top: 20px;
     width: 150px;

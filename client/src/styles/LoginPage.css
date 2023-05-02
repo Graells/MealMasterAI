@@ -1,4 +1,4 @@
-* {
+.login-container {
   height: 100%;
   overflow: hidden;
   font-family: "Lexend Zetta", sans-serif;
@@ -49,6 +49,7 @@ img {
   cursor: pointer;
   transition: background-color 0.2s;
   z-index: 1000;
+  height: 100%;
 }
 
 /* Media queries */

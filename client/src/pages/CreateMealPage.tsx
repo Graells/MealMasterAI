@@ -24,7 +24,7 @@ const CreateMealPage = () => {
   };
 
   return (
-    <>
+    <div className="form-page-container">
       <div className="createMealPage">
         <div className="homelink">
           <Link to="/">
@@ -49,7 +49,7 @@ const CreateMealPage = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

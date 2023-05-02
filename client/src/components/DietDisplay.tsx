@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "./Spinner";
@@ -46,7 +46,6 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   diet,
   filteredDiets,
   setFilteredDiets,
-
 }) => {
   // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);
@@ -70,7 +69,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
 
       if (response.ok) {
         const updatedMeal = await response.json();
-        const updatedDiets = diets.map((d:any) =>
+        const updatedDiets = diets.map((d: any) =>
           d.id === diet.id
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
             : d
@@ -82,7 +81,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
             ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
             : d
         );
-        setFilteredDiets?(updatedFilteredDiets): null;
+        setFilteredDiets ? updatedFilteredDiets : null;
       } else {
         const errorText = await response.text();
         console.error("Error updating meal title:", errorText);
@@ -91,6 +90,10 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
       console.error("Error updating meal title:", error);
     }
   };
+
+  useEffect(() => {
+    console.log("isLoading ==> ", isLoading);
+  }, [isLoading]);
 
   if (isLoading) {
     return <Spinner />;
@@ -102,13 +105,13 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
       });
 
       if (response.status === 204) {
-        const updatedDiets = diets.filter((d:any) => d.id !== diet.id);
+        const updatedDiets = diets.filter((d: any) => d.id !== diet.id);
         setDiets(updatedDiets);
 
         const updatedFilteredDiets = filteredDiets?.filter(
           (d) => d.id !== diet.id
         );
-        setFilteredDiets?(updatedFilteredDiets): null;
+        setFilteredDiets ? updatedFilteredDiets : null;
       } else {
         const errorText = await response.text();
         console.error("Error deleting meal:", errorText);
@@ -119,6 +122,8 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   };
 
   const isCurrentUserOwner = user && diet.user.auth0Id === user.sub;
+
+  console.log(" ====> ", isCurrentUserOwner);
 
   return (
     <div className="dietDisplay">
