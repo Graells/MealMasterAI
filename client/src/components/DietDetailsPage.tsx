@@ -5,6 +5,7 @@ import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
 import { MealInfo, User } from "./DietDisplay";
 import { DietContext } from "../App";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 
 export interface Diet {
   id: number;
@@ -16,8 +17,6 @@ export interface Diet {
 interface DietContextType {
   diets: Diet[];
 }
-
-// const DietContext = React.createContext<DietContextType>({ diets: [] });
 
 const DietDetailsPage: React.FC = () => {
   const { diets } = useContext(DietContext);
@@ -43,7 +42,10 @@ const DietDetailsPage: React.FC = () => {
   return (
     <>
       <Link to="/dashboard">
-        <button>Go to Dashboard</button>
+        <button className="settings-buttons">
+          <DashboardIcon className="DashboardIcon" />
+          Dashboard
+        </button>
       </Link>
       <div>
         <DietDisplay diet={diet} />

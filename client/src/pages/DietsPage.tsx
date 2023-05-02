@@ -6,7 +6,10 @@ import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
 import HomeIcon from "@mui/icons-material/Home";
 import "../styles/DropdownMenu.css";
+import "../styles/DietsPage.css";
 import Footer from "../components/Footer";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 const DietsPage = () => {
   const { diets, isLoading } = useContext(DietContext);
   const [filteredDiets, setFilteredDiets] = useState(diets);
@@ -37,20 +40,13 @@ const DietsPage = () => {
             <HomeIcon sx={{ color: "black" }} />
           </Link>
         </div>
-        <h3 className="h2-background" style={{ height: "50vh", width: "65vw" }}>
-          Dashboard: All Diets from all Users
-        </h3>
+
         <div className="select-container">
-          <select
-            onChange={(e) => filterByUser(e.target.value)}
-            style={{
-              height: "50px",
-              width: "65vw",
-              marginBottom: "20px",
-              padding: "10px",
-            }}
-          >
-            <option value="">All Users</option>
+          <select onChange={(e) => filterByUser(e.target.value)} style={{}}>
+            <option className="selectUsers" value="">
+              <KeyboardArrowDownIcon className="KeyboardArrowDownIcon" />
+              ALL USERS
+            </option>
             {getUniqueUsers().map((userEmail) => (
               <option key={userEmail} value={userEmail}>
                 {userEmail}

@@ -6,6 +6,7 @@ import "../styles/DietDisplay.css";
 import { ShareButton } from "./ShareButton";
 import { Link } from "react-router-dom";
 import { IoSettingsSharp } from "react-icons/io5";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
 
 export interface User {
   auth0Id: string;
@@ -132,7 +133,6 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
           <IoSettingsSharp
             className="options-icon"
             onClick={() => setShowOptions(!showOptions)}
-            size={24}
           />
         )}
         {showOptions && isCurrentUserOwner && (
@@ -150,14 +150,21 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
                   required
                   onChange={(e) => setTitle(e.target.value)}
                 />
-                <button type="submit">Submit</button>
+                <button className="settings-buttons" type="submit">
+                  SUBMIT
+                </button>
               </form>
             ) : (
-              <button onClick={() => setIsEditingTitle(true)}>
-                Update title
+              <button
+                className="settings-buttons"
+                onClick={() => setIsEditingTitle(true)}
+              >
+                UPDATE TITLE
               </button>
             )}
+            <br></br>
             <button
+              className="settings-buttons"
               onClick={() => {
                 if (
                   window.confirm("Are you sure you want to delete this diet?")
@@ -166,8 +173,9 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
                 }
               }}
             >
-              Delete
+              DELETE
             </button>
+            <br></br>
           </div>
         )}
 
@@ -176,8 +184,12 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
             Diet title: {diet.mealInfo.title} for {diet.mealInfo.name}
           </h3>
         </Link>
-        <button onClick={() => setShowDescription(!showDescription)}>
-          Show diet
+        <button
+          className="show-diet-button"
+          onClick={() => setShowDescription(!showDescription)}
+        >
+          <RestaurantIcon className="RestaurantIcon" />
+          SHOW DIET
         </button>
       </div>
       <div>
@@ -190,20 +202,16 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
       {showDescription && (
         <div className="share-container">
           <pre>{diet.description}</pre>
+          <br></br>
+          <br></br>
           <div className="share-button-container">
             <span>Share it with others:</span>
+            <br></br>
+            <br></br>
             <ShareButton diet={diet} />
           </div>
         </div>
       )}
-      <div className="profile-container">
-        <h3>By user:</h3>
-        <img src={diet.user.userPic} alt={diet.user.userName} />
-        <div className="info">
-          <p className="dietUserStyle">{diet.user.userName}</p>
-          <p>User email: {diet.user.email}</p>
-        </div>
-      </div>
     </div>
   );
 };

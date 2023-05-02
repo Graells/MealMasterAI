@@ -1,0 +1,110 @@
+.select-container {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.show-diet-button {
+  height: 25px;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 1000;
+}
+
+.dietDisplay {
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lexend Zetta", sans-serif;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background: #23568d;
+  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 140%);
+}
+
+.dietDisplay pre {
+  color: black;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.options-icon {
+  margin-right: 10px;
+  fill: black;
+}
+
+.show-diet-button {
+  margin: auto;
+}
+
+.share-buttons {
+  align-items: center;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% - 27px);
+  right: calc(100% - 5px);
+  margin: 0px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 140%);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  z-index: 1;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  border: none;
+}
+
+.settings-buttons {
+  height: 25px;
+  width: 20vw;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 1000;
+}
