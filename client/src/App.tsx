@@ -10,8 +10,8 @@ import DietDetailsPage from "./components/DietDetailsPage";
 
 const DietContext = React.createContext({
   diets: [],
-        isLoading: false,
-        lastCreatedDiet: {}
+  isLoading: false,
+  lastCreatedDiet: {},
 });
 
 const App = () => {

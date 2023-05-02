@@ -35,3 +35,9 @@ export interface IUser{
     userPic:string,
     meals:IDiet[]
 }
+
+export interface IAuth0User{
+    picture:string,
+    name:string,
+    email:string
+}

@@ -11,7 +11,8 @@ const Profile: React.FC = () => {
   }
 
   return (
-    isAuthenticated && (
+    <>
+    {isAuthenticated && user && (
       <div className="profile-container">
         <img src={user.picture} alt={user.name} />
         <div className="info">
@@ -20,7 +21,8 @@ const Profile: React.FC = () => {
         </div>
         <LogoutButton />
       </div>
-    )
+      )}
+    </>
   );
 };
 

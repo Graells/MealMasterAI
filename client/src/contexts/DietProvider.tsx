@@ -1,11 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { submitForm, addOne, getAll } from "../api.service";
 import { DietContext } from "../App";
 import { IDiet } from "../Interfaces";
 
-const DietProvider = ({ children }) => {
-  const [diets, setDiets] = useState<IDiet[]>([]);
+const DietProvider = ({ children }: { children: React.ReactNode }) => {
+  const [diets, setDiets] = useState<IDiet[]|[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [lastCreatedDiet, setLastCreatedDiet] = useState<{}>({});
 

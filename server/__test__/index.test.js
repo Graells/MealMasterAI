@@ -1,11 +1,11 @@
 import request from "supertest";
-import app from "./index";
+import app from "../dist/index";
 // import fs from "fs";
-import { mocksOpenIa } from "./mocks";
+import { mocksOpenIa } from "../src/mocks";
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 import { jest } from "@jest/globals";
-import sinon from 'sinon'
+import sinon from "sinon";
 
 describe("Test of the endpoints", () => {
   it("GET /Send an array of meals", async () => {
@@ -13,7 +13,6 @@ describe("Test of the endpoints", () => {
     expect(response.status).toEqual(200);
     expect(response.body).toBeInstanceOf(Array);
   });
-
 
   it("GET /meals/:id send back a specific meal", async () => {
     const response = await request(app).get("/meals/1");
