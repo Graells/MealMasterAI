@@ -1,6 +1,6 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from "react";
 // import { addOne } from '../api.service';
-import '../styles/CreateMealForm.css';
+import "../styles/CreateMealForm.css";
 
 
 interface Meal {
@@ -25,14 +25,14 @@ interface CreateMealFormProps {
 }
 
 const initialState: Meal = {
-  title: '',
-  name: '',
+  title: "",
+  name: "",
   age: 0,
-  gender: '',
+  gender: "",
   weight: 0,
   height: 0,
-  activityLevel: '',
-  dietaryPreferences: '',
+  activityLevel: "",
+  dietaryPreferences: "",
   weightGoal: 0,
   weightAmount: 0,
   timeFrame: 0,
@@ -44,7 +44,9 @@ const initialState: Meal = {
 const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
   const [formData, setFormData] = useState<Meal>(initialState);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -70,7 +72,6 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
     setFormData(initialState);
   };
   return (
-    
     <form className="formStyle" onSubmit={handleSubmit}>
       <h2>CREATE A NEW DIET</h2>
       <div className="columns-container">
@@ -85,36 +86,38 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           required
         />
 
-        <label htmlFor="name">Your name:</label>
-        <input
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="age">Age:</label>
-        <input
-          type="number"
-          id="age"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-          required
-        />
 
-        <label htmlFor="gender">Gender:</label>
-        <select
-          id="gender"
-          name="gender"
-          value={formData.gender}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select Gender</option>
-          <option value="MALE">Male</option>
-          <option value="FEMALE">Female</option>
-        </select>
+          <label htmlFor="name">Your name:</label>
+          <input
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            required
+          />
+
+          <label htmlFor="gender">Gender:</label>
+          <select
+            id="gender"
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Gender</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+          </select>
+
 
         <label htmlFor="weight">Your Weight (kg):</label>
         <input
@@ -208,9 +211,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
     </div>
     
       <button type="submit">Create Diet</button>
-      
     </form>
-    
   );
 };
 export default CreateMealForm;

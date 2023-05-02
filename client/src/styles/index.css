@@ -7,12 +7,8 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #35814a;
-  background: rgb(211, 255, 204);
-  background: linear-gradient(
-    114deg,
-    rgba(211, 255, 204, 1) 0%,
-    rgba(39, 39, 39, 1) 98%
-  );
+  background: #23568d;
+  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 98%);
 }
 #root {
   display: flex;

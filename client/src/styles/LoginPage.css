@@ -37,11 +37,7 @@ img {
 .space {
   width: 100px;
 }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 .login-hero {
   display: flex;
   flex-direction: row;
@@ -121,4 +117,3 @@ img {
     z-index: 1000;
   }
 }
-
