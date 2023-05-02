@@ -48,9 +48,7 @@ const CreateMealPage = () => {
           )}
         </div>
       </div>
-     <div className="create-meal-profile-box">
-      <Profile />
-      </div>
+     
     </>
     
   );
