@@ -41,3 +41,28 @@ export interface IAuth0User{
     name:string,
     email:string
 }
+export interface PreviousDiet {
+    createdAt: string;
+    description: string;
+    mealInfo: IMealInfo;
+    mealInfoId: number;
+    user: IUser;
+    userId: string
+}
+
+export interface FormDiet {
+    title: string;
+    name: string;
+    age: number;
+    gender: string;
+    weight: number;
+    height: number;
+    activityLevel: string;
+    dietaryPreferences: string;
+    weightGoal: number;
+    weightAmount: number;
+    timeFrame: number;
+    eatingFrequency: number;
+    createdAt: Date,
+    updatedAt: Date,
+  }

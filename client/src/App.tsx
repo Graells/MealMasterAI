@@ -7,11 +7,18 @@ import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
+import { PreviousDiet, IDiet } from "./Interfaces";
 
-const DietContext = React.createContext({
+interface DietContext {
+  diets: IDiet[],
+  isLoading: boolean,
+  lastCreatedDiet: PreviousDiet | {}
+}
+
+const DietContext = React.createContext<DietContext>({
   diets: [],
   isLoading: false,
-  lastCreatedDiet: {},
+  lastCreatedDiet: {}
 });
 
 const App = () => {

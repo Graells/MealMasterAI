@@ -7,10 +7,15 @@ import {
   TwitterIcon,
   EmailIcon,
 } from "react-share";
+import { IDiet } from "../Interfaces";
 
-export const ShareButton: React.FC = ({ diet }) => {
+interface Props {
+  diet: IDiet;
+}
+
+export const ShareButton: React.FC<Props> = ({ diet }) => {
   const getShareUrl = (dietId: number) => {
-    console.log(diet)
+    // console.log('dietId', dietId)
     return `${window.location.origin}/diet/${dietId}`;
   };
 

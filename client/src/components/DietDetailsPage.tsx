@@ -4,15 +4,20 @@ import { DietContext } from "../App";
 import DietDisplay from "./DietDisplay";
 import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
+import { IDiet } from "../Interfaces";
+
+// interface Params {
+//   dietId: string;
+// }
 
 const DietDetailsPage: React.FC = () => {
   const { diets } = useContext(DietContext);
-  console.log(diets)
-  const { dietId } = useParams();
-  const [diet, setDiet] = useState<any>(null);
-
+  const { dietId } = useParams<string>();
+  const [ diet, setDiet ] = useState<IDiet | null>(null);
+  
   useEffect(() => {
-    const foundDiet = diets.find((d) => d.id === parseInt(dietId));
+    const foundDiet = diets.find((d:IDiet) => d.id === Number(dietId));
+
     if (foundDiet) {
       setDiet(foundDiet);
     }
@@ -28,7 +33,8 @@ const DietDetailsPage: React.FC = () => {
         <button>Go to Dashboard</button>
       </Link>
       <div>
-        <DietDisplay diet={diet} />
+        <DietDisplay 
+        diet={diet} />
       </div>
     </>
   );
