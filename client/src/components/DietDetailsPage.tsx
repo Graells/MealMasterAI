@@ -4,6 +4,7 @@ import DietDisplay from "./DietDisplay";
 import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
 import { MealInfo, User } from "./DietDisplay";
+import { DietContext } from "../App";
 
 export interface Diet {
   id: number;
@@ -16,7 +17,7 @@ interface DietContextType {
   diets: Diet[];
 }
 
-const DietContext = React.createContext<DietContextType>({ diets: [] });
+// const DietContext = React.createContext<DietContextType>({ diets: [] });
 
 const DietDetailsPage: React.FC = () => {
   const { diets } = useContext(DietContext);
@@ -24,11 +25,16 @@ const DietDetailsPage: React.FC = () => {
   const [diet, setDiet] = useState<Diet | null>(null);
 
   useEffect(() => {
+    console.log("diets in details page", diets, dietId);
     const foundDiet = diets.find((d) => d.id === parseInt(dietId ?? "0", 10));
     if (foundDiet) {
       setDiet(foundDiet);
     }
   }, [diets, dietId]);
+
+  useEffect(() => {
+    console.log("diets in details page", diets, dietId);
+  }, [diets]);
 
   if (!diet) {
     return <Spinner />;
@@ -47,4 +53,3 @@ const DietDetailsPage: React.FC = () => {
 };
 
 export default DietDetailsPage;
-

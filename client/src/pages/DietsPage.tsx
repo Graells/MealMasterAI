@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import DietDisplay from "../components/DietDisplay";
 import { Link } from "react-router-dom";
 import { DietContext } from "../App";
@@ -19,11 +19,15 @@ const DietsPage = () => {
       setFilteredDiets(filtered);
     }
   };
+
+  useEffect(() => {
+    console.log("DIETS DietsPage", diets, isLoading);
+  }, [diets, isLoading]);
+
   const getUniqueUsers = () => {
     const userEmails = diets.map((diet) => diet.user.email);
     return [...new Set(userEmails)];
   };
-  // console.log("DIETS DietsPage", diets);
 
   return (
     <>
