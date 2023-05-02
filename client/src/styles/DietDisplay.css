@@ -1,56 +1,54 @@
 .dietDisplay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #F4F4F4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
-  }
-  
-  .dietDisplay h2 {
-    margin-bottom: 20px;
-  }
-  
-  .dietDisplay pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    font-family: inherit;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #1a8daf;
+}
 
+.dietDisplay h2 {
+  margin-bottom: 20px;
+}
 
-  .info .dietUserStyle {
-    font-weight: bold;
-    font-size: 19px;
-    color: #1A8DAF;
-    margin-bottom: 0px;
-  }
-  
+.dietDisplay pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
 
-  .title-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-  }
-  .share-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .share-button-container {
-    display: flex;
-    align-items: center;
-  }
+.info .dietUserStyle {
+  font-weight: bold;
+  font-size: 19px;
+  color: #1a8daf;
+  margin-bottom: 0px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+.share-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+}
 
 .options-icon {
-  font-size: 24px; 
+  font-size: 24px;
   cursor: pointer;
   margin: 0;
 }
@@ -62,9 +60,9 @@
   top: calc(100% - 27px);
   right: calc(100% - 5px);
   margin: 0px;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 
-  border: 1px solid  #1A8DAF;
+  border: 1px solid #1a8daf;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2px;

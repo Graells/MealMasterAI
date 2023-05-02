@@ -4,6 +4,7 @@ import "../styles/HomePage.css";
 import logo from "../assets/MealMasterAILogo.png";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -13,7 +14,7 @@ const HomePage = () => {
           <img src={logo} alt="App Logo" className="app-logo" />
           <button>refresh</button> 
         </Link>*/}
-        <h1>MealMasterAI</h1>
+        <h1>MEALMASTER AI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
             <button className="homebtn">
@@ -33,7 +34,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <Profile className="profile-container" />
+      <Footer />
     </>
   );
 };

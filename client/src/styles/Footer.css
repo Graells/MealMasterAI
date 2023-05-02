@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* set the desired height of the footer */
+}
