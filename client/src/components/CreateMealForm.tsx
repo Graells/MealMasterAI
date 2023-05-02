@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 // import { addOne } from '../api.service';
 import '../styles/CreateMealForm.css';
 
+
 interface Meal {
   title: string;
   name: string;
@@ -74,7 +75,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
       <h2>CREATE A NEW DIET</h2>
       <div className="columns-container">
       <div className="column">
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Meal Plan Title:</label>
         <input
           type="text"
           id="title"
@@ -115,7 +116,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           <option value="FEMALE">Female</option>
         </select>
 
-        <label htmlFor="weight">Weight (in kg):</label>
+        <label htmlFor="weight">Your Weight (kg):</label>
         <input
           type="number"
           step="0.1"
@@ -125,7 +126,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="height">Height (in cm):</label>
+        <label htmlFor="height">Your Height (cm):</label>
         <input
           type="number"
           id="height"
@@ -172,7 +173,8 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           <option value="GAIN">Gain</option>
           <option value="MAINTAIN">Maintain</option>
         </select>
-        <label htmlFor="weightAmount">Amount(in kg):</label>
+        <label htmlFor="weightAmount">Amount To Gain/Lose (kg):</label>
+        
         <input
           type="number"
           id="weightAmount"
@@ -181,7 +183,8 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="timeFrame">Time Frame (in weeks):</label>
+
+        <label htmlFor="timeFrame">Time Frame (weeks):</label>
         <input
           type="number"
           id="timeFrame"
@@ -191,7 +194,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           required
         />
         <label htmlFor="eatingFrequency">
-          Eating Frequency (meals per day):
+          Meals Eaten Per Day:
         </label>
         <input
           type="number"

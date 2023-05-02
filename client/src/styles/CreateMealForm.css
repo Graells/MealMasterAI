@@ -5,6 +5,9 @@
   margin: 5px;
   transform: scale(0.75);
   color: black;
+  position: relative;
+  top:-8vh;
+ 
 }
 
 .formStyle h2 {
@@ -21,7 +24,7 @@
 .column {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   padding: 0 0 0 10px;
 }
 
@@ -34,8 +37,8 @@
 
 .formStyle label {
   margin-top: 3vh;
-  font-weight: 1000;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  margin-left: 1vw;
 }
 
 .formStyle input,
@@ -44,9 +47,11 @@
   padding: 4px;
   border: 1px solid black;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 1rem;
   font-family: inherit;
-  width: 100%;
+  width: 85%;
+  margin-left: 1vw;
+  background-color: transparent;
 }
 
 .formStyle button {
@@ -61,7 +66,7 @@
   cursor: pointer;
   transition: background-color 0.2s;
   max-height: 5vh !important;
-  margin-left: 10px;
+  margin-left: 2vw;
   margin-top: 7vh;
   width: 100%;
 }
