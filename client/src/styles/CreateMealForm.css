@@ -10,6 +10,7 @@
 .formStyle h2 {
   margin-bottom: 2vh;
   max-height: 5vh !important;
+  font-size: 2rem;
 }
 
 .columns-container {
@@ -32,17 +33,16 @@
 }
 
 .formStyle label {
-  margin-top: 5px;
-  padding-bottom: 10px;
+  margin-top: 3vh;
   font-weight: 1000;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .formStyle input,
 .formStyle select,
 .formStyle textarea {
-  padding: 8px;
-  border: 1px solid #1a8daf;
+  padding: 4px;
+  border: 1px solid black;
   border-radius: 3px;
   font-size: 14px;
   font-family: inherit;
@@ -62,7 +62,8 @@
   transition: background-color 0.2s;
   max-height: 5vh !important;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 7vh;
+  width: 100%;
 }
 
 .formStyle button:hover {
