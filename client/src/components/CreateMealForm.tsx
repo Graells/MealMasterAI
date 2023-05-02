@@ -74,7 +74,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
       <h2>CREATE A NEW DIET</h2>
       <div className="columns-container">
       <div className="column">
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"

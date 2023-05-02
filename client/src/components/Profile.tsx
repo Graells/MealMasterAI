@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <>
-    isAuthenticated && (
+    {isAuthenticated && (
       <div className="profile-container profilehomepage">
         <img src={user?.picture} alt={user?.name} />
         <div className="info">
@@ -22,7 +22,7 @@ const Profile = () => {
         <LogoutButton />
       </div>
       
-    )
+    )}
     </>
   );
   

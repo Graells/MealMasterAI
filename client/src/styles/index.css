@@ -26,10 +26,10 @@ align-items: center;
   } */
   
   .h2-background {
-    background-color: #F4F4F4;
     padding: 10px;
     border-radius: 5px;
-    height: 30vh;
+    height: 10vh;
+    font-size: 1.5rem;
   }
   
   
