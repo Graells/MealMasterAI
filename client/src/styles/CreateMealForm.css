@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 80vw;
   margin: 5px;
-  transform: scale(.75);
+  transform: scale(0.75);
   color: black;
 }
 
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 0 0 0  10px;
+  padding: 0 0 0 10px;
 }
 
 .form-group {
@@ -30,7 +30,6 @@
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
-  
 }
 
 .formStyle label {
@@ -47,8 +46,7 @@
   border-radius: 3px;
   font-size: 14px;
   font-family: inherit;
-  width: 100%; 
-  
+  width: 100%;
 }
 
 .formStyle button {
@@ -69,5 +67,5 @@
 }
 
 .formStyle button:hover {
-  background-color: #92F7FD;
+  background-color: #92f7fd;
 }
