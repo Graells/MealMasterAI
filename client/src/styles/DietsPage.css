@@ -71,6 +71,10 @@
   align-items: center;
 }
 
+.share-buttons-container {
+  align-items: center;
+}
+
 .options-container {
   display: flex;
   flex-direction: column;
