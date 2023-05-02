@@ -1,29 +1,37 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #35814A;
-    background: rgb(211,255,204);
-background: linear-gradient(114deg, rgba(211,255,204,1) 0%, rgba(39,39,39,1) 98%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #35814a;
+  background: rgb(211, 255, 204);
+  background: linear-gradient(
+    114deg,
+    rgba(211, 255, 204, 1) 0%,
+    rgba(39, 39, 39, 1) 98%
+  );
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
-  #root {
-    display: flex;
-    flex-direction: column;
-align-items: center;
-  }
+* {
+  font-family: "Lexend Zetta", sans-serif;
+}
 
-  /* .app-logo {
+/* .app-logo {
     margin-top: 20px;
     width: 150px;
     height: auto;
     background-color: #F4F4F4;
     border-radius: 5px;
   } */
+
   
   .h2-background {
     padding: 10px;
@@ -34,6 +42,7 @@ align-items: center;
   
   
    /* button {
+
     display: inline-block;
     padding: 10px 20px;
     background-color: white;
@@ -49,10 +58,7 @@ align-items: center;
     
 
   } */
-  
- button:hover {
-    background-color: #92F7FD
-  }
-  
 
-
+button:hover {
+  background-color: #92f7fd;
+}
