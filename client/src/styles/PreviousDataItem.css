@@ -1,10 +1,10 @@
 .previous-data-item {
-    background-color: #F4F4F4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
-    padding: 1rem;
-    
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background: #23568D;
+  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0A1929 140%);
+  border-radius: 5px;
+  border: 1px solid  #1A8DAF;
+  padding: 1rem;
   }
   
   .previous-data-item h3 {

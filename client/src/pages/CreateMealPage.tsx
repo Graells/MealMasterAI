@@ -8,7 +8,6 @@ import "../styles/CreateMealPage.css";
 import "../styles/ProfileComponent.css";
 import HomeIcon from "@mui/icons-material/Home";
 import PreviousDataItem from "../components/PreviousDataItem";
-import Grid2 from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Footer from "../components/Footer";
 
 const CreateMealPage = () => {
