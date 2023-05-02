@@ -2,6 +2,7 @@
   height: 100%;
   overflow: hidden;
   font-family: "Lexend Zetta", sans-serif;
+  font-family: "Lexend Zetta", sans-serif;
 }
 
 img {
@@ -13,6 +14,29 @@ img {
 }
 
 .login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  height: 65px;
+  margin-bottom: 30px;
+  padding: 45px;
+}
+
+.headingName {
+  color: white;
+  padding-top: 15vh;
+  font-size: 3.7rem;
+}
+
+.space {
+  width: 100px;
+}
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,6 +76,7 @@ img {
   height: 100%;
 }
 
+/* Media queries */
 /* Media queries */
 @media only screen and (max-width: 768px) {
   .headingName {
@@ -96,3 +121,4 @@ img {
     z-index: 1000;
   }
 }
+
