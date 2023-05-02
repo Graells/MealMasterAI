@@ -26,6 +26,7 @@
   flex-direction: column;
   width: 100%;
   padding: 0 0 0 10px;
+  justify-content: space-evenly ;
 }
 
 .form-group {

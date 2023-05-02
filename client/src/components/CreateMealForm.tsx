@@ -156,7 +156,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           <option value="VERY_ACTIVE">Very Active</option>
         </select>
         <label htmlFor="dietaryPreferences">Dietary Preferences:</label>
-        <textarea
+        <input
           id="dietaryPreferences"
           name="dietaryPreferences"
           value={formData.dietaryPreferences}

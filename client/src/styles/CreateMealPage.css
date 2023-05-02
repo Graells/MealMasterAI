@@ -5,8 +5,7 @@
   } */
 .form-page-container {
   height: 100%;
-  border: 1px solid red;
-  /* background-color: red; */
+  
 }
 
 .form-and-data-container {
@@ -16,7 +15,6 @@
 .previous-data-container {
   width: 25vw;
   margin-right: 12vw;
-  margin-top: 15vh;
   height: 60vh;
   color: black;
   border-radius: 8px;
