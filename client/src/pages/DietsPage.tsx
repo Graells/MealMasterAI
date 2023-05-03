@@ -37,7 +37,9 @@ const DietsPage = () => {
         </div>
 
         <div className="select-container">
-          <select onChange={(e) => filterByUser(e.target.value)} style={{}}>
+          <select 
+          data-cy="diet-link"
+          onChange={(e) => filterByUser(e.target.value)} style={{}}>
             <option className="selectUsers" value="">
               <KeyboardArrowDownIcon className="KeyboardArrowDownIcon" />
               ALL USERS

@@ -72,19 +72,22 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
     <form className="formStyle" onSubmit={handleSubmit}>
       <h2>CREATE A NEW DIET</h2>
       <div className="columns-container">
-        <div className="column">
-          <label htmlFor="title">Meal Plan Title:</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
+      <div className="column">
+        <label htmlFor="title">Meal Plan Title:</label>
+        <input
+          data-cy="meal-name-input"
+          type="text"
+          id="title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          required
+        />
+
 
           <label htmlFor="name">Your name:</label>
           <input
+            data-cy="your-name-input"
             id="name"
             name="name"
             value={formData.name}
@@ -93,6 +96,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           />
           <label htmlFor="age">Age:</label>
           <input
+          data-cy="age-input"
             type="number"
             id="age"
             name="age"
@@ -103,6 +107,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 
           <label htmlFor="gender">Gender:</label>
           <select
+            data-cy="gender-input"
             id="gender"
             name="gender"
             value={formData.gender}
@@ -114,96 +119,107 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
             <option value="FEMALE">Female</option>
           </select>
 
-          <label htmlFor="weight">Your Weight (kg):</label>
-          <input
-            type="number"
-            step="0.1"
-            id="weight"
-            name="weight"
-            value={formData.weight}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="height">Your Height (cm):</label>
-          <input
-            type="number"
-            id="height"
-            name="height"
-            value={formData.height}
-            onChange={handleChange}
-            required
-          />
+
+        <label htmlFor="weight">Your Weight (kg):</label>
+        <input
+          data-cy="weight-input"
+          type="number"
+          step="0.1"
+          id="weight"
+          name="weight"
+          value={formData.weight}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="height">Your Height (cm):</label>
+        <input
+          data-cy="height-input"
+          type="number"
+          id="height"
+          name="height"
+          value={formData.height}
+          onChange={handleChange}
+          required
+        />
         </div>
-        <div className="column">
-          <label htmlFor="activityLevel">Activity Level:</label>
-          <select
-            id="activityLevel"
-            name="activityLevel"
-            value={formData.activityLevel}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Activity Level</option>
-            <option value="SEDENTARY">Sedentary</option>
-            <option value="LIGHT">Light</option>
-            <option value="MODERATE">Moderate</option>
-            <option value="ACTIVE">Active</option>
-            <option value="VERY_ACTIVE">Very Active</option>
-          </select>
-          <label htmlFor="dietaryPreferences">Dietary Preferences:</label>
-          <input
-            id="dietaryPreferences"
-            name="dietaryPreferences"
-            value={formData.dietaryPreferences}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="weightGoal">Weight Goal:</label>
-          <select
-            id="weightGoal"
-            name="weightGoal"
-            value={formData.weightGoal}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Weight Goal</option>
-            <option value="LOSE">Lose</option>
-            <option value="GAIN">Gain</option>
-            <option value="MAINTAIN">Maintain</option>
-          </select>
-          <label htmlFor="weightAmount">Amount To Gain/Lose (kg):</label>
+<div className="column">
+        <label htmlFor="activityLevel">Activity Level:</label>
+        <select
+          data-cy="activity-input"
+          id="activityLevel"
+          name="activityLevel"
+          value={formData.activityLevel}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Activity Level</option>
+          <option value="SEDENTARY">Sedentary</option>
+          <option value="LIGHT">Light</option>
+          <option value="MODERATE">Moderate</option>
+          <option value="ACTIVE">Active</option>
+          <option value="VERY_ACTIVE">Very Active</option>
+        </select>
+        <label htmlFor="dietaryPreferences">Dietary Preferences:</label>
+        <input
+        data-cy="preferences-input"
+          id="dietaryPreferences"
+          name="dietaryPreferences"
+          value={formData.dietaryPreferences}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="weightGoal">Weight Goal:</label>
+        <select
+          data-cy="weight-goal-input"
+          id="weightGoal"
+          name="weightGoal"
+          value={formData.weightGoal}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Weight Goal</option>
+          <option value="LOSE">Lose</option>
+          <option value="GAIN">Gain</option>
+          <option value="MAINTAIN">Maintain</option>
+        </select>
+        <label htmlFor="weightAmount">Amount To Gain/Lose (kg):</label>
+        
+        <input
+          data-cy="weight-amount-input"
+          type="number"
+          id="weightAmount"
+          name="weightAmount"
+          value={formData.weightAmount}
+          onChange={handleChange}
+          required
+        />
 
-          <input
-            type="number"
-            id="weightAmount"
-            name="weightAmount"
-            value={formData.weightAmount}
-            onChange={handleChange}
-            required
-          />
-
-          <label htmlFor="timeFrame">Time Frame (weeks):</label>
-          <input
-            type="number"
-            id="timeFrame"
-            name="timeFrame"
-            value={formData.timeFrame}
-            onChange={handleChange}
-            required
-          />
-          <label htmlFor="eatingFrequency">Meals Eaten Per Day:</label>
-          <input
-            type="number"
-            id="eatingFrequency"
-            name="eatingFrequency"
-            value={formData.eatingFrequency}
-            onChange={handleChange}
-            required
-          />
-        </div>
-      </div>
-
-      <button type="submit">Create Diet</button>
+        <label htmlFor="timeFrame">Time Frame (weeks):</label>
+        <input
+          data-cy="timeframe-input"
+          type="number"
+          id="timeFrame"
+          name="timeFrame"
+          value={formData.timeFrame}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="eatingFrequency">
+          Meals Eaten Per Day:
+        </label>
+        <input
+          data-cy="freq-input"
+          type="number"
+          id="eatingFrequency"
+          name="eatingFrequency"
+          value={formData.eatingFrequency}
+          onChange={handleChange}
+          required
+        />
+       </div>
+    </div>
+    {/* create-meal-nav-link for cypress test */}
+      <button data-cy="submit-meal-button" type="submit">Create Diet</button>
     </form>
   );
 };
