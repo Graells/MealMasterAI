@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import Profile from "../components/Profile";
 import "../styles/HomePage.css";
+import logo from "../assets/MealMasterAILogo.png";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import Footer from "../components/Footer";
-
 const HomePage = () => {
   return (
     <>
@@ -16,9 +17,7 @@ const HomePage = () => {
               Create Diet
             </button>
           </Link>
-
           <div className="space"></div>
-
           <Link to="/dashboard">
             <button data-cy="dashboard-nav-link" className="homebtn">
               <DashboardIcon className="DashboardIcon" />
@@ -27,10 +26,8 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
-
       <Footer />
     </>
   );
 };
-
 export default HomePage;
