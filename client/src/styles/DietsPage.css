@@ -12,6 +12,13 @@
   cursor: pointer;
 }
 
+.show-diet-button-container {
+justify-content:flex-end;
+width: 30vw;
+height: 10vh;
+
+}
+
 .show-diet-button {
   height: 25px;
   width: 20vw;
@@ -27,21 +34,22 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
-  
+  position: absolute;
+  right: 0;
 }
 
 .dietDisplay {
   display: flex;
   color: black;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   font-family: "Lexend Zetta", sans-serif;
-  font-weight: bold;
   border: none;
   text-transform: uppercase;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   background: rgba( 255, 255, 255, 0.2 );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
 }
 
 .dietDisplay pre {
@@ -117,6 +125,7 @@
 .title-display {
   color: black;
   text-decoration: none;
+  width: 25vw;
 }
 
 a:link { text-decoration: none; }

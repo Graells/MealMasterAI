@@ -13,6 +13,7 @@
   border-radius: 10px;
   height: 90vh;
   /* padding-bottom: 25vh; */
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .formStyle h2 {
@@ -46,6 +47,7 @@
   margin-top: 3vh;
   font-size: 1.1rem;
   margin-left: 1vw;
+  font-weight: 700;
 }
 
 .formStyle input,
@@ -78,6 +80,3 @@
   width: 93%;
 }
 
-.formStyle button:hover {
-  background-color: #92f7fd;
-}

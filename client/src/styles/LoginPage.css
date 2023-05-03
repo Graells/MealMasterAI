@@ -28,12 +28,6 @@ img {
   padding: 45px;
 }
 
-.headingName {
-  color: white;
-  padding-top: 15vh;
-  font-size: 3.7rem;
-}
-
 .space {
   width: 100px;
 }
@@ -48,7 +42,7 @@ img {
 }
 
 .headingName {
-  color: white;
+  color: black;
   padding-top: 15vh;
   padding-bottom: 35vh;
   font-size: 3.7rem;

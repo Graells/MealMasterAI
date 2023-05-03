@@ -172,9 +172,10 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
 
         <Link to={`/diet/${diet.id}`}>
           <h3 className="title-display">
-            Diet title: {diet.mealInfo.title} for {diet.mealInfo.name}
+            {diet.mealInfo.title} for {diet.mealInfo.name}
           </h3>
         </Link>
+        <div className="show-diet-button-container">
         <button
           className="show-diet-button"
           onClick={() => setShowDescription(!showDescription)}
@@ -182,12 +183,13 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
           <RestaurantIcon className="RestaurantIcon" />
           SHOW DIET
         </button>
+        </div>
       </div>
       <div>
-        <h3>
+        <h5>
           Goal: {diet.mealInfo.weightGoal.toLowerCase()}{" "}
           {diet.mealInfo.weightAmount} kg in {diet.mealInfo.timeFrame} weeks.
-        </h3>
+        </h5>
       </div>
 
       {showDescription && (
