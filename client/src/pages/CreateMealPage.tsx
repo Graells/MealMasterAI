@@ -3,7 +3,6 @@ import CreateMealForm from "../components/CreateMealForm";
 import { Link, useNavigate } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
-import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
 import "../styles/ProfileComponent.css";
 import HomeIcon from "@mui/icons-material/Home";

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "./Spinner";
 import Profile from "./Profile";
-import "../styles/DietUserDisplay.css";
+// import "../styles/DietUserDisplay.css";
 import { ShareButton } from "./ShareButton";
 import HomeIcon from "@mui/icons-material/Home";
 import DashboardIcon from "@mui/icons-material/Dashboard";

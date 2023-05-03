@@ -48,15 +48,12 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   filteredDiets,
   setFilteredDiets,
 }) => {
-  // will need to set contex type in DietProvider.tsx contexts
   const { diets, setDiets } = useContext(DietContext);
   const { user, isLoading } = useAuth0();
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [title, setTitle] = useState(diet.mealInfo.title);
   const [showDescription, setShowDescription] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
-
-  console.log("USER", user);
 
   const handleTitleEdit = async (newTitle: string) => {
     try {
@@ -92,10 +89,6 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
     }
   };
 
-  useEffect(() => {
-    console.log("isLoading ==> ", isLoading);
-  }, [isLoading]);
-
   if (isLoading) {
     return <Spinner />;
   }
@@ -123,8 +116,6 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
   };
 
   const isCurrentUserOwner = user && diet.user.auth0Id === user.sub;
-
-  console.log(" ====> ", isCurrentUserOwner);
 
   return (
     <div className="dietDisplay">

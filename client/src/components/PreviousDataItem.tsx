@@ -54,7 +54,7 @@ const PreviousDataItem: React.FC = () => {
             <div key={data.id}>
               <h3
                 onClick={() => toggleDetails(data.id)}
-                style={{ textDecoration: "underline", cursor: "pointer" }}
+                style={{ cursor: "pointer" }}
               >
                 {data.mealInfo.title} for {data.mealInfo.name}
               </h3>
