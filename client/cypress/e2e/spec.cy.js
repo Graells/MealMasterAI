@@ -26,6 +26,23 @@ describe('MealMaster E2E Tests', () => {
     // create meal page
     cy.get('[data-cy=meal-name-input]').type('Test Meal');
     cy.get('[data-cy=your-name-input]').type('Test Name');
+    cy.get('[data-cy=age-input]').type('30');
+    cy.get('[data-cy=gender-input]').select('FEMALE');
+    cy.get('[data-cy=weight-input]').type('60');
+    cy.get('[data-cy=height-input]').type('160');
+    cy.get('[data-cy=activity-input]').select('LIGHT');
+    cy.get('[data-cy=preferences-input]').type('Italian food');
+    cy.get('[data-cy=weight-goal-input]').select('GAIN');
+    cy.get('[data-cy=weight-amount-input]').type('3');
+    cy.get('[data-cy=timeframe-input]').type('3');
+    cy.get('[data-cy=freq-input]').type('3');
+
+
+
+
+
+
+
     cy.get('[data-cy=submit-meal-button]').click();
 
     
@@ -43,16 +60,16 @@ describe('MealMaster E2E Tests', () => {
   });
 
   it('Visits the diet user display page and checks for content', () => {
-    cy.visit('/diet-user-display');
+    cy.visit('http://localhost:5173/diet-user-display');
 
-    // Replace these with the expected content on your DietUserDisplay page
-    cy.contains('User Diets');
+    
+    cy.contains('Test Meal');
     cy.contains('Diet Information');
   });
 
   it('Visits a specific diet details page and checks for content', () => {
     cy.visit('http://localhost:5173/dashboard');
-    cy.get('[data-cy=diet-link]').first().click();
+    cy.get('[data-cy=diet-link]').first().select('Test Name');
 
     cy.url().should('include', '/diet/');
     cy.contains('Diet Details');

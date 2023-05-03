@@ -99,6 +99,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           />
           <label htmlFor="age">Age:</label>
           <input
+          data-cy="age-input"
             type="number"
             id="age"
             name="age"
@@ -109,6 +110,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 
           <label htmlFor="gender">Gender:</label>
           <select
+            data-cy="gender-input"
             id="gender"
             name="gender"
             value={formData.gender}
@@ -123,6 +125,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 
         <label htmlFor="weight">Your Weight (kg):</label>
         <input
+          data-cy="weight-input"
           type="number"
           step="0.1"
           id="weight"
@@ -133,6 +136,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
         />
         <label htmlFor="height">Your Height (cm):</label>
         <input
+          data-cy="height-input"
           type="number"
           id="height"
           name="height"
@@ -144,6 +148,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 <div className="column">
         <label htmlFor="activityLevel">Activity Level:</label>
         <select
+          data-cy="activity-input"
           id="activityLevel"
           name="activityLevel"
           value={formData.activityLevel}
@@ -159,6 +164,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
         </select>
         <label htmlFor="dietaryPreferences">Dietary Preferences:</label>
         <input
+        data-cy="preferences-input"
           id="dietaryPreferences"
           name="dietaryPreferences"
           value={formData.dietaryPreferences}
@@ -167,6 +173,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
         />
         <label htmlFor="weightGoal">Weight Goal:</label>
         <select
+          data-cy="weight-goal-input"
           id="weightGoal"
           name="weightGoal"
           value={formData.weightGoal}
@@ -181,6 +188,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
         <label htmlFor="weightAmount">Amount To Gain/Lose (kg):</label>
         
         <input
+          data-cy="weight-amount-input"
           type="number"
           id="weightAmount"
           name="weightAmount"
@@ -191,6 +199,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 
         <label htmlFor="timeFrame">Time Frame (weeks):</label>
         <input
+          data-cy="timeframe-input"
           type="number"
           id="timeFrame"
           name="timeFrame"
@@ -202,6 +211,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           Meals Eaten Per Day:
         </label>
         <input
+          data-cy="freq-input"
           type="number"
           id="eatingFrequency"
           name="eatingFrequency"
