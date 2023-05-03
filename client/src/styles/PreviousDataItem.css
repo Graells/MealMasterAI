@@ -1,7 +1,7 @@
 .previous-data-item {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  background: #23568d;
-  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 140%);
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   border-radius: 5px;
   border: 1px solid #1a8daf;
   text-decoration: underline;

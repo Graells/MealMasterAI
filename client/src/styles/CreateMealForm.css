@@ -6,10 +6,16 @@
   transform: scale(0.75);
   color: black;
   position: relative;
-  top: -8vh;
+  top: -12vh;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px;
+  height: 90vh;
+  /* padding-bottom: 25vh; */
 }
 
 .formStyle h2 {
+  text-align: center;
   margin-bottom: 2vh;
   max-height: 5vh !important;
   font-size: 2rem;
@@ -62,7 +68,7 @@
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   max-height: 5vh !important;

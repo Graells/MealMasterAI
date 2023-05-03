@@ -1,13 +1,15 @@
 .footer {
   display: flex;
   position: fixed;
-  bottom: 20px;
+  /* bottom: 20px; */
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 15vh;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .LogoutIcon {

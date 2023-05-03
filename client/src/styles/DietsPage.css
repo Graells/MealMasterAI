@@ -111,4 +111,5 @@
   cursor: pointer;
   transition: background-color 0.2s;
   z-index: 1000;
+  text-decoration: underline;
 }
