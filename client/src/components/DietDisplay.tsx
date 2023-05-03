@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { IoSettingsSharp } from "react-icons/io5";
 import { IDiet } from "../Interfaces";
 
-interface DietProps {
+export interface DietProps {
   diet: IDiet;
   filteredDiets: IDiet[];
   setFilteredDiets: React.Dispatch<React.SetStateAction<IDiet[]>>;

@@ -11,7 +11,7 @@ import { IDiet } from "../Interfaces";
 // }
 
 const DietDetailsPage: React.FC = () => {
-  const { diets } = useContext(DietContext);
+  const { diets, filteredDiets, setFilteredDiets } = useContext(DietContext);
   const { dietId } = useParams<string>();
   const [ diet, setDiet ] = useState<IDiet | null>(null);
   
@@ -34,7 +34,10 @@ const DietDetailsPage: React.FC = () => {
       </Link>
       <div>
         <DietDisplay 
-        diet={diet} />
+        diet={diet} 
+        filteredDiets={filteredDiets}
+        setFilteredDiets={setFilteredDiets}
+        />
       </div>
     </>
   );

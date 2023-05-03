@@ -1,3 +1,5 @@
+import {FormDiet} from "./Interfaces"
+
 export const getAll = async () => {
   try {
     const response = await fetch("http://localhost:3001/meals", {
@@ -14,17 +16,21 @@ export const getAll = async () => {
     // console.log("apiService DATA", data);
     return data;
   } catch (error) {
-    console.error("Error fetching diets:", error);
-    return "Error message:" + error.message;
+    if (error instanceof Error) {
+      console.error("Error fetching diets:", error);
+      return "Error message:" + error.message;
+    } else {
+      return "Unknown error occurred";
+    }
   }
-};
+}
 
 export const submitForm = async (
-  formData,
-  auth0Id,
-  userEmail,
-  userName,
-  userPic
+  formData:FormDiet,
+  auth0Id:string,
+  userEmail:string,
+  userName:string,
+  userPic:string
 ) => {
   const {
     title,
@@ -80,7 +86,7 @@ export const submitForm = async (
   }
 };
 
-export const addOne = async (meal) => {
+export const addOne = async (meal:FormDiet) => {
   try {
     const response = await fetch("http://localhost:3001/meals", {
       method: "POST",

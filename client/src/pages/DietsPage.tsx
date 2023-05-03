@@ -7,10 +7,10 @@ import Profile from "../components/Profile";
 // import logo from "../assets/MealMasterAILogo.png";
 import "../styles/DropdownMenu.css";
 const DietsPage = () => {
-  const { diets, isLoading } = useContext(DietContext);
-  const [filteredDiets, setFilteredDiets] = useState(diets);
+  const { diets, isLoading, filteredDiets, setFilteredDiets } = useContext(DietContext);
 
-  const filterByUser = (userEmail) => {
+
+  const filterByUser = (userEmail:string) => {
     if (userEmail === "") {
       setFilteredDiets(diets);
     } else {

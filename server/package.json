@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "tsc && node dist/index.js",
+    "dev": "ts-node --esm src/index.ts ",
+    "build:dev": "tsc --watch",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +41,7 @@
     "prisma": "^4.13.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   }
 }

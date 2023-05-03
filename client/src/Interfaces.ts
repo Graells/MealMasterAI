@@ -1,3 +1,12 @@
+export interface PreviousDiet {
+    createdAt: string;
+    description: string;
+    mealInfo: IMealInfo;
+    mealInfoId: number;
+    user: IUser;
+    userId: string
+}
+
 export interface IDiet {
     id:number,
     userId:string,
@@ -40,14 +49,6 @@ export interface IAuth0User{
     picture:string,
     name:string,
     email:string
-}
-export interface PreviousDiet {
-    createdAt: string;
-    description: string;
-    mealInfo: IMealInfo;
-    mealInfoId: number;
-    user: IUser;
-    userId: string
 }
 
 export interface FormDiet {

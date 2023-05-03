@@ -7,6 +7,7 @@ import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
 // import logo from "../assets/MealMasterAILogo.png";
 import PreviousDataItem from "../components/PreviousDataItem";
+import {FormDiet} from "../Interfaces"
 
 const CreateMealPage = () => {
   const { handleMealSubmit, isLoading, diets } = useContext(DietContext);
@@ -17,7 +18,7 @@ const CreateMealPage = () => {
     navigate("/diet-user-display");
   };
 
-  const onMealFormSubmit = async (formData) => {
+  const onMealFormSubmit = async (formData:FormDiet) => {
     await handleMealSubmit(formData, onSuccess);
   };
 

@@ -5,12 +5,8 @@ import Spinner from "./Spinner";
 import Profile from "./Profile";
 import "../styles/DietUserDisplay.css";
 import { ShareButton } from "./ShareButton";
-import { PreviousDiet } from "../Interfaces";
+import { PreviousDiet, IDiet } from "../Interfaces";
 
-interface lastCreatedDiet {
-  lastCreatedDiet: PreviousDiet;
-  isLoading: boolean
-}
 
 const DietUserDisplay: React.FC = () => {
   const { lastCreatedDiet, isLoading } = useContext(DietContext);

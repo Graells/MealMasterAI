@@ -2,16 +2,51 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useEffect, FC } from "react";
 import { submitForm, addOne, getAll } from "../api.service";
 import { DietContext } from "../App";
-import { IDiet } from "../Interfaces";
+import { IDiet, PreviousDiet, FormDiet } from "../Interfaces";
+
+const initialStateLastDiet: IDiet = {
+  id:0,
+  userId: "",
+  user: {
+    id:0,
+    auth0Id:"",
+    email:"",
+    userName:"",
+    userPic:"",
+    meals:[]
+  },
+  description: "",
+  createdAt: new Date(),
+  mealInfoId: 0,
+  mealInfo: {
+    id:0,
+    mealAI:[],
+    title:"",
+    name: "",
+    age: 0,
+    gender: "",
+    weight: 0,
+    height: 0,
+    activityLevel: "",
+    dietaryPreferences: "",
+    weightGoal: "",
+    weightAmount: 0,
+    timeFrame: 0,
+    eatingFrequency: 0,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+};
 
 const DietProvider = ({ children }: { children: React.ReactNode }) => {
-  const [diets, setDiets] = useState<IDiet[]|[]>([]);
+  const [diets, setDiets] = useState<IDiet[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [lastCreatedDiet, setLastCreatedDiet] = useState<{}>({});
+  const [lastCreatedDiet, setLastCreatedDiet] = useState<IDiet>(initialStateLastDiet);
+  const [filteredDiets, setFilteredDiets] = useState(diets);
 
   const { user, isAuthenticated } = useAuth0();
 
-  const handleMealSubmit = async (formData: {}, onSuccess:any) => {
+  const handleMealSubmit = async (formData: FormDiet, onSuccess:any) => {
     console.log('formData', formData)
     console.log('onSuccess', onSuccess)
 
@@ -24,13 +59,13 @@ const DietProvider = ({ children }: { children: React.ReactNode }) => {
 
       const generatedDiet = await submitForm(
         formData,
-        auth0Id,
-        userEmail,
-        userName,
-        userPic
-      );
+        auth0Id as string,
+        userEmail as string,
+        userName as string,
+        userPic as string
+      ) as IDiet;
       // await addOne(formData);
-      setDiets((prevDiets) => [...prevDiets, generatedDiet]);
+      setDiets([...diets, generatedDiet]);
       // console.log(prevDiets)
       setLastCreatedDiet(generatedDiet);
       if (onSuccess) {
@@ -55,7 +90,7 @@ const DietProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <DietContext.Provider
-      value={{ diets, setDiets, handleMealSubmit, isLoading, lastCreatedDiet }}
+      value={{ diets, setDiets, handleMealSubmit, isLoading, lastCreatedDiet, filteredDiets, setFilteredDiets }}
     >
       {children}
     </DietContext.Provider>

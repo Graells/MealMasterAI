@@ -23,8 +23,6 @@ export const ShareButton: React.FC<Props> = ({ diet }) => {
     <div className="share-buttons">
       <WhatsappShareButton
         url={getShareUrl(diet.id)}
-        quote={`Check out this diet plan created using AI tech: ${diet.mealInfo.title}`}
-        hashtag="#YourAppHashtag"
         className="whatsapp-share-button"
       >
         <WhatsappIcon size={32} round={true} />
