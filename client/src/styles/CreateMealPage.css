@@ -32,3 +32,9 @@
   left: 2vh;
   top: 2vh;
 }
+
+.scroll-text {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
+}

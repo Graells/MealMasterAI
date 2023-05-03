@@ -48,35 +48,36 @@ const PreviousDataItem: React.FC = () => {
     <div data-testid="your-previous-data" className="previous-data-item">
       {diets.map((data: Diet) => {
         const isCurrentUserOwner = user && data.user.auth0Id === user.sub;
-
         return (
           isCurrentUserOwner && (
             <div key={data.id}>
-              <h3
+              <p
                 onClick={() => toggleDetails(data.id)}
                 style={{ cursor: "pointer" }}
               >
                 {data.mealInfo.title} for {data.mealInfo.name}
-              </h3>
+              </p>
               {visibleDetails[data.id] && (
                 <>
-                  <p>Name: {data.mealInfo.name}</p>
-                  <p>Age: {data.mealInfo.age}</p>
-                  <p>Gender: {data.mealInfo.gender}</p>
-                  <p>Weight: {data.mealInfo.weight} kg</p>
-                  <p>Height: {data.mealInfo.height} cm</p>
-                  <p>Activity Level: {data.mealInfo.activityLevel}</p>
-                  <p>
-                    Dietary Preferences:{" "}
-                    {data.mealInfo.dietaryPreferences.join(", ")}
-                  </p>
-                  <p>Weight Goal: {data.mealInfo.weightGoal} kg</p>
-                  <p>Weight Amount: {data.mealInfo.weightAmount} kg</p>
-                  <p>Time Frame: {data.mealInfo.timeFrame} weeks</p>
-                  <p>
-                    Eating Frequency: {data.mealInfo.eatingFrequency} meals per
-                    day
-                  </p>
+                  {" "}
+                  <div className="PreviousDietDetails">
+                    <p>Name: {data.mealInfo.name}</p>
+                    <p>Age: {data.mealInfo.age}</p>
+                    <p>Gender: {data.mealInfo.gender}</p>
+                    <p>Weight: {data.mealInfo.weight} kg</p>
+                    <p>Height: {data.mealInfo.height} cm</p>
+                    <p>Activity Level: {data.mealInfo.activityLevel}</p>
+                    <p>
+                      Dietary Preferences: {data.mealInfo.dietaryPreferences}
+                    </p>
+                    <p>Weight Goal: {data.mealInfo.weightGoal} kg</p>
+                    <p>Weight Amount: {data.mealInfo.weightAmount} kg</p>
+                    <p>Time Frame: {data.mealInfo.timeFrame} weeks</p>
+                    <p>
+                      Eating Frequency: {data.mealInfo.eatingFrequency} meals
+                      per day
+                    </p>
+                  </div>
                 </>
               )}
             </div>
