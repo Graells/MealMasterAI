@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 80vw;
   margin: 5px;
+  margin-right: 4vw;
   transform: scale(0.75);
   color: black;
   position: relative;
@@ -63,7 +64,7 @@
 .formStyle button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: white;
+  background-color: #EFEFEF;
   color: black;
   text-transform: uppercase;
   font-weight: bold;

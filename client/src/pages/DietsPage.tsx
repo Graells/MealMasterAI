@@ -51,9 +51,13 @@ const DietsPage = () => {
             ))}
           </select>
         </div>
+        <div className="list-container">
         {isLoading ? (
           <Spinner />
-        ) : (
+        ) : 
+       
+        (
+          
           filteredDiets.map((diet) => (
             <DietDisplay
               key={diet.id}
@@ -62,7 +66,10 @@ const DietsPage = () => {
               setFilteredDiets={setFilteredDiets}
             />
           ))
-        )}
+        )
+       
+        }
+      </div>
       </div>
 
       <Footer />

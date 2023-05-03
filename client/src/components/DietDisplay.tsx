@@ -171,7 +171,7 @@ const DietDisplay: React.FC<DietDisplayProps> = ({
         )}
 
         <Link to={`/diet/${diet.id}`}>
-          <h3>
+          <h3 className="title-display">
             Diet title: {diet.mealInfo.title} for {diet.mealInfo.name}
           </h3>
         </Link>
