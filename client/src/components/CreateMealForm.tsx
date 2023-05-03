@@ -209,8 +209,8 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
         />
        </div>
     </div>
-    
-      <button type="submit">Create Diet</button>
+    {/* create-meal-nav-link for cypress test */}
+      <button data-cy="create-meal-nav-link" type="submit">Create Diet</button>
     </form>
   );
 };

@@ -7,7 +7,7 @@ const LoginButton: React.FC = () => {
   return (
     <>
       {!isAuthenticated && (
-        <button className="loginbtn" onClick={() => loginWithRedirect()}>
+        <button data-cy="login-button" className="loginbtn" onClick={() => loginWithRedirect()}>
           Log In
         </button>
       )}
