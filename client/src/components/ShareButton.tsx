@@ -15,7 +15,6 @@ interface Props {
 
 export const ShareButton: React.FC<Props> = ({ diet }) => {
   const getShareUrl = (dietId: number) => {
-    // console.log('dietId', dietId)
     return `${window.location.origin}/diet/${dietId}`;
   };
 

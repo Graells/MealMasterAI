@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { DietContext } from "../App";
 import DietDisplay from "./DietDisplay";
 import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
 import { IDiet } from "../Interfaces";
+import { useSelector } from "react-redux"
 
-// interface Params {
-//   dietId: string;
-// }
+import { RootState } from "../store/store";
+
 
 const DietDetailsPage: React.FC = () => {
-  const { diets, filteredDiets, setFilteredDiets } = useContext(DietContext);
+  // Redux lines
+  const diets = useSelector((state:RootState) => state.diets)
+
   const { dietId } = useParams<string>();
   const [ diet, setDiet ] = useState<IDiet | null>(null);
   
@@ -35,8 +36,8 @@ const DietDetailsPage: React.FC = () => {
       <div>
         <DietDisplay 
         diet={diet} 
-        filteredDiets={filteredDiets}
-        setFilteredDiets={setFilteredDiets}
+        //filteredDiets={filteredDiets}
+        //setFilteredDiets={setFilteredDiets}
         />
       </div>
     </>

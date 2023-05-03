@@ -1,15 +1,18 @@
 import { useContext, useState } from "react";
-import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/PreviousDataItem.css";
 import { IDiet } from "../Interfaces";
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store";
 
 interface IVisibleDetails {
   [id:string]:boolean
 }
 
 const PreviousDataItem = () => {
-  const { diets } = useContext(DietContext);
+  // Redux lines
+  const diets = useSelector((state:RootState) => state.diets)
+
   const { user } = useAuth0();
   const [visibleDetails, setVisibleDetails] = useState<IVisibleDetails>({});
   const toggleDetails = (id:string) => {

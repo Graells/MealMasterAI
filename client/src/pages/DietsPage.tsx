@@ -1,30 +1,36 @@
 import React, { useContext, useState } from "react";
 import DietDisplay from "../components/DietDisplay";
 import { Link } from "react-router-dom";
-import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import Profile from "../components/Profile";
-// import logo from "../assets/MealMasterAILogo.png";
 import "../styles/DropdownMenu.css";
-const DietsPage = () => {
-  const { diets, isLoading, filteredDiets, setFilteredDiets } = useContext(DietContext);
 
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store";
+import { useDispatch } from 'react-redux'
+import { setDiets } from "../store/dietsSlice";
+import { setFilteredDiets } from "../store/filteredDietsSlice";
+
+
+const DietsPage = () => {
+  // Redux lines
+  const diets = useSelector((state:RootState) => state.diets)
+  const filteredDiets = useSelector((state:RootState) => state.filteredDiets)
+  const isLoading = useSelector((state:RootState) => state.loading)
+  const dispatch = useDispatch()
 
   const filterByUser = (userEmail:string) => {
     if (userEmail === "") {
-      setFilteredDiets(diets);
+      dispatch(setFilteredDiets(diets));
     } else {
       const filtered = diets.filter((diet) => diet.user.email === userEmail);
-      setFilteredDiets(filtered);
+      dispatch(setFilteredDiets(filtered));
     }
   };
   const getUniqueUsers = () => {
     const userEmails = diets.map((diet) => diet.user.email);
     return [...new Set(userEmails)];
   };
-  
-
-  console.log("DIETS DietsPage", diets);
 
   return (
     <>
@@ -53,8 +59,8 @@ const DietsPage = () => {
             <DietDisplay
               key={diet.id}
               diet={diet}
-              filteredDiets={filteredDiets}
-              setFilteredDiets={setFilteredDiets}
+              // filteredDiets={filteredDiets}
+              // setFilteredDiets={setFilteredDiets}
             />
           ))
         )}

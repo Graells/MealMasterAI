@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { DietContext } from "../App";
+// import { DietContext } from "../App";
 import { useAuth0 } from "@auth0/auth0-react";
 import Spinner from "./Spinner";
 import "../styles/DietDisplay.css";
@@ -9,21 +9,28 @@ import { Link } from "react-router-dom";
 import { IoSettingsSharp } from "react-icons/io5";
 import { IDiet } from "../Interfaces";
 
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store";
+import { useDispatch } from 'react-redux'
+import { setDiets } from "../store/dietsSlice";
+import { setFilteredDiets } from "../store/filteredDietsSlice";
+
+
 export interface DietProps {
   diet: IDiet;
-  filteredDiets: IDiet[];
-  setFilteredDiets: React.Dispatch<React.SetStateAction<IDiet[]>>;
 }
 
-const DietDisplay: React.FC<DietProps> = ({ diet, filteredDiets, setFilteredDiets }: DietProps) => {
-  const { diets, setDiets } = useContext<any>(DietContext);
+const DietDisplay: React.FC<DietProps> = ({ diet }) => {
+  // Redux lines
+  const diets = useSelector((state:RootState) => state.diets)
+  const filteredDiets = useSelector((state:RootState) => state.filteredDiets)
+  const dispatch = useDispatch()
+
   const { user, isLoading } = useAuth0();
   const [isEditingTitle, setIsEditingTitle] = useState(false);
   const [title, setTitle] = useState(diet.mealInfo.title);
   const [showDescription, setShowDescription] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
-  
-  // console.log("USER", user);
   
   const handleTitleEdit = async (newTitle: string) => {
     try {
@@ -42,14 +49,14 @@ const DietDisplay: React.FC<DietProps> = ({ diet, filteredDiets, setFilteredDiet
         ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
         : d
         );
-        setDiets(updatedDiets);
+        dispatch(setDiets(updatedDiets));
         
         const updatedFilteredDiets = filteredDiets.map((d:IDiet) =>
         d.id === diet.id
         ? { ...d, mealInfo: { ...d.mealInfo, title: updatedMeal.title } }
         : d
         );
-        setFilteredDiets(updatedFilteredDiets);
+        dispatch(setFilteredDiets(updatedFilteredDiets));
       } else {
         const errorText = await response.text();
         console.error("Error updating meal title:", errorText);
@@ -71,11 +78,11 @@ const DietDisplay: React.FC<DietProps> = ({ diet, filteredDiets, setFilteredDiet
       
       if (response.status === 204) {
         const updatedDiets = diets.filter((d:IDiet) => d.id !== diet.id);
-        setDiets(updatedDiets);
-        console.log('diets', diets)
+        dispatch(setDiets(updatedDiets));
         
         const updatedFilteredDiets = filteredDiets.filter((d:IDiet) => d.id !== diet.id);
-        setFilteredDiets(updatedFilteredDiets);
+        dispatch(setFilteredDiets(updatedFilteredDiets));
+
       } else {
         const errorText = await response.text();
         console.error("Error deleting meal:", errorText);

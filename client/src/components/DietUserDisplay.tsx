@@ -1,19 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DietContext } from "../App";
 import Spinner from "./Spinner";
 import Profile from "./Profile";
 import "../styles/DietUserDisplay.css";
 import { ShareButton } from "./ShareButton";
-import { PreviousDiet, IDiet } from "../Interfaces";
+
+import { useSelector } from "react-redux"
+import { RootState } from "../store/store";
 
 
 const DietUserDisplay: React.FC = () => {
-  const { lastCreatedDiet, isLoading } = useContext(DietContext);
+  // Redux lines
+  const lastCreatedDiet = useSelector((state:RootState) => state.lastCreatedDiet)
+  const isLoading = useSelector((state:RootState) => state.loading)
 
-  // useEffect(()=>{
-  //   console.log(lastCreatedDiet.description), []
-  // })
 
   return (
     <>

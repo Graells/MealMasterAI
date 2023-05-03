@@ -1,38 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, RouteProps  } from "react-router-dom";
 import CreateMealPage from "./pages/CreateMealPage";
 import DietsPage from "./pages/DietsPage";
 import HomePage from "./pages/HomePage";
-import DietProvider from "./contexts/DietProvider";
 import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
 import { PreviousDiet, IDiet, FormDiet } from "./Interfaces";
+import { getAll } from "./api.service";
 
+import { useDispatch } from 'react-redux'
+import { setDiets } from "./store/dietsSlice";
+import { setLoading } from "./store/loadingSlice";
+import { setFilteredDiets } from "./store/filteredDietsSlice";
 
-interface DietContext {
-  diets: IDiet[],
-  setDiets: React.Dispatch<React.SetStateAction<IDiet[] | []>>
-  handleMealSubmit:(formData: FormDiet, onSuccess:any)=>void,
-  isLoading: boolean,
-  lastCreatedDiet: IDiet,
-  filteredDiets:IDiet[],
-  setFilteredDiets:any
-}
-
-const DietContext = React.createContext<DietContext>({
-  diets: [],
-  setDiets:()=>{},
-  handleMealSubmit:()=>{},
-  isLoading: false,
-  lastCreatedDiet: {} as IDiet,
-  filteredDiets:[],
-  setFilteredDiets:null
-});
 
 const App = () => {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    fetchDiets();
+  }, []);
+
+  const fetchDiets = async () => {
+    dispatch(setLoading(true));
+    const diets = await getAll();
+    dispatch(setDiets(diets));
+    dispatch(setFilteredDiets(diets));
+    dispatch(setLoading(false));
+  };
+
   return (
-    <DietProvider>
+    
+    // <DietProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />
@@ -43,9 +44,9 @@ const App = () => {
           <Route path="/diet/:dietId" element={<DietDetailsPage  />} />
         </Routes>
       </BrowserRouter>
-    </DietProvider>
+    // </DietProvider>
   );
 };
 
 export default App;
-export { DietContext };
+// export { DietContext };

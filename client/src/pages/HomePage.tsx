@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Profile from "../components/Profile";
 import "../styles/HomePage.css";
-// import logo from "../assets/MealMasterAILogo.png";
 
 const HomePage = () => {
   return (
