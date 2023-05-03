@@ -78,6 +78,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
       <div className="column">
         <label htmlFor="title">Meal Plan Title:</label>
         <input
+          data-cy="meal-name-input"
           type="text"
           id="title"
           name="title"
@@ -89,6 +90,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
 
           <label htmlFor="name">Your name:</label>
           <input
+            data-cy="your-name-input"
             id="name"
             name="name"
             value={formData.name}
@@ -210,7 +212,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
        </div>
     </div>
     {/* create-meal-nav-link for cypress test */}
-      <button data-cy="create-meal-nav-link" type="submit">Create Diet</button>
+      <button data-cy="submit-meal-button" type="submit">Create Diet</button>
     </form>
   );
 };

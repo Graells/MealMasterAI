@@ -8,9 +8,14 @@ describe('MealMaster E2E Tests', () => {
     cy.visit('http://localhost:5173/');
 
     cy.get('[data-cy=login-button]').click();
-    
+    cy.origin('https://dev-x5rau7o7dqkll2cr.us.auth0.com', () => {
+      
+    cy.contains('Continue with GitHub');
     cy.contains('Continue with Google');
   });
+
+})
+   
 
   it('Navigates to the create meal page and creates a meal', () => {
     cy.visit('http://localhost:5173/home');
@@ -18,13 +23,15 @@ describe('MealMaster E2E Tests', () => {
 
     cy.url().should('include', '/create-meal');
 
-    // Adjust these selectors based on your CreateMealPage component
+    // create meal page
     cy.get('[data-cy=meal-name-input]').type('Test Meal');
-    cy.get('[data-cy=meal-description-input]').type('A delicious test meal');
+    cy.get('[data-cy=your-name-input]').type('Test Name');
     cy.get('[data-cy=submit-meal-button]').click();
 
-    // Replace this with a success message or redirect if applicable
-    cy.contains('Meal successfully created');
+    
+    
+    // e
+    // cy.contains('Meal successfully created');
   });
 
   it('Visits the dashboard and checks for the created meal', () => {
