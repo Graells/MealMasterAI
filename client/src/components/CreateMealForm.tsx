@@ -1,7 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-// import { addOne } from '../api.service';
 import "../styles/CreateMealForm.css";
-
 
 interface Meal {
   title: string;
@@ -67,7 +65,6 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
       createdAt: formData.createdAt,
       updatedAt: formData.updatedAt,
     };
-    // addOne(meal);
     onMealSubmit(meal);
     setFormData(initialState);
   };

@@ -6,7 +6,6 @@ import Profile from "./Profile";
 import "../styles/DietUserDisplay.css";
 import { ShareButton } from "./ShareButton";
 import HomeIcon from "@mui/icons-material/Home";
-import DashboardIcon from "@mui/icons-material/Dashboard";
 
 const DietUserDisplay = () => {
   const { lastCreatedDiet, isLoading } = useContext(DietContext);
@@ -20,26 +19,22 @@ const DietUserDisplay = () => {
           </Link>
         </div>
 
-        <h2 className="h2-background">Your new Diet</h2>
+        <h2 className="new-diet-display-h2-text">YOUR NEW DIET</h2>
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="dietDisplay">
             <pre>{lastCreatedDiet?.description}</pre>
             {lastCreatedDiet && (
-              <div>
+              <div className="share-button-container">
                 <span>Share it with others:</span>
+                <br></br>
+                <br></br>
                 <ShareButton diet={lastCreatedDiet} />
               </div>
             )}
           </div>
         )}
-        <Link to="/dashboard">
-          <button className="homebtn">
-            <DashboardIcon className="DashboardIcon" />
-            Dashboard
-          </button>
-        </Link>
       </div>
       <div className="footer">
         <Profile />

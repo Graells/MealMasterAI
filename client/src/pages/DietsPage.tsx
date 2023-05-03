@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import DietDisplay from "../components/DietDisplay";
 import { Link } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
-import Profile from "../components/Profile";
 import HomeIcon from "@mui/icons-material/Home";
 import "../styles/DropdownMenu.css";
 import "../styles/DietsPage.css";
@@ -22,10 +21,6 @@ const DietsPage = () => {
       setFilteredDiets(filtered);
     }
   };
-
-  useEffect(() => {
-    console.log("DIETS DietsPage", diets, isLoading);
-  }, [diets, isLoading]);
 
   const getUniqueUsers = () => {
     const userEmails = diets.map((diet) => diet.user.email);
