@@ -13,7 +13,7 @@ const HomePage = () => {
         <h1>MEALMASTER AI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
-            <button className="homebtn">
+            <button data-cy="create-meal-nav-link" className="homebtn">
               <RestaurantIcon className="RestaurantIcon" />
               Create Diet
             </button>
@@ -22,7 +22,7 @@ const HomePage = () => {
           <div className="space"></div>
 
           <Link to="/dashboard">
-            <button className="homebtn">
+            <button data-cy="dashboard-nav-link" className="homebtn">
               <DashboardIcon className="DashboardIcon" />
               Dashboard
             </button>
