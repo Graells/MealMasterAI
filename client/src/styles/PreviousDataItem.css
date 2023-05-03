@@ -1,15 +1,24 @@
 .previous-data-item {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  background: #23568D;
-  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0A1929 140%);
+  background: #23568d;
+  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 140%);
   border-radius: 5px;
-  border: 1px solid  #1A8DAF;
+  border: 1px solid #1a8daf;
+  text-decoration: underline;
+  font-size: smaller;
   padding: 1rem;
-  }
-  
-  .previous-data-item h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    
-  }
-  
+  max-height: 150px;
+  overflow-y: scroll;
+  text-transform: uppercase;
+}
+
+.previous-data-item p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.PreviousDietDetails {
+  border-radius: 5px;
+  border: 1px solid #1a8daf;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}

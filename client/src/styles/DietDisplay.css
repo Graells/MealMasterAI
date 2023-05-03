@@ -44,7 +44,7 @@
 
 .share-button-container {
   display: flex;
-  align-items: center;
+  align-items: start;
 }
 
 .options-icon {
@@ -59,12 +59,17 @@
   position: absolute;
   top: calc(100% - 27px);
   right: calc(100% - 5px);
-  margin: 0px;
   background-color: #f4f4f4;
-
+  width: fit-content;
   border: 1px solid #1a8daf;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2px;
   z-index: 1;
+}
+
+.settings-buttons {
+  padding: 20px;
+  width: auto;
+  height: auto;
 }

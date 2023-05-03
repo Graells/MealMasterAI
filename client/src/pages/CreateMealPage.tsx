@@ -3,7 +3,6 @@ import CreateMealForm from "../components/CreateMealForm";
 import { Link, useNavigate } from "react-router-dom";
 import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
-import Profile from "../components/Profile";
 import "../styles/CreateMealPage.css";
 import "../styles/ProfileComponent.css";
 import HomeIcon from "@mui/icons-material/Home";
@@ -40,7 +39,9 @@ const CreateMealPage = () => {
 
           {!isLoading && (
             <div className="previous-data-container">
-              <h4 className="h2-background">YOUR PREVIOUS DIET PLANS</h4>
+              <h3 className="scroll-text">
+                SCROLL TO CHECK YOUR PREVIOUS DIETS
+              </h3>
               <PreviousDataItem />
             </div>
           )}

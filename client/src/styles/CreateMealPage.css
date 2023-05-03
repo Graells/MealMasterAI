@@ -1,11 +1,5 @@
-/* .createMealPage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
 .form-page-container {
   height: 100%;
-  
 }
 
 .form-and-data-container {
@@ -37,4 +31,10 @@
   height: 5vh;
   left: 2vh;
   top: 2vh;
+}
+
+.scroll-text {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
 }

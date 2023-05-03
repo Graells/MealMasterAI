@@ -10,10 +10,6 @@ const HomePage = () => {
   return (
     <>
       <div className="styleHomePage" style={{ paddingBottom: "80px" }}>
-        {/* <Link to="/">
-          <img src={logo} alt="App Logo" className="app-logo" />
-          <button>refresh</button> 
-        </Link>*/}
         <h1>MEALMASTER AI</h1>
         <div className="buttonGroup">
           <Link to="/create-meal">
