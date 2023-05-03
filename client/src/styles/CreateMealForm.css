@@ -3,13 +3,21 @@
   flex-direction: column;
   width: 80vw;
   margin: 5px;
+  margin-right: 4vw;
   transform: scale(0.75);
   color: black;
   position: relative;
-  top: -8vh;
+  top: -12vh;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px;
+  height: 90vh;
+  /* padding-bottom: 25vh; */
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .formStyle h2 {
+  text-align: center;
   margin-bottom: 2vh;
   max-height: 5vh !important;
   font-size: 2rem;
@@ -39,6 +47,7 @@
   margin-top: 3vh;
   font-size: 1.1rem;
   margin-left: 1vw;
+  font-weight: 700;
 }
 
 .formStyle input,
@@ -57,12 +66,12 @@
 .formStyle button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: white;
+  background-color: #EFEFEF;
   color: black;
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
   max-height: 5vh !important;
@@ -71,6 +80,3 @@
   width: 93%;
 }
 
-.formStyle button:hover {
-  background-color: #92f7fd;
-}

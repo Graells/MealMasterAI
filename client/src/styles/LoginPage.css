@@ -28,12 +28,6 @@ img {
   padding: 45px;
 }
 
-.headingName {
-  color: white;
-  padding-top: 15vh;
-  font-size: 3.7rem;
-}
-
 .space {
   width: 100px;
 }
@@ -48,8 +42,9 @@ img {
 }
 
 .headingName {
-  color: white;
+  color: black;
   padding-top: 15vh;
+  padding-bottom: 35vh;
   font-size: 3.7rem;
 }
 
@@ -57,7 +52,7 @@ img {
   width: 100px;
 }
 
-.loginbtn {
+/* .loginbtn {
   width: 20vw;
   display: inline-block;
   background-color: white;
@@ -70,7 +65,7 @@ img {
   transition: background-color 0.2s;
   z-index: 1000;
   height: 100%;
-}
+} */
 
 /* Media queries */
 /* Media queries */

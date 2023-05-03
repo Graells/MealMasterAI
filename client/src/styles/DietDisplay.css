@@ -1,14 +1,14 @@
 .dietDisplay {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #1a8daf;
+  
 }
 
 .dietDisplay h2 {
@@ -27,7 +27,7 @@
 .info .dietUserStyle {
   font-weight: bold;
   font-size: 19px;
-  color: #1a8daf;
+  color: black;
   margin-bottom: 0px;
 }
 
@@ -61,7 +61,7 @@
   right: calc(100% - 5px);
   background-color: #f4f4f4;
   width: fit-content;
-  border: 1px solid #1a8daf;
+  border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 2px;

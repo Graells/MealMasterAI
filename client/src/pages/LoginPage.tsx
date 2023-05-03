@@ -28,7 +28,7 @@ const LoginPage = () => {
 
         <Link to="/dashboard">
           <button className="settings-buttons">
-            <DashboardIcon className="DashboardIcon" />
+            {/* <DashboardIcon className="DashboardIcon" /> */}
             Dashboard
           </button>
         </Link>

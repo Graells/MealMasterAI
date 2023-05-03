@@ -6,10 +6,10 @@
   .select-container select {
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     appearance: none;
-    background-color: white;
+    background: rgba( 255, 255, 255, 0.2 );
     cursor: pointer;
     outline: none;
   }
@@ -17,10 +17,10 @@
   .select-container::after {
     content: "▼";
     position: absolute;
-    top: 8px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     pointer-events: none;
     font-size: 14px;
-    color: #999;
+    color: black;
   }
   

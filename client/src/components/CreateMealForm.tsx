@@ -182,7 +182,7 @@ const CreateMealForm: React.FC<CreateMealFormProps> = ({ onMealSubmit }) => {
           <option value="GAIN">Gain</option>
           <option value="MAINTAIN">Maintain</option>
         </select>
-        <label htmlFor="weightAmount">Amount To Gain/Lose (kg):</label>
+        <label htmlFor="weightAmount">To Gain / Lose (kg):</label>
         
         <input
           data-cy="weight-amount-input"

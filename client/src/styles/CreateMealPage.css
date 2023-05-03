@@ -4,17 +4,23 @@
 
 .form-and-data-container {
   display: flex;
+  height: 75vh;
 }
 
 .previous-data-container {
   width: 25vw;
   margin-right: 12vw;
-  height: 60vh;
+  margin-left: -10vw;
+  margin-top: -0.1vh;
+  height: 67.5vh;
   color: black;
   border-radius: 8px;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.logoutbtn {
+/* .logoutbtn {
   background-color: transparent;
   border: none;
   border-radius: 10px;
@@ -24,7 +30,7 @@
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-}
+} */
 
 .homelink {
   position: absolute;

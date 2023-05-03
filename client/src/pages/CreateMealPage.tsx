@@ -39,9 +39,10 @@ const CreateMealPage = () => {
 
           {!isLoading && (
             <div className="previous-data-container">
-              <h3 className="scroll-text">
-                SCROLL TO CHECK YOUR PREVIOUS DIETS
-              </h3>
+              <h2 className="scroll-text">
+                PREVIOUS DIETS
+                
+              </h2>
               <PreviousDataItem />
             </div>
           )}
