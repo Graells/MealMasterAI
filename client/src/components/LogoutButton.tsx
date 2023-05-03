@@ -9,7 +9,7 @@ const LogoutButton: React.FC = () => {
     <>
       {isAuthenticated && (
         <button
-          className="logoutbtn"
+          className="settings-buttons"
           onClick={() =>
             logout({ logoutParams: { returnTo: window.location.origin } })
           }

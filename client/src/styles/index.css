@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #35814a;
+  color: black;
   background: #23568d;
   background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 98%);
 }
@@ -20,40 +20,12 @@ body {
   font-family: "Lexend Zetta", sans-serif;
 }
 
-/* .app-logo {
-    margin-top: 20px;
-    width: 150px;
-    height: auto;
-    background-color: #F4F4F4;
-    border-radius: 5px;
-  } */
-
-  
-  .h2-background {
-    padding: 10px;
-    border-radius: 5px;
-    height: 10vh;
-    font-size: 1.2rem;
-  }
-  
-  
-   /* button {
-
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    min-width: 100px;
-    text-decoration: none;
-    
-
-  } */
+.h2-background {
+  padding: 10px;
+  border-radius: 5px;
+  height: 10vh;
+  font-size: 1.2rem;
+}
 
 button:hover {
   background-color: #92f7fd;
