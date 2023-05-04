@@ -5,7 +5,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import aiarm from "../assets/airobotarm.svg";
 import "../styles/LoginPage.css";
+import "../styles/index.css"
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import Footer from "../components/Footer";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -28,11 +30,11 @@ const LoginPage = () => {
 
         <Link to="/dashboard">
           <button className="settings-buttons">
-            {/* <DashboardIcon className="DashboardIcon" /> */}
             Dashboard
           </button>
         </Link>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

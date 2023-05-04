@@ -1,3 +1,22 @@
+.light-mode {
+  background-color: #FFBA08;
+  color: black;
+}
+
+.light-mode h1 {
+  color: black;
+}
+
+.dark-mode {
+  background-color: #134074;
+  color: white;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+
 body {
   display: flex;
   justify-content: center;
@@ -7,8 +26,6 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: black;
-  /* background: #23568d;
-  background: linear-gradient(114deg, rgba(211, 255, 204, 1) 0%, #0a1929 98%); */
   background-color: #FFBA08;
 }
 

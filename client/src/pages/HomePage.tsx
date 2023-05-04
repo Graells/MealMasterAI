@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Profile from "../components/Profile";
 import "../styles/HomePage.css";
-import logo from "../assets/MealMasterAILogo.png";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import Footer from "../components/Footer";

@@ -37,13 +37,15 @@ img {
   flex-direction: row;
   align-items: space-between;
   height: 65px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   padding: 45px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
 .headingName {
   color: black;
-  padding-top: 15vh;
+  padding-top: 1vh;
   padding-bottom: 35vh;
   font-size: 3.7rem;
 }
@@ -52,22 +54,9 @@ img {
   width: 100px;
 }
 
-/* .loginbtn {
-  width: 20vw;
-  display: inline-block;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  z-index: 1000;
-  height: 100%;
-} */
 
-/* Media queries */
+
+
 /* Media queries */
 @media only screen and (max-width: 768px) {
   .headingName {
