@@ -26,8 +26,8 @@ const CreateMealPage = () => {
     <div className="form-page-container ">
       <div className="createMealPage">
         <div className="homelink">
-          <Link to="/">
-            <HomeIcon sx={{ color: "black" }} />
+          <Link aria-label="Home button" to="/">
+            <HomeIcon  sx={{ color: "black" }} />
           </Link>
         </div>
 

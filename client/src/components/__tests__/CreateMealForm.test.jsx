@@ -54,10 +54,10 @@ const AllProviders = ({children}) => { return (
   fireEvent.change(screen.getByLabelText(/Gender:/i), {
     target: { value: 'MALE' },
   });
-  fireEvent.change(screen.getByLabelText(/Weight \(in kg\):/i), {
+  fireEvent.change(screen.getByLabelText(/Weight \(kg\):/i), {
     target: { value: '80' },
   });
-  fireEvent.change(screen.getByLabelText(/Height \(in cm\):/i), {
+  fireEvent.change(screen.getByLabelText(/Height \(cm\):/i), {
     target: { value: '180' },
   });
   fireEvent.change(screen.getByLabelText(/Activity Level:/i), {
@@ -69,10 +69,14 @@ const AllProviders = ({children}) => { return (
   fireEvent.change(screen.getByLabelText(/Weight Goal:/i), {
     target: { value: 'LOSE' },
   });
-  fireEvent.change(screen.getByLabelText(/Amount\(in kg\):/i), {
-    target: { value: '5' },
+
+// screen.getByText(/to gain \/ lose \(kg\):/i)
+
+  fireEvent.change(screen.getByText(/to gain \/ lose \(kg\):/i), {
+    target: { value: '5' }
+  ,
   });
-  fireEvent.change(screen.getByLabelText(/Time Frame \(in weeks\):/i), {
+  fireEvent.change(screen.getByLabelText(/Time Frame \(weeks\):/i), {
     target: { value: '4' },
   });
   fireEvent.change(screen.getByLabelText(/Eating Frequency/i), {
