@@ -12,7 +12,8 @@ export const dietsSlice = createSlice({
   reducers: {
     setDiets: (_state, action) => {
       return action.payload;
-    }
+    },
+    updateDietAfterValidate: () => {},
   }
 });
 

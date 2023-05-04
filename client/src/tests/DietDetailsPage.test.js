@@ -13,6 +13,8 @@ import "@testing-library/jest-dom/extend-expect";
 import DietDetailsPage from "../components/DietDetailsPage";
 import { DietProvider } from "./mocks/diestProvider";
 import { DietContext } from "./mocks/diestProvider";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 
 describe.only("DietDetailsPage", () => {
   it("Should be shown when the info is loading", () => {
@@ -22,10 +24,12 @@ describe.only("DietDetailsPage", () => {
       return <div></div>;
     };
     const { container, getByText } = render(
+      <Provider store={store}>
       <DietProvider>
         <Dummy />
         <DietDetailsPage />
       </DietProvider>
+      </Provider>
     );
     const button = getByText("Go to Dashboard");
     expect(button).toBeInTheDocument();
