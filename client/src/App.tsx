@@ -8,6 +8,8 @@ import LoginPage from "./pages/LoginPage";
 import DietUserDisplay from "./components/DietUserDisplay";
 import DietDetailsPage from "./components/DietDetailsPage";
 import { Diet } from "./components/DietDetailsPage";
+import Footer from "./components/Footer";
+
 
 interface DietContextType {
   diets: Diet[];
@@ -37,10 +39,11 @@ const App = () => {
           <Route path="/diet-user-display" element={<DietUserDisplay />} />
           <Route path="/diet/:dietId" element={<DietDetailsPage />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </DietProvider>
   );
 };
 
 export default App;
-// export { DietContext };
+

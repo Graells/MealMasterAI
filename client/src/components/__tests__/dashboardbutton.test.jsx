@@ -3,7 +3,7 @@ import {render, screen} from '@testing-library/react';
 import LoginPage from '../../pages/LoginPage';
 import LoginButton from '../LoginButton';
 import {BrowserRouter} from 'react-router-dom';
-// import { useAuth0 } from "@auth0/auth0-react";
+
 
 
 describe("Login Page buttons", () => {

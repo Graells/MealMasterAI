@@ -5,6 +5,7 @@ import { DietContext } from "../App";
 import Spinner from "../components/Spinner";
 import "../styles/CreateMealPage.css";
 import "../styles/ProfileComponent.css";
+import "../styles/index.css"
 import HomeIcon from "@mui/icons-material/Home";
 import PreviousDataItem from "../components/PreviousDataItem";
 import Footer from "../components/Footer";
@@ -22,7 +23,7 @@ const CreateMealPage = () => {
   };
 
   return (
-    <div className="form-page-container">
+    <div className="form-page-container ">
       <div className="createMealPage">
         <div className="homelink">
           <Link to="/">
