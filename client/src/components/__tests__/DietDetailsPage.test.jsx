@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import DietDetailsPage from './DietDetailsPage';
+import DietDetailsPage from '../DietDetailsPage';
 import { BrowserRouter } from 'react-router-dom';
-import { DietContext } from '../App';
+import { DietContext } from '../../App';
 
 describe('DietDetailsPage', () => {
   test('DietDetailsPage should render a Spinner when diet is not found', () => {
@@ -18,7 +18,7 @@ describe('DietDetailsPage', () => {
   });
 
   test('DietDetailsPage should render DietDisplay and Dashboard button when diet is found', () => {
-    const mockDiet: Diet = {
+    const mockDiet = {
       id: 1,
       mealInfo: { title: 'Test' },
       user: { name: 'Test Name' },
