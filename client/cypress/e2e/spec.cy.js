@@ -66,6 +66,6 @@ describe('MealMaster E2E Tests', () => {
     cy.get('[data-cy=diet-link]').first().select('jordanrollinstefl@gmail.com');
 
     cy.url().should('include', '/dashboard');
-    cy.get(':nth-child(6) > .title-container > a > h3').contains('Diet title: Test Meal for Test Name')
+    cy.get(':nth-child(6) > .title-container > a > h3').contains('Test Meal for Test Name')
   });
 });
