@@ -1,7 +1,11 @@
 .dietUserDisplay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-button-container {
+  display: flex;
+  align-items: start;
+}

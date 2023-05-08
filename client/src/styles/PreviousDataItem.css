@@ -1,15 +1,23 @@
 .previous-data-item {
-    background-color: #F4F4F4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background: rgba( 255, 255, 255, 0.2 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 5px;
+  border: 1px solid white;
+  text-decoration: underline;
+  font-size: smaller;
+  padding: 1rem;
+  max-height: 150px;
+  overflow-y: scroll;
+  text-transform: uppercase;
+}
+
+.previous-data-item p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.PreviousDietDetails {
+  border-radius: 5px;
   
-  .previous-data-item h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    
-  }
-  
+}
