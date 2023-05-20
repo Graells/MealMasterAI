@@ -1,28 +1,103 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #F4F4F4;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Lexend Zetta", sans-serif;
+  font-family: "Lexend Zetta", sans-serif;
+}
+
+img {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  margin-right: 0px;
+  z-index: -1;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  height: 65px;
+  margin-bottom: 30px;
+  padding: 45px;
+}
+
+.space {
+  width: 100px;
+}
+
+.login-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  height: 65px;
+  margin-bottom: 40px;
+  padding: 45px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.headingName {
+  color: black;
+  padding-top: 1vh;
+  padding-bottom: 35vh;
+  font-size: 3.7rem;
+}
+
+.space {
+  width: 100px;
+}
+
+
+
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .headingName {
+    font-size: 2.1rem;
   }
-  .login-container .login-hero {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+  .login-hero {
     height: 50px;
-    margin-bottom: 2px;
+    margin-bottom: 15px;
+    padding: 20px;
   }
-  .login-container .login-dashboard {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
+
+  .space {
+    width: 10vw;
   }
-  .app-logo {
-    width: 150px;
-    height: auto;
+
+  .loginbtn {
+    width: 30vw;
+    z-index: 1000;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .headingName {
+    font-size: 1.9rem;
+  }
+
+  .login-hero {
+    height: 25vh;
+    margin-bottom: 10vh;
+    width: max-content;
+  }
+
+  .space {
+    width: 10vw;
+  }
+
+  .loginbtn {
+    height: 6vh;
+    width: 40vw;
+    font-size: 1rem;
+    z-index: 1000;
+  }
+}

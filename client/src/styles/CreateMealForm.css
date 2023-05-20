@@ -1,59 +1,82 @@
 .formStyle {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid  #1A8DAF;
-  }
-  
-  .formStyle h2 {
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .formStyle label {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .formStyle input,
-  .formStyle select,
-  .formStyle textarea {
-    padding: 8px;
-    border: 1px solid  #1A8DAF;
-    border-radius: 3px;
-    font-size: 14px;
-    font-family: inherit;
-  }
-  
-  .formStyle button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #35814A;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 20px;
-  }
-  
-  .formStyle button:hover {
-    background-color: #036B88
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 5px;
+  margin-right: 4vw;
+  transform: scale(0.75);
+  color: black;
+  position: relative;
+  top: -12vh;
+  background: rgba( 255, 255, 255, 0.6 );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border-radius: 10px;
+  height: 90vh;
+  /* padding-bottom: 25vh; */
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
 
-  }
-  
-  
+.formStyle h2 {
+  text-align: center;
+  margin-bottom: 2vh;
+  max-height: 5vh !important;
+  font-size: 2rem;
+}
+
+.columns-container {
+  display: flex;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 0 0 10px;
+  justify-content: space-evenly;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.formStyle label {
+  margin-top: 3vh;
+  font-size: 1.1rem;
+  margin-left: 1vw;
+  font-weight: 700;
+}
+
+.formStyle input,
+.formStyle select,
+.formStyle textarea {
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 85%;
+  margin-left: 1vw;
+  background-color: transparent;
+}
+
+.formStyle button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #EFEFEF;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  max-height: 5vh !important;
+  margin-left: 2vw;
+  margin-top: 7vh;
+  width: 93%;
+}
+
