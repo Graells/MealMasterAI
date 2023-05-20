@@ -5,6 +5,7 @@ import LogoutButton from "./LogoutButton";
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  console.log('useAuth0', useAuth0);
 
   if (isLoading) {
     return <Spinner />;

@@ -6,9 +6,10 @@ const PreviousDataItem = () => {
   const { diets } = useContext(DietContext);
   const { user } = useAuth0();
   const [visibleDetails, setVisibleDetails] = useState({});
+  console.log('visibleDetails', visibleDetails);
   const toggleDetails = (id) => {
     setVisibleDetails((prevState) => ({
-      ...prevState,
+       ...prevState,
       [id]: !prevState[id],
     }));
   };
