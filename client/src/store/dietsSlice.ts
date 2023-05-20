@@ -4,6 +4,7 @@ import { IDiet } from "../Interfaces"
 import { RootState } from "./store";
 
 
+
 const initialDietsState: IDiet[] = [];
 
 export const dietsSlice = createSlice({
@@ -12,8 +13,7 @@ export const dietsSlice = createSlice({
   reducers: {
     setDiets: (_state, action) => {
       return action.payload;
-    },
-    updateDietAfterValidate: () => {},
+    }
   }
 });
 

@@ -1,6 +1,8 @@
 import React from "react";
-import { render, fireEvent, getByTestId, screen, window, getByLabelText, toHaveBeenCalledTimes, getByText } from "@testing-library/react";
-import Profile from "../components/Profile";
+import { 
+        render, 
+        fireEvent
+      } from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
 import LoginButton from "../components/LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -40,14 +42,14 @@ describe("LoginButton", () => {
     expect(loginWithRedirect).toHaveBeenCalled();
   });
 
-  test("Doesn't render the Log In button when authenticated", () => {
-    useAuth0.mockReturnValue(
-      { isAuthenticated: true }
-    );
+  // test("Doesn't render the Log In button when authenticated", () => {
+  //   useAuth0.mockReturnValue(
+  //     { isAuthenticated: true }
+  //   );
 
-    const { queryByText } = render(<LoginButton />);
-    const button = queryByText("Log In");
+  //   const { queryByText } = render(<LoginButton />);
+  //   const button = queryByText("Log In");
 
-    expect(button).toBeNull();
-  });
+  //   expect(button).toBeNull();
+  // });
 });

@@ -1,37 +1,30 @@
-import React, { useContext } from "react";
-import {
-  render,
-  fireEvent,
-  getByTestId,
-  screen,
-  window,
-  getByLabelText,
-  toHaveBeenCalledWith,
-  toHaveBeenCalledTimes,
-} from "@testing-library/react";
+import React from 'react';
+import { render, waitFor } from '@testing-library/react';
+import { useSelector } from 'react-redux';
 import "@testing-library/jest-dom/extend-expect";
 import DietDetailsPage from "../components/DietDetailsPage";
-import { DietProvider } from "./mocks/diestProvider";
-import { DietContext } from "./mocks/diestProvider";
-import { Provider } from "react-redux";
-import { store } from "../store/store";
 
-describe.only("DietDetailsPage", () => {
-  it("Should be shown when the info is loading", () => {
-    const Dummy = () => {
-      const diets = useContext(DietContext);
-      console.log(diets);
-      return <div></div>;
-    };
-    const { container, getByText } = render(
-      <Provider store={store}>
-      <DietProvider>
-        <Dummy />
-        <DietDetailsPage />
-      </DietProvider>
-      </Provider>
-    );
-    const button = getByText("Go to Dashboard");
-    expect(button).toBeInTheDocument();
+
+jest.mock("react-redux", () => ({
+  useSelector: jest.fn(),
+}));
+
+const mockDiets = [
+  { id: 1, name: "Test Diet 1", meals: [] },
+  { id: 2, name: "Test Diet 2", meals: [] },
+];
+
+describe("DietDetailsPage", () => {
+  beforeEach(() => {
+    useSelector.mockClear();
+  });
+
+  it("should display the DietDisplay component when the diet is loaded", async () => {
+    useSelector.mockReturnValue(mockDiets);
+
+    const { getByText } = render(<DietDetailsPage />);
+    await waitFor(() => {
+      expect(getByText("Test Diet 1")).toBeInTheDocument();
+    });
   });
 });

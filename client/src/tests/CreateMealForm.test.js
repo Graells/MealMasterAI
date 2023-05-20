@@ -2,15 +2,10 @@ import React from "react";
 import {
   render,
   fireEvent,
-  getByTestId,
-  screen,
-  window,
-  getByLabelText,
-  toHaveBeenCalledWith,
-  toHaveBeenCalledTimes,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import CreateMealForm from "../components/CreateMealForm";
+
 
 describe("NewDietForm", () => {
   test("should submit the form when all fields are valid", () => {

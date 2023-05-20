@@ -36,8 +36,6 @@ const DietDetailsPage: React.FC = () => {
       <div>
         <DietDisplay 
         diet={diet} 
-        //filteredDiets={filteredDiets}
-        //setFilteredDiets={setFilteredDiets}
         />
       </div>
     </>

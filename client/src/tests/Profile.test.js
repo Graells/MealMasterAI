@@ -1,12 +1,11 @@
 import React from "react";
-import { render, fireEvent, getByTestId, screen, window, getByLabelText, toHaveBeenCalledTimes, getByText } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import Profile from "../components/Profile";
 import '@testing-library/jest-dom/extend-expect';
-import LogoutButton from "../components/LogoutButton";
-import Spinner from "../components/Spinner";
 import { useAuth0 } from "@auth0/auth0-react";
 
 jest.mock('@auth0/auth0-react');
+
 
 describe("Authentification window", () => {
   const user = {
