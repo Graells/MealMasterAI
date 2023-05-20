@@ -11,23 +11,23 @@ datasource db {
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
-  auth0Id     String   @unique
-  email       String?
-  userName        String?
-  userPic        String?
-  meals       MealAI[] 
+  id       Int      @id @default(autoincrement())
+  auth0Id  String   @unique
+  email    String?
+  userName String?
+  userPic  String?
+  meals    MealAI[]
 }
+
 model MealAI {
   id          Int      @id @default(autoincrement())
-  userId      String      
+  userId      String
   user        User     @relation(fields: [userId], references: [auth0Id])
   description String?
   createdAt   DateTime @default(now())
   mealInfoId  Int      @unique
   mealInfo    MealInfo @relation(fields: [mealInfoId], references: [id])
 }
-
 
 model MealInfo {
   id                 Int           @id @default(autoincrement())
