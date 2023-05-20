@@ -1,0 +1,6 @@
+This amazing app was taken from my colleague's repository for experience with a legacy project. Some changes have been done that make this app more stabile and easier for futher improvements.
+
+1. JavaScript refactored to TypeScript.
+2. Context API approach of data flow was refactored using "@reduxjs/toolkit" library.
+3. Added tests for back-end and for each component on front-end using "@testing-library/react" and "@testing-library/jest-dom/extend-expect".
+4. After testing fixed some small issues and added forms validation.
