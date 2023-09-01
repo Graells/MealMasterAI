@@ -1,6 +1,10 @@
+const API = import.meta.env.VITE_APP_API_URL
+  ? import.meta.env.VITE_APP_API_URL
+  : "http://localhost:3001";
+
 export const getAll = async () => {
   try {
-    const response = await fetch("http://localhost:3001/meals", {
+    const response = await fetch(API + "/meals", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -42,7 +46,7 @@ export const submitForm = async (
   } = formData;
 
   try {
-    const response = await fetch("http://localhost:3001/ai-generate", {
+    const response = await fetch(API + "/ai-generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +86,7 @@ export const submitForm = async (
 
 export const addOne = async (meal) => {
   try {
-    const response = await fetch("http://localhost:3001/meals", {
+    const response = await fetch(API + "/meals", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
